@@ -1,31 +1,47 @@
-# shadcn/ui monorepo template
+# Frontend Conference Kansai 2025
 
-This template is for creating a monorepo with shadcn/ui.
+This repository is source codes for Frontend Conference Kansai 2025's Website.
 
-## Usage
+## Requirements
+
+- Volta or nodenv
+
+## Setup
+
+### Install Node.js
+
+- Use Volta
 
 ```bash
-pnpm dlx shadcn@latest init
+volta install node@23.1.0
+volta install pnpm@10.6.3
 ```
-
-## Adding components
-
-To add components to your app, run the following command at the root of your `web` app:
+- Use nodenv
 
 ```bash
-pnpm dlx shadcn@latest add button -c apps/web
+nodenv install 23.1.0
+npn i -g pnpm@10.6.3
 ```
 
-This will place the ui components in the `packages/ui/src/components` directory.
+### Install node_modules
 
-## Tailwind
+```bash
+pnpm i --frozen-lockfile
+```
 
-Your `tailwind.config.ts` and `globals.css` are already set up to use the components from the `ui` package.
+## Start dev server
 
-## Using components
+```bash
+pnpm dev
+```
 
-To use the components in your app, import them from the `ui` package.
+- Web Only
 
-```tsx
-import { Button } from "@workspace/ui/components/button";
+```bash
+pnpm dev --filter=web
+```
+
+- Storybook Only
+```bash
+pnpm dev --filter=storybook
 ```
