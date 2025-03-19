@@ -5,6 +5,7 @@
   "private": true,
   "scripts": {
     "lint": "biome lint .",
+    "lint:fix": "biome check --write",
     "format": "biome format . --write"
   },
   "dependencies": {

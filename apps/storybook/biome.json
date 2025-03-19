@@ -1,3 +1,13 @@
 {
-  "extends": ["../../biome.json"]
+  "extends": ["../../biome.json"],
+  "linter": {
+    "rules": {
+      "nursery": {
+        "useSortedClasses": "off"
+      },
+      "style": {
+        "useNodejsImportProtocol": "off"
+      }
+    }
+  }
 }

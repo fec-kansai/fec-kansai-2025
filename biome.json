@@ -7,7 +7,11 @@
 	},
 	"files": {
 		"ignoreUnknown": false,
-		"ignore": []
+		"ignore": [
+			".next",
+			"**/*.app.json",
+			"**/*.node.json"
+		]
 	},
 	"formatter": {
 		"enabled": true,
