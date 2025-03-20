@@ -1,12 +1,8 @@
 pre-commit:
   piped: true
   commands:
-    format:
-      priority: 1
-      run: pnpm format
-      stage_fixed: true
     lint:
-      priority: 2
+      priority: 1
       run: pnpm lint:fix
       stage_fixed: true
 commit-msg:
