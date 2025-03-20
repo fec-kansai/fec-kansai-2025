@@ -48,7 +48,7 @@ pnpm dev --filter=web
 pnpm dev --filter=storybook
 ```
 
-### Commit Convention
+## Commit Convention
 
 Before you create a Pull Request, please check whether your commits comply with
 the commit conventions used in this repository.
