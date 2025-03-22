@@ -6,8 +6,8 @@
     "prepare": "lefthook install",
     "build": "turbo build",
     "dev": "turbo dev",
-    "lint": "turbo lint",
-    "lint:fix": "turbo lint:fix"
+    "check": "turbo check",
+    "check:fix": "turbo check:fix"
   },
   "devDependencies": {
     "@commitlint/cli": "^19.8.0",
