@@ -3,13 +3,17 @@
   "version": "0.0.1",
   "private": true,
   "scripts": {
+    "prepare": "lefthook install",
     "build": "turbo build",
     "dev": "turbo dev",
-    "lint": "turbo lint",
-    "format": "turbo format"
+    "check": "turbo check",
+    "check:fix": "turbo check:fix"
   },
   "devDependencies": {
+    "@commitlint/cli": "^19.8.0",
+    "@commitlint/config-conventional": "^19.8.0",
     "@workspace/typescript-config": "workspace:*",
+    "lefthook": "^1.11.3",
     "turbo": "^2.4.2",
     "typescript": "5.7.3"
   },

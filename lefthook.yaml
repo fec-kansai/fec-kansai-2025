@@ -1,0 +1,18 @@
+pre-commit:
+  piped: true
+  commands:
+    check:
+      priority: 1
+      run: pnpm check:fix
+      stage_fixed: true
+commit-msg:
+  commands:
+    commitlint:
+      run: pnpm commitlint --edit {1}
+
+post-merge:
+  commands:
+    pnpm:
+      glob: "**/package.json pnpm-lock.yaml"
+      run: pnpm install
+
