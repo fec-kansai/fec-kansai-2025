@@ -2,12 +2,14 @@ name: "Check UI Build"
 
 description: "Check UI Build"
 
+inputs:
+  working-directory:
+    description: "The directory to run the action in"
+    required: false
+    default: "./apps/web"
+
 runs:
   using: "composite"
-  defaults:
-    run:
-      shell: bash
-      working-directory: ./apps/web
   steps:
     - name: Check out repository code
       uses: actions/checkout@v4
@@ -15,10 +17,16 @@ runs:
         fetch-depth: 0
 
     - name: Check Spelling
+      shell: bash
       run: pnpm typecheck
+      working-directory: ${{ inputs.working-directory }}
 
     - name: Check Format And Linting
+      shell: bash
       run: pnpm check
+      working-directory: ${{ inputs.working-directory }}
 
     - name: Check Building
+      shell: bash
       run: pnpm build
+      working-directory: ${{ inputs.working-directory }}
