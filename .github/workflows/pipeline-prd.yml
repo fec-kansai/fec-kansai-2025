@@ -12,10 +12,6 @@ jobs:
         with:
           fetch-depth: 0
 
-
-      - name: InstallDependencies
-        uses: ./.github/actions/install-dependencies
-
       - name: Check UI Build
         uses: ./.github/actions/check-ui-build
       
