@@ -1,0 +1,13 @@
+name: Chekck Production Build
+on:
+  push:
+    tags:
+      - "v*"
+jobs:
+  CheckPrdBuild:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check UI Build
+        uses: ./.github/actions/check-ui-build
+      - name: Check Storybook Build
+        uses: ./.github/actions/check-storybook-build
