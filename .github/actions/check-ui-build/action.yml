@@ -35,3 +35,9 @@ runs:
       shell: bash
       run: pnpm build
       working-directory: ${{ inputs.working-directory }}
+
+    - name: Output Artifacts
+      uses: actions/upload-artifact@v4
+      with:
+        name: "ui-build-artifact"
+        path: ${{ inputs.working-directory }}/.next/static
