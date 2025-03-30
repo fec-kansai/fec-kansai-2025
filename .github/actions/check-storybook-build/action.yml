@@ -4,6 +4,10 @@ description: "Check Storybook Build"
 
 runs:
   using: "composite"
+  defaults:
+    run:
+      shell: bash
+      working-directory: ./apps/storybook
   steps:
     - name: Check out repository code
       uses: actions/checkout@v4
@@ -13,16 +17,8 @@ runs:
     - name: Install dependencies
       uses: ./.github/actions/install-dependencies
 
-    - name: Move to Storybook directory
-      shell: bash
-      run: | 
-        cd ./apps/storybook
-        ls -la
-
     - name: Check Format And Linting
-      shell: bash
       run: pnpm check
 
     - name: Check Building Storybook
-      shell: bash
       run: pnpm build

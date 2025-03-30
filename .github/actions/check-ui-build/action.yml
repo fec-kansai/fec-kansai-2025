@@ -4,29 +4,21 @@ description: "Check UI Build"
 
 runs:
   using: "composite"
+  defaults:
+    run:
+      shell: bash
+      working-directory: ./apps/web
   steps:
     - name: Check out repository code
       uses: actions/checkout@v4
       with:
         fetch-depth: 0
 
-    - name: Install dependencies
-      uses: ./.github/actions/install-dependencies
-
-    - name: Move to Storybook directory
-      shell: bash
-      run: | 
-        cd ./apps/web
-        ls -la
-
     - name: Check Spelling
-      shell: bash
       run: pnpm typecheck
 
     - name: Check Format And Linting
-      shell: bash
       run: pnpm check
 
     - name: Check Building
-      shell: bash
       run: pnpm build
