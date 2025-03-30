@@ -14,10 +14,13 @@ runs:
       uses: ./.github/actions/install-dependencies
 
     - name: Move to Storybook directory
+      shell: bash
       run: cd apps/storybook
 
     - name: Check Format And Linting
+      shell: bash
       run: pnpm check
 
     - name: Check Building Storybook
+      shell: bash
       run: pnpm build
