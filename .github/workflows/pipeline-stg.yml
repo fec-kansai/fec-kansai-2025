@@ -19,8 +19,8 @@ jobs:
         with:
           fetch-depth: 0
 
-      - name: Check UI Build
-        uses: ./.github/actions/check-ui-build
+      - name: Check Storybook Build
+        uses: ./.github/actions/check-storybook-build
 
   Deploy:
     runs-on: ubuntu-latest
