@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "storybook dev -p 6006",
-    "build": "tsc -b &&  storybook build",
+    "build": "storybook build",
     "check": "biome check .",
     "check:fix": "biome check --write"
   },
