@@ -1,7 +1,7 @@
 name: Chekck Stage Build
 on: [push]
 jobs:
-  CheckStgBuild:
+  CheckUIBuild:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -11,6 +11,13 @@ jobs:
 
       - name: Check UI Build
         uses: ./.github/actions/check-ui-build
+  CheckStoryBookBuild:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
 
-      - name: Check Storybook Build
-        uses: ./.github/actions/check-storybook-build
+      - name: Check UI Build
+        uses: ./.github/actions/check-ui-build
