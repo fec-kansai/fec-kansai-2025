@@ -16,6 +16,11 @@ runs:
       with:
         fetch-depth: 0
 
+    - name: InstallDependencies
+      uses: ./.github/actions/install-dependencies
+      with:
+        working-directory: ${{ inputs.working-directory }}
+
     - name: Check Format And Linting
       shell: bash
       run: pnpm check

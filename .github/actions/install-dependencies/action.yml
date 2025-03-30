@@ -2,6 +2,12 @@ name: "Install UI Dependencies"
 
 description: "Install UI packages"
 
+inputs:
+  working-directory:
+    description: "The directory to run the action in"
+    required: false
+    default: "."
+
 runs:
   using: "composite"
   steps:
@@ -35,4 +41,5 @@ runs:
 
     - name: Install Dependencies
       shell: bash
+      working-directory: ${{ inputs.working-directory }}
       run: pnpm install
