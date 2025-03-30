@@ -4,6 +4,10 @@ jobs:
   CheckStgBuild:
     runs-on: ubuntu-latest
     steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
       - name: Check UI Build
         uses: ./.github/actions/check-ui-build
       - name: Check Storybook Build
