@@ -15,7 +15,9 @@ runs:
 
     - name: Move to Storybook directory
       shell: bash
-      run: cd apps/storybook
+      run: | 
+        cd ./apps/storybook
+        ls -la
 
     - name: Check Format And Linting
       shell: bash

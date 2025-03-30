@@ -15,7 +15,9 @@ runs:
 
     - name: Move to Storybook directory
       shell: bash
-      run: cd apps/web
+      run: | 
+        cd ./apps/web
+        ls -la
 
     - name: Check Spelling
       shell: bash
