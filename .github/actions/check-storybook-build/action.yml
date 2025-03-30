@@ -14,9 +14,6 @@ runs:
       with:
         fetch-depth: 0
 
-    - name: Install dependencies
-      uses: ./.github/actions/install-dependencies
-
     - name: Check Format And Linting
       run: pnpm check
 
