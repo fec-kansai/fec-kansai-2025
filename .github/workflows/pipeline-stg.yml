@@ -54,6 +54,6 @@ jobs:
         with:
           accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
-          projectName: fec-kansai-2025
+          projectName: fec-kansai-2025-stg
           directory: ./_deploy
           gitHubToken: ${{ secrets.GITHUB_TOKEN }}
