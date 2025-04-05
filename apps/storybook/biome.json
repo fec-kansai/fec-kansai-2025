@@ -8,6 +8,9 @@
     }
   },
   "files": {
-    "include": ["src/**/*.(ts|js|tsx|jsx)", ".storybook/**/*.(ts|js|tsx|jsx)"]
+    "include": [
+      "src/**/*.(ts|js|tsx|jsx|md|mdx)",
+      ".storybook/**/*.(ts|js|tsx|jsx|md|mdx)"
+    ]
   }
 }
