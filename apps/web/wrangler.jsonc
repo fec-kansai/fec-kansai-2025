@@ -1,5 +1,6 @@
 {
-  "name": "wrangler",
+  "name": "fec-kansai-2025-prd",
+  "compatibility_date":"2025-04-05",
   "assets": {
     "directory": "./out"
   }
