@@ -1,0 +1,6 @@
+{
+  "name": "wrangler",
+  "assets": {
+    "directory": "./out"
+  }
+}
