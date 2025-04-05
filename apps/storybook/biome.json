@@ -6,5 +6,8 @@
         "useNodejsImportProtocol": "off"
       }
     }
+  },
+  "files": {
+    "include": ["src/**/*.(ts|js|tsx|jsx)", ".storybook/**/*.(ts|js|tsx|jsx)"]
   }
 }
