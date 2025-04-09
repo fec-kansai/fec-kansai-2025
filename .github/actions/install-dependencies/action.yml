@@ -1,0 +1,45 @@
+name: "Install UI Dependencies"
+
+description: "Install UI packages"
+
+inputs:
+  working-directory:
+    description: "The directory to run the action in"
+    required: false
+    default: "."
+
+runs:
+  using: "composite"
+  steps:
+    - name: Checkout
+      uses: actions/checkout@v4
+      with:
+        fetch-depth: 0
+
+    - name: Setup Node
+      uses: actions/setup-node@v4
+      with:
+        node-version: 22
+
+    - uses: pnpm/action-setup@v2
+      name: Install pnpm
+      with:
+        version: 10
+
+    - name: Get pnpm store directory
+      shell: bash
+      run: |
+        echo "STORE_PATH=$(pnpm store path --silent)" >> $GITHUB_ENV
+
+    - uses: actions/cache@v4
+      name: Setup pnpm cache
+      with:
+        path: ${{ env.STORE_PATH }}
+        key: ${{ runner.os }}-pnpm-store-${{inputs.working-directory}}-${{ hashFiles('**/pnpm-lock.yaml') }}
+        restore-keys: |
+          ${{ runner.os }}-pnpm-store-
+
+    - name: Install Dependencies
+      shell: bash
+      working-directory: ${{ inputs.working-directory }}
+      run: pnpm install

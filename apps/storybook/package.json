@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "storybook dev -p 6006",
-    "build": "tsc -b &&  storybook build",
+    "build": "storybook build",
     "check": "biome check .",
     "check:fix": "biome check --write"
   },
@@ -37,5 +37,8 @@
     "vite": "^6.2.0",
     "vite-tsconfig-paths": "^5.1.4",
     "vitest": "^3.0.8"
+  },
+  "engines": {
+    "node": ">=22.0.0"
   }
 }
