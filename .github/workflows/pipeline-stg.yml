@@ -1,5 +1,11 @@
 name: Chekck Stage Build
-on: [push]
+on:
+  push:
+    branches:
+      - staging
+  pull_request:
+    branches:
+      - staging
 jobs:
   CheckUIBuild:
     runs-on: ubuntu-latest
