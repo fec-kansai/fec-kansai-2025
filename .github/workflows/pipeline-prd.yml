@@ -57,4 +57,4 @@ jobs:
         with:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
-          command: pages deploy ./deploy --project-name=fec-kansai-2025 --commit-dirty=true --branch=main
+          command: pages deploy ./_deploy --project-name=fec-kansai-2025 --commit-dirty=true --branch=main
