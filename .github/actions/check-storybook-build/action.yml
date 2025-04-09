@@ -13,10 +13,8 @@ runs:
   steps:
     - name: Check out repository code
       uses: actions/checkout@v4
-      run: |
-        git fetch --prune --unshallow
-      # with:
-      #   fetch-depth: 0
+      with:
+        fetch-depth: 0
     - name: InstallDependencies
       uses: ./.github/actions/install-dependencies
       with:
@@ -35,7 +33,7 @@ runs:
     - name: workaround for detached HEAD
       shell: bash
       run: |
-        git checkout ${GITHUB_REF#refs/heads/} || git checkout -b ${GITHUB_REF#refs/heads/} && git pull
+        git checkout ${GITHUB_REF#refs/pull/*/head} || git checkout -b ${GITHUB_REF#refs/pull/*/head} && git pull origin ${GITHUB_REF#refs/pull/*/head}
       working-directory: ${{ inputs.working-directory }}
 
     - name: screenshot and visual regression test
