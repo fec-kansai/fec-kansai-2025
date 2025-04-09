@@ -1,7 +1,17 @@
 {
-  "name": "fec-kansai-2025-prd",
+  "name": "fec-kansai-2025",
   "compatibility_date":"2025-04-05",
-  "assets": {
-    "directory": "./out"
-  }
+  "pages_build_output_dir":"out",
+  "env": {
+    "preview": {
+        "vars": {
+          "NODE_ENV": "development"
+        }
+    },
+    "production": {
+        "vars": {
+          "NODE_ENV": "production"
+        }
+    }
+  },
 }

@@ -1,0 +1,38 @@
+name: "Check Storybook Build"
+
+description: "Check Storybook Build"
+
+inputs:
+  working-directory:
+    description: "The directory to run the action in"
+    required: false
+    default: "./apps/storybook"
+
+runs:
+  using: "composite"
+  steps:
+    - name: Check out repository code
+      uses: actions/checkout@v4
+      with:
+        fetch-depth: 0
+
+    - name: InstallDependencies
+      uses: ./.github/actions/install-dependencies
+      with:
+        working-directory: ${{ inputs.working-directory }}
+
+    - name: Check Format And Linting
+      shell: bash
+      run: pnpm check
+      working-directory: ${{ inputs.working-directory }}
+
+    - name: Check Building Storybook
+      shell: bash
+      run: pnpm build
+      working-directory: ${{ inputs.working-directory }}
+
+    - name: Output Artifacts
+      uses: actions/upload-artifact@v4
+      with:
+        name: "storybook-build-artifact"
+        path: ${{ inputs.working-directory }}/storybook-static
