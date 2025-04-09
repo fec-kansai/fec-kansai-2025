@@ -29,3 +29,4 @@ src/stories/**/*
 tsconfig.app.tsbuildinfo
 
 __screenshots__
+.reg

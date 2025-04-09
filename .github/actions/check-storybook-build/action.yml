@@ -31,6 +31,11 @@ runs:
       run: pnpm build
       working-directory: ${{ inputs.working-directory }}
 
+    - name: screenshot and visual regression test
+      run: |
+        pnpm ci:screenshot
+        pnpm ci:vrt
+
     - name: Output Artifacts
       uses: actions/upload-artifact@v4
       with:
