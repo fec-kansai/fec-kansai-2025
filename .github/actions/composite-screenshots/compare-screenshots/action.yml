@@ -7,7 +7,7 @@ inputs:
     required: false
     default: "./apps/storybook"
 
-run:
+runs:
   using: "composite"
   steps:
     - name: Check out code
