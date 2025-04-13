@@ -17,16 +17,16 @@ runs:
 
     - name: Restore cached expected screenshots # キャッシュに保存されたスクショがあったら再利用する
       id: expected_screenshots_cache
-      uses: .github/actions/composite-screenshots/cache-screenshots
+      uses: ./../../.github/actions/composite-screenshots/cache-screenshots
 
     - name: Client setup
-      uses: .github/actions/install-dependencies
+      uses: ./../../.github/actions/install-dependencies
       with:
         working-directory: ${{ inputs.working-directory }}
 
     - name: Restore or build storybook # キャッシュにスクショが保存されてなかったらStorybookをビルドしてスクショ撮影する
       if: ${{ steps.expected_screenshots_cache.outputs.cache-hit != 'true'}}
-      uses: .github/actions/composite-screenshots/cache-storybook-static
+      uses: ./../../.github/actions/composite-screenshots/cache-storybook-static
 
     - name: Take expected screenshots
       if: ${{ steps.expected_screenshots_cache.outputs.cache-hit != 'true'}}
