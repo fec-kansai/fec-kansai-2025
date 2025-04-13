@@ -17,7 +17,7 @@ runs:
 
     - name: Restore cached expected screenshots # キャッシュに保存されたスクショがあったら再利用する
       id: expected_screenshots_cache
-      uses: ./.github/acitons/composite-screenshots/cache-screenshots
+      uses: ./.github/actions/composite-screenshots/cache-screenshots
 
     - name: Client setup
       uses: ./.github/actions/install-dependencies
