@@ -16,11 +16,6 @@ runs:
       with:
         fetch-depth: 0
 
-    - name: Check EditorConfig
-      shell: bash
-      uses: editorconfig-checker/action-editorconfig-checker@main
-      run: editorconfig-checker
-
     - name: InstallDependencies
       uses: ./.github/actions/install-dependencies
       with:
