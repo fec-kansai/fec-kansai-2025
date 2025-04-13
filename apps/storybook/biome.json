@@ -9,8 +9,12 @@
   },
   "files": {
     "include": [
-      "src/**/*.(ts|js|tsx|jsx|md|mdx)",
-      ".storybook/**/*.(ts|js|tsx|jsx|md|mdx)"
+      "/**/*.ts",
+      "/**/*.js",
+      "/**/*.tsx",
+      "/**/*.jsx",
+      "/**/*.md",
+      "/**/*.mdx"
     ]
   }
 }
