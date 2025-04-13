@@ -1,0 +1,27 @@
+name: "Cache Expected Screenshots"
+description: "キャッシュに保存されているスクショを再利用する。(保存されていなかった場合はアップする)"
+
+inputs:
+  working-directory:
+    description: "The directory to run the action in"
+    required: false
+    default: "./apps/storybook"
+
+outputs:
+  cache-hit:
+    description: "キャッシュが存在するかどうか"
+    value: ${{ steps.expected_screenshots_cache_id.outputs.cache-hit }}
+runs:
+  using: "composite"
+  steps:
+    - name: Get commit hash of current branch
+      id: get_hash
+      run: echo "hash=$(git rev-parse HEAD)" >> $GITHUB_OUTPUT
+      shell: bash
+    - name: Cache screenshots
+      uses: actions/cache@v4
+      id: expected_screenshots_cache_id
+      with:
+        path: __screenshots__
+        key: ${{ runner.os }}-screenshots-${{ steps.get_hash.outputs.hash }}
+        working-directory: ${{ inputs.working-directory }}

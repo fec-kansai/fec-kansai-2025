@@ -27,3 +27,6 @@ dist-ssr
 storybook-static
 src/stories/**/*
 tsconfig.app.tsbuildinfo
+
+__screenshots__
+.reg

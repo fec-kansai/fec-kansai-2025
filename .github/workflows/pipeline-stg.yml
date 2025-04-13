@@ -1,8 +1,8 @@
 name: Chekck Stage Build
 on:
-  push:
-    branches:
-      - staging
+  # push:
+  #   branches:
+  #     - staging
   pull_request:
     branches:
       - staging
@@ -27,6 +27,11 @@ jobs:
 
       - name: Check Storybook Build
         uses: ./.github/actions/check-storybook-build
+
+      - name: Compare Screenshots
+        uses: ./.github/actions/composite-screenshots/compare-screenshots
+        with:
+          github: ${{ toJson(github) }}
 
   Deploy:
     runs-on: ubuntu-latest
@@ -53,7 +58,7 @@ jobs:
       - name: Check Merged Artifacts
         shell: bash
         run: |
-          ls -la
+          ls -la ./_deploy
 
       - name: Publish to Cloudflare Pages
         uses: cloudflare/wrangler-action@v3

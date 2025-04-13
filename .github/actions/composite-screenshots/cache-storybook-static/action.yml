@@ -1,0 +1,38 @@
+name: "Restore or Build Storybook"
+description: "キャッシュに保存されているStorybookのビルド成果物を再利用する。(保存されていなかった場合はビルドする)"
+
+inputs:
+  working-directory:
+    description: "The directory to run the action in"
+    required: false
+    default: "./apps/storybook"
+
+runs:
+  using: "composite"
+  steps:
+    - name: Get commit hash of current branch
+      id: get_hash
+      run: echo "hash=$(git rev-parse HEAD)" >> $GITHUB_OUTPUT
+      shell: bash
+
+    # キャッシュされたStorybookのビルド成果物を取得する
+    - name: Restore cached storybook build result
+      id: storybook_cache
+      uses: actions/cache@v4
+      with:
+        path: storybook-static
+        key: ${{ runner.os }}-storybook-static-${{ steps.get_hash.outputs.hash  }}
+        working-directory: ${{ inputs.working-directory }}
+
+    # キャッシュが存在しなかったら、Storybookをビルドする(Job終了時にビルド成果物はキャッシュされます)
+    - name: Check Building Storybook
+      if: ${{ steps.storybook_cache.outputs.cache-hit != 'true'}}
+      shell: bash
+      run: pnpm build
+      working-directory: ${{ inputs.working-directory }}
+
+    - name: Output Artifacts
+      uses: actions/upload-artifact@v4
+      with:
+        name: "storybook-build-artifact"
+        path: ${{ inputs.working-directory }}/storybook-static
