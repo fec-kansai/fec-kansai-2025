@@ -1,0 +1,45 @@
+name: Take Actual Screenshots
+description: "Take Actual Screenshots"
+
+inputs:
+  working-directory:
+    description: "The directory to run the action in"
+    required: false
+    default: "./apps/storybook"
+
+
+runs:
+  using: "composite"
+  steps:
+    - name: Check out code
+      uses: actions/checkout@v4
+      with:
+        fetch-depth: 0
+
+    - name: Client setup
+      uses: ./.github/actions/install-dependencies
+      with:
+        working-directory: ${{ inputs.working-directory }}
+
+    - name: Workaround for detached HEAD
+      shell: bash
+      run: |
+        git checkout ${GITHUB_HEAD_REF#refs/heads/} || git checkout -b ${GITHUB_HEAD_REF#refs/heads/} && git pull
+
+    - name: Build Storybook
+      shell: bash
+      run: pnpm build
+      working-directory: ${{ inputs.working-directory }}
+
+
+    - name: Take actual screenshots
+      shell: bash
+      run: pnpm ci:screenshot
+      working-directory: ${{ inputs.working-directory }}
+
+    - name: Upload actual screenshots to artifact
+      uses: actions/upload-artifact@v4
+      with:
+        name: actual-screenshots
+        path: __screenshots__
+        retention-days: 3

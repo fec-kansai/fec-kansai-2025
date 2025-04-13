@@ -1,0 +1,43 @@
+name: Take Expected Screenshots
+description: "Take Expected Screenshots"
+
+inputs:
+  working-directory:
+    description: "The directory to run the action in"
+    required: false
+    default: "./apps/storybook"
+
+runs:
+  using: "composite"
+  steps:
+    - name: Check out code
+      uses: actions/checkout@v4
+      with:
+        ref: main # mainブランチのスクショをVRTの正の画像とする
+
+    - name: Restore cached expected screenshots # キャッシュに保存されたスクショがあったら再利用する
+      id: expected_screenshots_cache
+      uses: ./.github/composite_actions/cache-screenshots
+
+    - name: Client setup
+      uses: ./.github/actions/install-dependencies
+      with:
+        working-directory: ${{ inputs.working-directory }}
+
+    - name: Restore oÏr build storybook # キャッシュにスクショが保存されてなかったらStorybookをビルドしてスクショ撮影する
+      if: ${{ steps.expected_screenshots_cache.outputs.cache-hit != 'true'}}
+      uses: ./.github/composite_actions/cache-storybook-static
+
+    - name: Take expected screenshots
+      if: ${{ steps.expected_screenshots_cache.outputs.cache-hit != 'true'}}
+      shell: bash
+      run: pnpm ci:screenshot
+      with:
+        working-directory: ${{ inputs.working-directory }}
+
+    - name: Upload expected screenshots to artifact # 他のstepでスクショを使うのでartifactにアップする
+      uses: actions/upload-artifact@v4
+      with:
+        name: expected-screenshots
+        path: __screenshots__
+        retention-days: 3
