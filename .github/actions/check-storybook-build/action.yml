@@ -21,6 +21,10 @@ runs:
       with:
         working-directory: ${{ inputs.working-directory }}
 
+    - name: Check EditorConfig
+      shell: bash
+      run: npx -y editorconfig-checker
+
     - name: Check Format And Linting
       shell: bash
       run: pnpm check
