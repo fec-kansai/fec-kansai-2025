@@ -1,8 +1,8 @@
 name: Chekck Stage Build
 on:
-  push:
-    branches:
-      - staging
+  # push:
+  #   branches:
+  #     - staging
   pull_request:
     branches:
       - staging
@@ -27,6 +27,35 @@ jobs:
 
       - name: Check Storybook Build
         uses: ./.github/actions/check-storybook-build
+
+      - name: Restore cached expected screenshots # キャッシュに保存されたスクショがあったら再利用する
+        id: expected_screenshots_cache
+        uses: ./.github/actions/composite-screenshots/cache-screenshots
+
+      - name: Restore or build storybook # キャッシュにスクショが保存されてなかったらStorybookをビルドしてスクショ撮影する
+        if: ${{ steps.expected_screenshots_cache.outputs.cache-hit != 'true'}}
+        uses: ./.github/actions/composite-screenshots/cache-storybook-static
+
+      - name: workaround for detached HEAD
+        shell: bash
+        run: |
+          git checkout ${GITHUB_REF#refs/pull/*/head} || git checkout -b ${GITHUB_REF#refs/pull/*/head} && git pull origin ${GITHUB_REF#refs/pull/*/head}
+
+      - name: screenshot and visual regression test
+        shell: bash
+        run: |
+          pnpm ci:screenshot
+          pnpm ci:vrt
+
+      - name: Upload actual screenshots to artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: actual-screenshots
+          path: __screenshots__
+          retention-days: 3
+
+      - name: Compare Screenshots
+        uses: ./.github/actions/composite-screenshots/compare-screenshots
 
   Deploy:
     runs-on: ubuntu-latest
@@ -53,7 +82,7 @@ jobs:
       - name: Check Merged Artifacts
         shell: bash
         run: |
-          ls -la
+          ls -la ./_deploy
 
       - name: Publish to Cloudflare Pages
         uses: cloudflare/wrangler-action@v3

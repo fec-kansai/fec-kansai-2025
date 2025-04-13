@@ -31,15 +31,17 @@ runs:
       run: |
         echo "STORE_PATH=$(pnpm store path --silent)" >> $GITHUB_ENV
 
-    - uses: actions/cache@v4
-      name: Setup pnpm cache
+    - name: Setup pnpm cache
+      id: pnpm_cache
+      uses: actions/cache@v4
       with:
         path: ${{ env.STORE_PATH }}
         key: ${{ runner.os }}-pnpm-store-${{inputs.working-directory}}-${{ hashFiles('**/pnpm-lock.yaml') }}
         restore-keys: |
-          ${{ runner.os }}-pnpm-store-
+          ${{ runner.os }}-pnpm-store-${{inputs.working-directory}}-
 
     - name: Install Dependencies
       shell: bash
+      # if: ${{ steps.pnpm_cache.outputs.cache-hit != 'true'}}
       working-directory: ${{ inputs.working-directory }}
       run: pnpm install

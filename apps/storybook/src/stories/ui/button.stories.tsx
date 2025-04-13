@@ -10,7 +10,7 @@ export default {
   argTypes: {
     onClick: { action: "clicked" },
   },
-  render: (args) => <Button {...args}>テスト</Button>,
+  render: (args) => <Button {...args}>テストABC</Button>,
 } satisfies Meta<ComponentType>;
 
 // More on writing stories with args: https://storybook.js.org/docs/writing-stories/args
