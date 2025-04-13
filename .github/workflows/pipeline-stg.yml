@@ -53,7 +53,7 @@ jobs:
       - name: Check Merged Artifacts
         shell: bash
         run: |
-          ls -la
+          ls -la ./_deploy
 
       - name: Publish to Cloudflare Pages
         uses: cloudflare/wrangler-action@v3

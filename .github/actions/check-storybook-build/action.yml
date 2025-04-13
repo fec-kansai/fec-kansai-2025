@@ -15,6 +15,7 @@ runs:
       uses: actions/checkout@v4
       with:
         fetch-depth: 0
+
     - name: InstallDependencies
       uses: ./.github/actions/install-dependencies
       with:
@@ -25,10 +26,13 @@ runs:
       run: pnpm check
       working-directory: ${{ inputs.working-directory }}
 
-    - name: Check Building Storybook
-      shell: bash
-      run: pnpm build
-      working-directory: ${{ inputs.working-directory }}
+    - name: Restore cached expected screenshots # キャッシュに保存されたスクショがあったら再利用する
+      id: expected_screenshots_cache
+      uses: ./.github/actions/composite-screenshots/cache-screenshots
+
+    - name: Restore or build storybook # キャッシュにスクショが保存されてなかったらStorybookをビルドしてスクショ撮影する
+      if: ${{ steps.expected_screenshots_cache.outputs.cache-hit != 'true'}}
+      uses: ./.github/actions/composite-screenshots/cache-storybook-static
 
     - name: workaround for detached HEAD
       shell: bash
@@ -41,6 +45,19 @@ runs:
       run: |
         pnpm ci:screenshot
         pnpm ci:vrt
+      working-directory: ${{ inputs.working-directory }}
+
+    - name: Upload actual screenshots to artifact
+      uses: actions/upload-artifact@v4
+      with:
+        name: actual-screenshots
+        path: __screenshots__
+      working-directory: ${{ inputs.working-directory }}
+      retention-days: 3
+
+    - name: Compare Screenshots
+      shell: bash
+      uses: ./.github/actions/composite-screenshots/compare-screenshots
       working-directory: ${{ inputs.working-directory }}
 
     - name: Output Artifacts

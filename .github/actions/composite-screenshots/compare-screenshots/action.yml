@@ -1,0 +1,62 @@
+name: "Compare Screenshots"
+description: "mainとfeatureのスクリーンショットを比較する"
+
+inputs:
+  working-directory:
+    description: "The directory to run the action in"
+    required: false
+    default: "./apps/storybook"
+
+run:
+  - name: Check out code
+    if: ${{ github.event_name != 'pull_request_target' }}
+    uses: actions/checkout@v4
+    with:
+      fetch-depth: 0
+
+  - name: Check out PR
+    if: ${{ github.event_name == 'pull_request_target' }}
+    uses: actions/checkout@v4
+    with:
+      ref: ${{ github.event.pull_request.head.sha }}
+      fetch-depth: 0
+
+  - name: Download expected screenshots from artifact
+    uses: actions/download-artifact@v4
+    with:
+      name: expected-screenshots
+      path: .reg/expected/
+      working-directory: ${{ inputs.working-directory }}
+
+  - name: Download actual screenshots from artifact
+    uses: actions/download-artifact@v4
+    with:
+      name: actual-screenshots
+      path: __screenshots__
+      working-directory: ${{ inputs.working-directory }}
+
+  - name: Workaround for detached HEAD
+    run: git checkout ${GITHUB_HEAD_REF#refs/heads/} || git checkout -b ${GITHUB_HEAD_REF#refs/heads/} && git pull
+
+  - name: Compare Screenshots
+    run: pnpm ci:vrt
+    working-directory: ${{ inputs.working-directory }}
+
+  - name: Find comment
+    uses: peter-evans/find-comment@v3
+    id: find_comment
+    with:
+      issue-number: ${{ github.event.pull_request.number }}
+      comment-author: "github-actions[bot]"
+      body-includes: reg-suit report
+      working-directory: ${{ inputs.working-directory }}
+
+  - name: Comment VRT report URL
+    uses: peter-evans/create-or-update-comment@v4
+    with:
+      comment-id: ${{ steps.find_comment.outputs.comment-id }}
+      issue-number: ${{ github.event.pull_request.number }}
+      body: |
+        reg-suit report
+        https://fictional-adventure-eveyz55.pages.github.io/${{github.head_ref}}/vrt-report
+      edit-mode: replace
