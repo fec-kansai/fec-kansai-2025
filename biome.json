@@ -9,7 +9,6 @@
     "ignoreUnknown": false,
     "ignore": [
       ".next",
-      "**/*.app.json",
       "**/*.node.json",
       "node_modules",
       "out",
@@ -22,6 +21,7 @@
   "formatter": {
     "enabled": true,
     "useEditorconfig": true,
+    "formatWithErrors": true,
     "indentStyle": "space"
   },
   "organizeImports": {
@@ -40,6 +40,11 @@
   "javascript": {
     "formatter": {
       "quoteStyle": "double"
+    }
+  },
+  "json": {
+    "parser": {
+      "allowTrailingCommas": false
     }
   }
 }
