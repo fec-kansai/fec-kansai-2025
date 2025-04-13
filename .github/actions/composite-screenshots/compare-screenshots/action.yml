@@ -28,14 +28,14 @@ runs:
       with:
         name: expected-screenshots
         path: .reg/expected/
-        working-directory: ${{ working-directory }}
+        working-directory: ${{ inputs.working-directory }}
 
     - name: Download actual screenshots from artifact
       uses: actions/download-artifact@v4
       with:
         name: actual-screenshots
         path: __screenshots__
-        working-directory: ${{ working-directory }}
+        working-directory: ${{ inputs.working-directory }}
 
     - name: Workaround for detached HEAD
       shell: bash
@@ -44,7 +44,7 @@ runs:
     - name: Compare Screenshots
       shell: bash
       run: pnpm ci:vrt
-      working-directory: ${{ working-directory }}
+      working-directory: ${{ inputs.working-directory }}
 
     - name: Find comment
       uses: peter-evans/find-comment@v3
@@ -53,7 +53,7 @@ runs:
         issue-number: ${{ github.event.pull_request.number }}
         comment-author: "github-actions[bot]"
         body-includes: reg-suit report
-        working-directory: ${{ working-directory }}
+        working-directory: ${{ inputs.working-directory }}
 
     - name: Comment VRT report URL
       uses: peter-evans/create-or-update-comment@v4
