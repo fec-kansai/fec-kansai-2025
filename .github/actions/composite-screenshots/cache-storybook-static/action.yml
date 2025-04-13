@@ -14,6 +14,7 @@ runs:
       id: get_hash
       run: echo "hash=$(git rev-parse HEAD)" >> $GITHUB_OUTPUT
       shell: bash
+
     # キャッシュされたStorybookのビルド成果物を取得する
     - name: Restore cached storybook build result
       id: storybook_cache
@@ -22,6 +23,7 @@ runs:
         path: storybook-static
         key: ${{ runner.os }}-storybook-static-${{ steps.get_hash.outputs.hash  }}
         working-directory: ${{ inputs.working-directory }}
+
     # キャッシュが存在しなかったら、Storybookをビルドする(Job終了時にビルド成果物はキャッシュされます)
     - name: Check Building Storybook
       if: ${{ steps.storybook_cache.outputs.cache-hit != 'true'}}
