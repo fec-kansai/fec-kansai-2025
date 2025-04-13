@@ -38,9 +38,11 @@ runs:
         working-directory: ${{ working-directory }}
 
     - name: Workaround for detached HEAD
+      shell: bash
       run: git checkout ${GITHUB_HEAD_REF#refs/heads/} || git checkout -b ${GITHUB_HEAD_REF#refs/heads/} && git pull
 
     - name: Compare Screenshots
+      shell: bash
       run: pnpm ci:vrt
       working-directory: ${{ working-directory }}
 
