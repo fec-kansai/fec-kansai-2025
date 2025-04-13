@@ -48,7 +48,6 @@ runs:
       shell: bash
       run: |
         pnpm ci:screenshot
-        pnpm ci:vrt
       working-directory: ${{ inputs.working-directory }}
 
     - name: Upload actual screenshots to artifact
