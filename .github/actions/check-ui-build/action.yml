@@ -24,8 +24,7 @@ runs:
     - name: Check EditorConfig
       shell: bash
       run: npx -y editorconfig-checker
-      with:
-        working-directory: ${{ inputs.working-directory }}
+      working-directory: ${{ inputs.working-directory }}
 
     - name: Check Spelling
       shell: bash
