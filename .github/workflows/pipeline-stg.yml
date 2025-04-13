@@ -30,6 +30,8 @@ jobs:
 
       - name: Compare Screenshots
         uses: ./.github/actions/composite-screenshots/compare-screenshots
+        with:
+          github: ${{ toJson(github) }}
 
   Deploy:
     runs-on: ubuntu-latest

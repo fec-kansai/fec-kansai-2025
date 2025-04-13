@@ -6,6 +6,9 @@ inputs:
     description: "The directory to run the action in"
     required: false
     default: "./apps/storybook"
+  github:
+    description: "GitHub context"
+    required: true
 
 run:
   - name: Check out code
