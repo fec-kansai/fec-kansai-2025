@@ -17,7 +17,7 @@ runs:
         fetch-depth: 0
 
     - name: Client setup
-      uses: ./.github/actions/install-dependencies
+      uses: ../../install-dependencies
       with:
         working-directory: ${{ inputs.working-directory }}
 
