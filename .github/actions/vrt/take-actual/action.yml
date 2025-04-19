@@ -27,18 +27,11 @@ runs:
         git branch --set-upstream-to=origin/${GITHUB_HEAD_REF#refs/heads/} ${GITHUB_HEAD_REF#refs/heads/} || true
         git pull
 
-    - name: Build Storybook
-      shell: bash
-      run: pnpm build
-      working-directory: ${{ inputs.working-directory }}
-
-    - shell: bash
-      run: ls -la
-      working-directory: ${{ inputs.working-directory }}
-
     - name: Take actual screenshots
       shell: bash
-      run: pnpm ci:screenshot
+      run: |
+        pnpm build
+        pnpm ci:screenshot
       working-directory: ${{ inputs.working-directory }}
 
     - name: Upload actual screenshots to artifact
