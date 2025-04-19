@@ -1,6 +1,6 @@
 {
   "core": {
-    "workingDir": ".reg",
+    "workingDir": "vrt-report",
     "actualDir": "__screenshots__",
     "thresholdRate": 0,
     "threshold": 0,

@@ -27,7 +27,7 @@ runs:
       uses: actions/download-artifact@v4
       with:
         name: expected-screenshots
-        path: ${{ inputs.working-directory }}/.reg/expected/
+        path: ${{ inputs.working-directory }}/vrt-report/expected/
         working-directory: ${{ inputs.working-directory }}
 
     - name: Download actual screenshots from artifact
@@ -53,14 +53,14 @@ runs:
       shell: bash
       run: |
         ls -la
-        ls -la .reg
+        ls -la vrt-report
       working-directory: ${{ inputs.working-directory }}
 
     - name: Output Artifacts
       uses: actions/upload-artifact@v4
       with:
         name: "vrt-report-artifact"
-        path: ${{ inputs.working-directory }}/.reg
+        path: ${{ inputs.working-directory }}/vrt-report
 
     - name: Find comment
       uses: peter-evans/find-comment@v3
