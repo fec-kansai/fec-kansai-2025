@@ -53,6 +53,7 @@ runs:
       shell: bash
       run: |
         ls -la
+        ls -la .reg
       working-directory: ${{ inputs.working-directory }}
 
     - name: Output Artifacts
