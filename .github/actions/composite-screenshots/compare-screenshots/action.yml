@@ -49,6 +49,11 @@ runs:
         pnpm ci:vrt
       working-directory: ${{ inputs.working-directory }}
 
+    - name: Check VRT report
+      shell: bash
+      run: |
+        ls -la
+
     - name: Output Artifacts
       uses: actions/upload-artifact@v4
       with:
