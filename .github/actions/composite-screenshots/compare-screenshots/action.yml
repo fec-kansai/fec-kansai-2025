@@ -53,6 +53,7 @@ runs:
       shell: bash
       run: |
         ls -la
+      working-directory: ${{ inputs.working-directory }}
 
     - name: Output Artifacts
       uses: actions/upload-artifact@v4
