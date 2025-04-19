@@ -63,6 +63,12 @@ jobs:
           name: storybook-build-artifact
           path: ./_deploy/storybook
 
+      - name: Download VRT Artifacts
+        uses: actions/download-artifact@v4
+        with:
+          name: vrt-report-artifact
+          path: ./_deploy/${{github.head_ref}}/vrt-report
+
       - name: Check Merged Artifacts
         shell: bash
         run: |
