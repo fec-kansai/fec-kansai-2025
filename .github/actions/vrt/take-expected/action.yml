@@ -33,7 +33,7 @@ runs:
       shell: bash
       run: |
         pnpm build
-        pnpm ci:screenshot
+        PORT=9004 pnpm run ci:screenshot
       working-directory: ${{ inputs.working-directory }}
 
     - name: Upload expected screenshots to artifact # 他のstepでスクショを使うのでartifactにアップする

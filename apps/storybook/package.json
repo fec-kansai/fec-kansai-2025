@@ -8,7 +8,7 @@
     "build": "storybook build",
     "check": "biome check .",
     "check:fix": "biome check --write",
-    "ci:screenshot": "storycap http://localhost:9003 --serverTimeout 60000 --captureTimeout 10000 --serverCmd 'npx http-server storybook-static --ci -p 9003'",
+    "ci:screenshot": "PORT=$PORT storycap http://localhost:${PORT:-9000} --serverTimeout 60000 --captureTimeout 10000 --serverCmd 'npx http-server storybook-static --ci -p ${PORT:-9000}'",
     "ci:vrt": "npx reg-suit run"
   },
   "dependencies": {
