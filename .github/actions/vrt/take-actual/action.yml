@@ -38,5 +38,5 @@ runs:
       uses: actions/upload-artifact@v4
       with:
         name: actual-screenshots
-        path: __screenshots__
+        path: ${{ inputs.working-directory }}/__screenshots__
         retention-days: 3
