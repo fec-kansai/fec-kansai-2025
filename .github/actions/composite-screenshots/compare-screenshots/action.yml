@@ -45,6 +45,7 @@ runs:
       shell: bash
       run: |
         pnpm install
+        ls -la
         pnpm ci:vrt
       working-directory: ${{ inputs.working-directory }}
 
