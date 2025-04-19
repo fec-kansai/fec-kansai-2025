@@ -27,14 +27,14 @@ runs:
       uses: actions/download-artifact@v4
       with:
         name: expected-screenshots
-        path: .reg/expected/
+        path: ${{ inputs.working-directory }}/.reg/expected/
         working-directory: ${{ inputs.working-directory }}
 
     - name: Download actual screenshots from artifact
       uses: actions/download-artifact@v4
       with:
         name: actual-screenshots
-        path: __screenshots__
+        path: ${{ inputs.working-directory }}/__screenshots__
         working-directory: ${{ inputs.working-directory }}
 
     - name: Workaround for detached HEAD
