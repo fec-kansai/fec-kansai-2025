@@ -27,7 +27,8 @@ Next.js の app router の app ディレクトリです。
 ### page
 
 ページ固有のコンポーネントや hooks などを配置します。
-コンポーネントは `page/{page}/{component}.tsx`、hooks は `page/{page}/hooks/{hook}.ts` のように配置します。
+コンポーネントは `page/{page}/components/{component}.tsx`、hooks は `page/{page}/hooks/{hook}.ts` のように配置します。
+そして、`page/{page}/index.tsx` で各コンポーネントや hooks を組み合わせ、それを app ディレクトリの `page.tsx` で利用します。
 
 ### hooks
 
