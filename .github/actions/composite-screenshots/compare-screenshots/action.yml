@@ -55,8 +55,7 @@ runs:
       with:
         issue-number: ${{ github.event.pull_request.number }}
         comment-author: "github-actions[bot]"
-        body-includes: reg-suit report
-        working-directory: ${{ inputs.working-directory }}
+        body-includes: reg-suit detected
 
     - name: Comment VRT report URL
       uses: peter-evans/create-or-update-comment@v4
