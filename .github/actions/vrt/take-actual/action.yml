@@ -32,6 +32,10 @@ runs:
       run: pnpm build
       working-directory: ${{ inputs.working-directory }}
 
+    - shell: bash
+      run: ls -la
+      working-directory: ${{ inputs.working-directory }}
+
     - name: Take actual screenshots
       shell: bash
       run: pnpm ci:screenshot
