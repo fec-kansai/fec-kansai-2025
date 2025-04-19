@@ -43,7 +43,9 @@ runs:
 
     - name: Compare Screenshots
       shell: bash
-      run: pnpm ci:vrt
+      run: |
+        pnpm install
+        pnpm ci:vrt
       working-directory: ${{ inputs.working-directory }}
 
     - name: Find comment
