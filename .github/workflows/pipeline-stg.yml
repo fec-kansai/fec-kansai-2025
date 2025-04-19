@@ -7,10 +7,6 @@ on:
     branches:
       - staging
 
-permissions:
-  pull-requests: write
-  issues: write
-
 jobs:
   CheckUIBuild:
     runs-on: ubuntu-latest
@@ -24,6 +20,11 @@ jobs:
         uses: ./.github/actions/check-ui-build
   CheckStoryBookBuild:
     runs-on: ubuntu-latest
+
+    permissions:
+      pull-requests: write
+      issues: write
+
     steps:
       - name: Checkout
         uses: actions/checkout@v4
