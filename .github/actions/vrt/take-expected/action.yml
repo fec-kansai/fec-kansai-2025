@@ -38,7 +38,6 @@ runs:
 
     - name: Upload expected screenshots to artifact # 他のstepでスクショを使うのでartifactにアップする
       uses: actions/upload-artifact@v4
-      working-directory: ${{ inputs.working-directory }}
       with:
         name: expected-screenshots
         path: ${{ inputs.working-directory }}/__screenshots__
