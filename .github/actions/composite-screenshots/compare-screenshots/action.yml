@@ -49,6 +49,12 @@ runs:
         pnpm ci:vrt
       working-directory: ${{ inputs.working-directory }}
 
+    - name: Output Artifacts
+      uses: actions/upload-artifact@v4
+      with:
+        name: "vrt-report-artifact"
+        path: ${{ inputs.working-directory }}/.reg
+
     - name: Find comment
       uses: peter-evans/find-comment@v3
       id: find_comment
@@ -64,5 +70,5 @@ runs:
         issue-number: ${{ github.event.pull_request.number }}
         body: |
           reg-suit report
-          https://fictional-adventure-eveyz55.pages.github.io/${{github.head_ref}}/vrt-report
+          https://staging.fec-kansai-2025.pages.dev/${{github.head_ref}}/vrt-report
         edit-mode: replace
