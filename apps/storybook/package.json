@@ -4,12 +4,12 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "storybook dev -p 9001",
+    "dev": "storybook dev -p 9003",
     "build": "storybook build",
     "check": "biome check .",
     "check:fix": "biome check --write",
-    "ci:screenshot": "npx storycap http://localhost:9001 --serverCmd 'npx http-server storybook-static --ci -p 9001'",
-    "ci:vrt": "npx reg-suit run"
+    "ci:screenshot": "PORT=$PORT storycap http://localhost:${PORT:-9000} --serverTimeout 60000 --captureTimeout 10000 --serverCmd 'npx http-server storybook-static --ci -p ${PORT:-9000}'",
+    "ci:vrt": "reg-suit run"
   },
   "dependencies": {
     "@workspace/ui": "workspace:*",
