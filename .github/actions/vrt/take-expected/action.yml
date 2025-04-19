@@ -32,7 +32,7 @@ runs:
       if: ${{ steps.expected_screenshots_cache.outputs.cache-hit != 'true'}}
       shell: bash
       run: |
-        pnpm ci:build
+        pnpm build
         pnpm ci:screenshot
       working-directory: ${{ inputs.working-directory }}
 
