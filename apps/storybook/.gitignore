@@ -25,7 +25,6 @@ dist-ssr
 
 *storybook.log
 storybook-static
-src/stories/**/*
 tsconfig.app.tsbuildinfo
 
 __screenshots__
