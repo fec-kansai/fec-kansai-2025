@@ -40,7 +40,7 @@ export default function MainVisual() {
       <img
         src="/bg.png"
         alt="メインビジュアル背景"
-        className="absolute inset-0 w-full h-full object-cover z-0"
+        className="absolute inset-0 w-full h-auto object-cover z-0"
       />
       {/* ロゴ中央やや上配置 */}
       <div className="absolute left-1/2 top-[22%] -translate-x-1/2 z-20 flex flex-col items-center justify-center">
