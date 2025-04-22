@@ -1,5 +1,5 @@
+import { LogoHeader } from "@workspace/ui";
 import { Button } from "@workspace/ui/components/button";
-import { LogoHeader } from "@workspace/ui/components/icons";
 
 const navLinks = [
   { label: "概要", href: "#about" },
