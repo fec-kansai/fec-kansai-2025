@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;700&display=swap');
 @import "tailwindcss";
 @source "../../../apps/**/*.{ts,tsx}";
 @source "../../../components/**/*.{ts,tsx}";
@@ -8,6 +9,33 @@
 @custom-variant dark (&:is(.dark *));
 
 :root {
+
+  /* font-family */
+  --font-sans: 'Noto Sans JP', sans-serif;
+
+  /* font-color */
+  --neon-pink: #EC43C1;
+  --neon-blue: #435CEC;
+  --neon-light-blue: #43DEEC;
+  --neon-red: #EC4343;
+  --neon-green: #43EC62;
+  
+  /* text-shadow */
+  --text-shadow-value: 0px 0px 30px;
+  --neon-pink-shadow: var(--text-shadow-value) var(--neon-pink);
+  --neon-blue-shadow: var(--text-shadow-value) var(--neon-blue);
+  --neon-light-blue-shadow: var(--text-shadow-value) var(--neon-light-blue);
+  --neon-red-shadow: var(--text-shadow-value) var(--neon-red);
+  --neon-green-shadow: var(--text-shadow-value) var(--neon-green);
+
+  /* border */
+  --border-value: 1px solid;
+  --neon-pink-border: var(--border-value) var(--neon-pink);
+  --neon-blue-border: var(--border-value) var(--neon-blue);
+  --neon-light-blue-border: var(--border-value) var(--neon-light-blue);
+  --neon-red-border: var(--border-value) var(--neon-red-blue);
+  --neon-green-border: var(--border-value) var(--neon-green-blue);
+  
   --background: oklch(1 0 0);
   --foreground: oklch(0.145 0 0);
   --card: oklch(1 0 0);
