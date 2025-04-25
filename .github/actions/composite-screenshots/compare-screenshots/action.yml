@@ -27,14 +27,14 @@ runs:
       uses: actions/download-artifact@v4
       with:
         name: expected-screenshots
-        path: .reg/expected/
+        path: ${{ inputs.working-directory }}/vrt-report/expected/
         working-directory: ${{ inputs.working-directory }}
 
     - name: Download actual screenshots from artifact
       uses: actions/download-artifact@v4
       with:
         name: actual-screenshots
-        path: __screenshots__
+        path: ${{ inputs.working-directory }}/__screenshots__
         working-directory: ${{ inputs.working-directory }}
 
     - name: Workaround for detached HEAD
@@ -43,8 +43,24 @@ runs:
 
     - name: Compare Screenshots
       shell: bash
-      run: pnpm ci:vrt
+      run: |
+        pnpm install
+        ls -la
+        pnpm ci:vrt
       working-directory: ${{ inputs.working-directory }}
+
+    - name: Check VRT report
+      shell: bash
+      run: |
+        ls -la
+        ls -la vrt-report
+      working-directory: ${{ inputs.working-directory }}
+
+    - name: Output Artifacts
+      uses: actions/upload-artifact@v4
+      with:
+        name: "vrt-report-artifact"
+        path: ${{ inputs.working-directory }}/vrt-report
 
     - name: Find comment
       uses: peter-evans/find-comment@v3
@@ -52,8 +68,7 @@ runs:
       with:
         issue-number: ${{ github.event.pull_request.number }}
         comment-author: "github-actions[bot]"
-        body-includes: reg-suit report
-        working-directory: ${{ inputs.working-directory }}
+        body-includes: reg-suit detected
 
     - name: Comment VRT report URL
       uses: peter-evans/create-or-update-comment@v4
@@ -62,5 +77,5 @@ runs:
         issue-number: ${{ github.event.pull_request.number }}
         body: |
           reg-suit report
-          https://fictional-adventure-eveyz55.pages.github.io/${{github.head_ref}}/vrt-report
+          https://staging.fec-kansai-2025.pages.dev/${{github.head_ref}}/vrt-report
         edit-mode: replace

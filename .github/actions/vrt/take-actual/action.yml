@@ -7,7 +7,6 @@ inputs:
     required: false
     default: "./apps/storybook"
 
-
 runs:
   using: "composite"
   steps:
@@ -24,22 +23,20 @@ runs:
     - name: Workaround for detached HEAD
       shell: bash
       run: |
-        git checkout ${GITHUB_HEAD_REF#refs/heads/} || git checkout -b ${GITHUB_HEAD_REF#refs/heads/} && git pull
-
-    - name: Build Storybook
-      shell: bash
-      run: pnpm build
-      working-directory: ${{ inputs.working-directory }}
-
+        git checkout ${GITHUB_HEAD_REF#refs/heads/} || git checkout -b ${GITHUB_HEAD_REF#refs/heads/}
+        git branch --set-upstream-to=origin/${GITHUB_HEAD_REF#refs/heads/} ${GITHUB_HEAD_REF#refs/heads/} || true
+        git pull
 
     - name: Take actual screenshots
       shell: bash
-      run: pnpm ci:screenshot
+      run: |
+        pnpm build
+        PORT=9003 pnpm run ci:screenshot
       working-directory: ${{ inputs.working-directory }}
 
     - name: Upload actual screenshots to artifact
       uses: actions/upload-artifact@v4
       with:
         name: actual-screenshots
-        path: __screenshots__
+        path: ${{ inputs.working-directory }}/__screenshots__
         retention-days: 3
