@@ -33,8 +33,8 @@
   --neon-pink-border: var(--border-value) var(--neon-pink);
   --neon-blue-border: var(--border-value) var(--neon-blue);
   --neon-light-blue-border: var(--border-value) var(--neon-light-blue);
-  --neon-red-border: var(--border-value) var(--neon-red-blue);
-  --neon-green-border: var(--border-value) var(--neon-green-blue);
+  --neon-red-border: var(--border-value) var(--neon-red);
+  --neon-green-border: var(--border-value) var(--neon-green);
   
   --background: oklch(1 0 0);
   --foreground: oklch(0.145 0 0);
