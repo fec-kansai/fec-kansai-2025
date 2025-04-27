@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;700&display=swap");
 @import "tailwindcss";
 @source "../../../apps/**/*.{ts,tsx}";
 @source "../../../components/**/*.{ts,tsx}";
@@ -9,17 +9,16 @@
 @custom-variant dark (&:is(.dark *));
 
 :root {
-
   /* font-family */
-  --font-sans: 'Noto Sans JP', sans-serif;
+  --font-sans: "Noto Sans JP", sans-serif;
 
   /* font-color */
-  --neon-pink: #EC43C1;
-  --neon-blue: #435CEC;
-  --neon-light-blue: #43DEEC;
-  --neon-red: #EC4343;
-  --neon-green: #43EC62;
-  
+  --neon-pink: #ec43c1;
+  --neon-blue: #435cec;
+  --neon-light-blue: #43deec;
+  --neon-red: #ec4343;
+  --neon-green: #43ec62;
+
   /* text-shadow */
   --text-shadow-value: 0px 0px 30px;
   --neon-pink-shadow: var(--text-shadow-value) var(--neon-pink);
@@ -35,7 +34,7 @@
   --neon-light-blue-border: var(--border-value) var(--neon-light-blue);
   --neon-red-border: var(--border-value) var(--neon-red);
   --neon-green-border: var(--border-value) var(--neon-green);
-  
+
   --background: oklch(1 0 0);
   --foreground: oklch(0.145 0 0);
   --card: oklch(1 0 0);
@@ -107,6 +106,31 @@
 }
 
 @theme inline {
+
+  /* カラー */
+  --color-neon-pink: var(--neon-pink);
+  --color-neon-blue: var(--neon-blue);
+  --color-neon-light-blue: var(--neon-light-blue);
+  --color-neon-red: var(--neon-red);
+  --color-neon-green: var(--neon-green);
+
+  /* テキストシャドウ */
+  --text-shadow-neon-pink: var(--neon-pink-shadow);
+  --text-shadow-neon-blue: var(--neon-blue-shadow);
+  --text-shadow-neon-light-blue: var(--neon-light-blue-shadow);
+  --text-shadow-neon-red: var(--neon-red-shadow);
+  --text-shadow-neon-green: var(--neon-green-shadow);
+
+  /* ボーダー */
+  --border-neon-pink: var(--neon-pink-border);
+  --border-neon-blue: var(--neon-blue-border);
+  --border-neon-light-blue: var(--neon-light-blue-border);
+  --border-neon-red: var(--neon-red-border);
+  --border-neon-green: var(--neon-green-border);
+
+  /* フォント */
+  --font-family-sans: var(--font-sans);
+
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --color-card: var(--card);
