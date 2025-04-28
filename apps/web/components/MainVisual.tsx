@@ -4,7 +4,7 @@ import {
   OctopusIcon,
   TakoyakiBoxIcon,
   TowerOfSunIcon,
-} from "@workspace/ui/components/icons";
+} from "@workspace/ui";
 import { Logo } from "@workspace/ui/components/icons/ui/Logo";
 import { useEffect, useState } from "react";
 
