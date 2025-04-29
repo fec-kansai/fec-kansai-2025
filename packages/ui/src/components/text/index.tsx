@@ -12,6 +12,7 @@ const textVariants = cva("text-base/8", {
       pink: "text-neon-pink",
       lightBlue: "text-neon-light-blue",
       yellow: "text-neon-yellow",
+      link: "cursor-pointer transition-duration-300 text-link-gray hover:text-link-gray"
     },
   },
   defaultVariants: {

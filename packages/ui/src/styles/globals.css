@@ -19,6 +19,7 @@
   --neon-red: #ec4343;
   --neon-green: #43ec62;
   --neon-yellow: #ece143;
+  --link-gray: #D1D5DB;
 
   /* text-shadow */
   --text-shadow-value: 0px 0px 30px;
@@ -115,6 +116,7 @@
   --color-neon-light-blue: var(--neon-light-blue);
   --color-neon-red: var(--neon-red);
   --color-neon-green: var(--neon-green);
+  --color-link-gray: var(--link-gray);
 
   /* テキストシャドウ */
   --text-shadow-neon-pink: var(--neon-pink-shadow);
@@ -237,6 +239,15 @@
     color: #ffffff;
     -webkit-text-stroke: 4px var(--color-neon-yellow);
     text-shadow: var(--text-shadow-neon-yellow);
+    paint-order: stroke fill;
+  }
+  .text-link-gray {
+    color: var(--color-link-gray);
+  }
+  .text-link-gray:hover {
+    color: #ffffff;
+    -webkit-text-stroke: 4px var(--color-neon-pink);
+    text-shadow: var(--text-shadow-neon-pink);
     paint-order: stroke fill;
   }
 }
