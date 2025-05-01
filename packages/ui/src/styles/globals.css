@@ -115,18 +115,18 @@
   --color-neon-green: var(--neon-green);
 
   /* テキストシャドウ */
-  --text-shadow-neon-pink: var(--neon-pink-shadow);
-  --text-shadow-neon-blue: var(--neon-blue-shadow);
-  --text-shadow-neon-light-blue: var(--neon-light-blue-shadow);
-  --text-shadow-neon-red: var(--neon-red-shadow);
-  --text-shadow-neon-green: var(--neon-green-shadow);
+  /* --text-shadow-neon-pink: var(--neon-pink);
+  --text-shadow-neon-blue: var(--neon-blue);
+  --text-shadow-neon-light-blue: var(--neon-light-blue);
+  --text-shadow-neon-red: var(--neon-red);
+  --text-shadow-neon-green: var(--neon-green); */
 
   /* ボーダー */
-  --border-neon-pink: var(--neon-pink-border);
-  --border-neon-blue: var(--neon-blue-border);
-  --border-neon-light-blue: var(--neon-light-blue-border);
-  --border-neon-red: var(--neon-red-border);
-  --border-neon-green: var(--neon-green-border);
+  --border-neon-pink: var(--neon-pink);
+  --border-neon-blue: var(--neon-blue);
+  --border-neon-light-blue: var(--neon-light-blue);
+  --border-neon-red: var(--neon-red);
+  --border-neon-green: var(--neon-green);
 
   /* フォント */
   --font-family-sans: var(--font-sans);
@@ -195,5 +195,77 @@
   }
   body {
     @apply bg-background text-foreground;
+  }
+}
+
+@layer utilities {
+  /* Neon Pink */
+  .text-stroke-neon-pink {
+    -webkit-text-stroke-width: 2px;
+    -webkit-text-stroke-color: var(--neon-pink);
+    -webkit-text-fill-color: white;
+    paint-order: stroke fill;
+  }
+  .text-stroke-neon-pink:hover {
+    text-shadow: 0 0 30px var(--neon-pink);
+  }
+  .box-shadow-neon-pink {
+    box-shadow: 0 0 10px var(--neon-pink);
+  }
+
+  /* Neon Blue */
+  .text-stroke-neon-blue {
+    -webkit-text-stroke-width: 2px;
+    -webkit-text-stroke-color: var(--neon-blue);
+    -webkit-text-fill-color: white;
+    paint-order: stroke fill;
+  }
+  .text-stroke-neon-blue:hover {
+    text-shadow: 0 0 30px var(--neon-blue);
+  }
+  .box-shadow-neon-blue {
+    box-shadow: 0 0 10px var(--neon-blue);
+  }
+
+  /* Neon Light Blue */
+  .text-stroke-neon-light-blue {
+    -webkit-text-stroke-width: 2px;
+    -webkit-text-stroke-color: var(--neon-light-blue);
+    -webkit-text-fill-color: white;
+    paint-order: stroke fill;
+  }
+  .text-stroke-neon-light-blue:hover {
+    text-shadow: 0 0 30px var(--neon-light-blue);
+  }
+  .box-shadow-neon-light-blue {
+    box-shadow: 0 0 10px var(--neon-light-blue);
+  }
+
+  /* Neon Red */
+  .text-stroke-neon-red {
+    -webkit-text-stroke-width: 2px;
+    -webkit-text-stroke-color: var(--neon-red);
+    -webkit-text-fill-color: white;
+    paint-order: stroke fill;
+  }
+  .text-stroke-neon-red:hover {
+    text-shadow: 0 0 30px var(--neon-red);
+  }
+  .box-shadow-neon-red {
+    box-shadow: 0 0 10px var(--neon-red);
+  }
+
+  /* Neon Green */
+  .text-stroke-neon-green {
+    -webkit-text-stroke-width: 2px;
+    -webkit-text-stroke-color: var(--neon-green);
+    -webkit-text-fill-color: white;
+    paint-order: stroke fill;
+  }
+  .text-stroke-neon-green:hover {
+    text-shadow: 0 0 30px var(--neon-green);
+  }
+  .box-shadow-neon-green {
+    box-shadow: 0 0 10px var(--neon-green);
   }
 }

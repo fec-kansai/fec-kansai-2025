@@ -5,20 +5,15 @@ import type * as React from "react";
 import { cn } from "@workspace/ui/lib/utils";
 
 const buttonVariants = cva(
-  "inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-[color,box-shadow] disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg:not([class*='size-'])]:size-4 shrink-0 [&_svg]:shrink-0 outline-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive",
+  "border-3 inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-[color,box-shadow] disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg:not([class*='size-'])]:size-4 shrink-0 [&_svg]:shrink-0 outline-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive transition-all duration-300 hover:cursor-pointer",
   {
     variants: {
       variant: {
-        default:
-          "bg-primary text-primary-foreground shadow-xs hover:bg-primary/90",
-        destructive:
-          "bg-destructive text-white shadow-xs hover:bg-destructive/90 focus-visible:ring-destructive/20 dark:focus-visible:ring-destructive/40",
-        outline:
-          "border border-input bg-background shadow-xs hover:bg-accent hover:text-accent-foreground",
-        secondary:
-          "bg-secondary text-secondary-foreground shadow-xs hover:bg-secondary/80",
-        ghost: "hover:bg-accent hover:text-accent-foreground",
-        link: "text-primary underline-offset-4 hover:underline",
+        "neon-pink": "text-white text-shadow-neon-pink text-stroke-neon-pink box-shadow-neon-pink border-[var(--neon-pink)] hover:bg-[rgba(236,67,193,0.5)]",
+        "neon-blue": "text-white text-shadow-neon-blue text-stroke-neon-blue box-shadow-neon-blue border-[var(--neon-blue)] hover:bg-[rgba(67,92,236,0.5)]",
+        "neon-light-blue": "text-white text-shadow-neon-light-blue text-stroke-neon-light-blue box-shadow-neon-light-blue border-[var(--neon-light-blue)] hover:bg-[rgba(67,222,236,0.5)]",
+        "neon-red": "text-white text-shadow-neon-red text-stroke-neon-red box-shadow-neon-red border-[var(--neon-red)] hover:bg-[rgba(236,67,67,0.5)]",
+        "neon-green": "text-white text-shadow-neon-green text-stroke-neon-green box-shadow-neon-green border-[var(--neon-green)] hover:bg-[rgba(67,236,98,0.5)]",
       },
       size: {
         default: "h-9 px-4 py-2 has-[>svg]:px-3",
@@ -28,10 +23,10 @@ const buttonVariants = cva(
       },
     },
     defaultVariants: {
-      variant: "default",
+      variant: "neon-pink",
       size: "default",
     },
-  },
+  }
 );
 
 function Button({
