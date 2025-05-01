@@ -280,6 +280,20 @@
   .box-shadow-neon-green {
     box-shadow: 0 0 10px var(--neon-green);
   }
+
+  /* Neon Yellow */
+  .text-stroke-neon-yellow {
+    -webkit-text-stroke-width: 2px;
+    -webkit-text-stroke-color: var(--neon-yellow);
+    -webkit-text-fill-color: white;
+    paint-order: stroke fill;
+  }
+  .text-stroke-neon-yellow:hover {
+    text-shadow: 0 0 30px var(--neon-yellow);
+  }
+  .box-shadow-neon-yellow {
+    box-shadow: 0 0 10px var(--neon-yellow);
+  }
   .text-neon-pink {
     color: #ffffff;
     -webkit-text-stroke: 4px var(--color-neon-pink);

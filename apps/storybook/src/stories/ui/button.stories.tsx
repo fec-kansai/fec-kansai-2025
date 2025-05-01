@@ -26,6 +26,7 @@ export const Variants: Story = () => {
     "neon-light-blue",
     "neon-red",
     "neon-green",
+    "neon-yellow",
   ] as const;
   return (
     <>
