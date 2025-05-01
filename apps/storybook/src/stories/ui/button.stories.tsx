@@ -1,17 +1,23 @@
-import type { Meta, StoryObj } from "@storybook/react";
-import { Button } from "@workspace/ui/components/button";
+import type { Meta, StoryFn } from "@storybook/react";
+import { Button } from "@workspace/ui";
 
 type ComponentType = typeof Button;
-type Story = StoryObj<ComponentType>;
+type Story = StoryFn<ComponentType>;
 
-export default {
+const meta = {
   title: "Components/Button",
   component: Button,
+  args: {
+    children: "Button",
+    variant: "neon-pink",
+    size: "lg",
+  },
   argTypes: {
     onClick: { action: "clicked" },
   },
-  render: (args) => <Button {...args}>テストABC</Button>,
 } satisfies Meta<ComponentType>;
+
+export default meta;
 
 export const Variants: Story = () => {
   const variants = [
@@ -20,7 +26,7 @@ export const Variants: Story = () => {
     "neon-light-blue",
     "neon-red",
     "neon-green",
-  ];
+  ] as const;
   return (
     <>
       {variants.map((variant) => (

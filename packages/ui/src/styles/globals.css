@@ -18,6 +18,8 @@
   --neon-light-blue: #43deec;
   --neon-red: #ec4343;
   --neon-green: #43ec62;
+  --neon-yellow: #ece143;
+  --link-gray: #d1d5db;
 
   /* text-shadow */
   --text-shadow-value: 0px 0px 30px;
@@ -106,20 +108,14 @@
 }
 
 @theme inline {
-
   /* カラー */
   --color-neon-pink: var(--neon-pink);
   --color-neon-blue: var(--neon-blue);
+  --color-neon-yellow: var(--neon-yellow);
   --color-neon-light-blue: var(--neon-light-blue);
   --color-neon-red: var(--neon-red);
   --color-neon-green: var(--neon-green);
-
-  /* テキストシャドウ */
-  /* --text-shadow-neon-pink: var(--neon-pink);
-  --text-shadow-neon-blue: var(--neon-blue);
-  --text-shadow-neon-light-blue: var(--neon-light-blue);
-  --text-shadow-neon-red: var(--neon-red);
-  --text-shadow-neon-green: var(--neon-green); */
+  --color-link-gray: var(--link-gray);
 
   /* ボーダー */
   --border-neon-pink: var(--neon-pink);
@@ -127,6 +123,22 @@
   --border-neon-light-blue: var(--neon-light-blue);
   --border-neon-red: var(--neon-red);
   --border-neon-green: var(--neon-green);
+
+  /* テキストシャドウ */
+  --text-shadow-neon-pink: var(--neon-pink-shadow);
+  --text-shadow-neon-blue: var(--neon-blue-shadow);
+  --text-shadow-neon-yellow: var(--neon-yellow-shadow);
+  --text-shadow-neon-light-blue: var(--neon-light-blue-shadow);
+  --text-shadow-neon-red: var(--neon-red-shadow);
+  --text-shadow-neon-green: var(--neon-green-shadow);
+
+  /* ボーダー */
+  --border-neon-pink: var(--neon-pink-border);
+  --border-neon-blue: var(--neon-blue-border);
+  --border-neon-light-blue: var(--neon-light-blue-border);
+  --border-neon-red: var(--neon-red-border);
+  --border-neon-green: var(--neon-green-border);
+  --border-neon-yellow: var(--neon-yellow-border);
 
   /* フォント */
   --font-family-sans: var(--font-sans);
@@ -267,5 +279,50 @@
   }
   .box-shadow-neon-green {
     box-shadow: 0 0 10px var(--neon-green);
+  }
+  .text-neon-pink {
+    color: #ffffff;
+    -webkit-text-stroke: 4px var(--color-neon-pink);
+    text-shadow: var(--text-shadow-neon-pink);
+    paint-order: stroke fill;
+  }
+  .text-neon-blue {
+    color: #ffffff;
+    -webkit-text-stroke: 4px var(--color-neon-blue);
+    text-shadow: var(--text-shadow-neon-blue);
+    paint-order: stroke fill;
+  }
+  .text-neon-light-blue {
+    color: #ffffff;
+    -webkit-text-stroke: 4px var(--color-neon-light-blue);
+    text-shadow: var(--text-shadow-neon-light-blue);
+    paint-order: stroke fill;
+  }
+  .text-neon-red {
+    color: #ffffff;
+    -webkit-text-stroke: 4px var(--color-neon-red);
+    text-shadow: var(--text-shadow-neon-red);
+    paint-order: stroke fill;
+  }
+  .text-neon-green {
+    color: #ffffff;
+    -webkit-text-stroke: 4px var(--color-neon-green);
+    text-shadow: var(--text-shadow-neon-green);
+    paint-order: stroke fill;
+  }
+  .text-neon-yellow {
+    color: #ffffff;
+    -webkit-text-stroke: 4px var(--color-neon-yellow);
+    text-shadow: var(--text-shadow-neon-yellow);
+    paint-order: stroke fill;
+  }
+  .text-link-gray {
+    color: var(--color-link-gray);
+  }
+  .text-link-gray:hover {
+    color: #ffffff;
+    -webkit-text-stroke: 4px var(--color-neon-pink);
+    text-shadow: var(--text-shadow-neon-pink);
+    paint-order: stroke fill;
   }
 }
