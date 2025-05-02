@@ -1,3 +1,4 @@
+import { Link } from "@/components/Link";
 import { LogoHeader } from "@workspace/ui";
 import { Button } from "@workspace/ui/components/button";
 
@@ -19,13 +20,9 @@ export default function Header() {
         {/* ナビゲーション */}
         <nav className="hidden md:flex gap-6">
           {navLinks.map((link) => (
-            <a
-              key={link.label}
-              href={link.href}
-              className="text-gray-200 hover:text-white text-sm font-medium transition-colors"
-            >
+            <Link key={link.label} href={link.href}>
               {link.label}
-            </a>
+            </Link>
           ))}
         </nav>
         {/* チケット購入ボタン */}
