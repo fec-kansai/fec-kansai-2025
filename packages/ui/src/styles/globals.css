@@ -221,6 +221,9 @@
   .text-stroke-neon-pink:hover {
     text-shadow: 0 0 30px var(--neon-pink);
   }
+  /* .text-stroke-neon-pink:active {
+    scale: 0.95;
+  } */
   .box-shadow-neon-pink {
     box-shadow: 0 0 30px var(--neon-pink);
   }

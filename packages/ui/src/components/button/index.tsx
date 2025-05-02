@@ -5,7 +5,7 @@ import type * as React from "react";
 import { cn } from "@workspace/ui/lib/utils";
 
 const buttonVariants = cva(
-  "border-2 inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-lg text-sm font-medium duration-300 hover:cursor-pointer",
+  "border-2 inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-lg text-sm font-medium duration-300 hover:cursor-pointer transform focus:scale-105 active:scale-95",
   {
     variants: {
       variant: {
