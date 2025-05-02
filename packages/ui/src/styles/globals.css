@@ -205,48 +205,63 @@
 }
 
 @layer utilities {
-  .text-neon-pink {
+
+  .neon-base {
     color: #ffffff;
-    -webkit-text-stroke: 0.125em var(--color-neon-pink);
+    paint-order: stroke fill;
+  }
+
+  /* テキスト向けネオンスタイル */
+  .text-neon-stroke-width {
+    -webkit-text-stroke-width: 0.0625em;
+  }
+
+  /* 見出し向けネオンスタイル */
+  .heading-neon-stroke-width {
+    -webkit-text-stroke-width: 0.125em;
+  }
+
+  /* ネオン色バリエーション */
+  .effect-neon-pink {
+    -webkit-text-stroke-color: var(--color-neon-pink);
     text-shadow: var(--text-shadow-neon-pink);
-    paint-order: stroke fill;
   }
-  .text-neon-blue {
-    color: #ffffff;
-    -webkit-text-stroke: 0.125em var(--color-neon-blue);
+
+  .effect-neon-blue {
+    -webkit-text-stroke-color: var(--color-neon-blue);
     text-shadow: var(--text-shadow-neon-blue);
-    paint-order: stroke fill;
   }
-  .text-neon-light-blue {
-    color: #ffffff;
-    -webkit-text-stroke: 0.125em var(--color-neon-light-blue);
+
+  .effect-neon-light-blue{
+    -webkit-text-stroke-color: var(--color-neon-light-blue);
     text-shadow: var(--text-shadow-neon-light-blue);
-    paint-order: stroke fill;
   }
-  .text-neon-red {
-    color: #ffffff;
-    -webkit-text-stroke: 0.125em var(--color-neon-red);
+
+  .effect-neon-red {
+    -webkit-text-stroke-color: var(--color-neon-red);
     text-shadow: var(--text-shadow-neon-red);
-    paint-order: stroke fill;
   }
-  .text-neon-green {
-    color: #ffffff;
-    -webkit-text-stroke: 0.125em var(--color-neon-green);
+
+  .effect-neon-green {
+
+    -webkit-text-stroke-color: var(--color-neon-green);
     text-shadow: var(--text-shadow-neon-green);
-    paint-order: stroke fill;
   }
-  .text-neon-yellow {
-    color: #ffffff;
-    -webkit-text-stroke: 0.125em var(--color-neon-yellow);
+
+  .effect-neon-yellow {
+    -webkit-text-stroke-color: var(--color-neon-yellow);
     text-shadow: var(--text-shadow-neon-yellow);
-    paint-order: stroke fill;
   }
-  .text-link-gray {
+
+  /* リンクスタイル */
+  .effect-link-gray {
     color: var(--color-link-gray);
+    transition: all 0.2s ease-in-out;
   }
-  .text-link-gray:hover {
+
+  .effect-link-gray:hover {
     color: #ffffff;
-    -webkit-text-stroke: 0.125em var(--color-neon-pink);
+    -webkit-text-stroke: 0.0625em var(--color-neon-pink);
     text-shadow: var(--text-shadow-neon-pink);
     paint-order: stroke fill;
   }

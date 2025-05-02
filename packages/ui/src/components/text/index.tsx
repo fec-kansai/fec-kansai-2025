@@ -2,17 +2,17 @@ import { Slot } from "@radix-ui/react-slot";
 import { type VariantProps, cva } from "class-variance-authority";
 import { cn } from "@workspace/ui/lib/utils";
 
-const textVariants = cva("text-base/8", {
+const textVariants = cva("text-base/8 neon-base text-neon-stroke-width", {
   variants: {
     colorScheme: {
       white: "text-white",
-      red: "text-neon-red",
-      blue: "text-neon-blue",
-      green: "text-neon-green",
-      pink: "text-neon-pink",
-      lightBlue: "text-neon-light-blue",
-      yellow: "text-neon-yellow",
-      link: "cursor-pointer transition-duration-300 text-link-gray hover:text-link-gray"
+      red: "effect-neon-red",
+      blue: "effect-neon-blue",
+      green: "effect-neon-green",
+      pink: "effect-neon-pink",
+      lightBlue: "effect-neon-light-blue",
+      yellow: "effect-neon-yellow",
+      link: "cursor-pointer transition-duration-300 text-link-gray hover:text-link-gray",
     },
   },
   defaultVariants: {

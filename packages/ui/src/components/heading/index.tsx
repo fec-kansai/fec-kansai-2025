@@ -1,12 +1,12 @@
 import { type VariantProps, cva } from "class-variance-authority";
 import { cn } from "@workspace/ui/lib/utils";
 
-const headingVariants = cva("font-bold", {
+const headingVariants = cva("font-bold neon-base heading-neon-stroke-width", {
   variants: {
     variant: {
-      primary: "text-neon-pink text-4xl",
-      secondary: "text-neon-blue text-2xl",
-      accent: "text-neon-red text-2xl",
+      primary: "effect-neon-pink text-2xl md:text-4xl",
+      secondary: "effect-neon-blue  text-base  md:text-2xl",
+      accent: "effect-neon-red text-base md:text-2xl",
     },
   },
   defaultVariants: {
@@ -14,11 +14,11 @@ const headingVariants = cva("font-bold", {
   },
 });
 function Heading(
-  props: React.ComponentProps<"h1"> &
+  props: React.ComponentProps<"h2"> &
     VariantProps<typeof headingVariants>
 ) {
   const { className, variant,  children, ...rest } = props;
-  const Component = variant === "primary" ? "h1": "h2";
+  const Component = variant === "primary" ? "h2": "h3";
 
   return (
     <Component
