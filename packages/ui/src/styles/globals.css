@@ -254,12 +254,11 @@
   }
 
   /* リンクスタイル */
-  .effect-link-gray {
+  .link {
     color: var(--color-link-gray);
-    transition: all 0.2s ease-in-out;
   }
 
-  .effect-link-gray:hover {
+  .link:hover {
     color: #ffffff;
     -webkit-text-stroke: 0.0625em var(--color-neon-pink);
     text-shadow: var(--text-shadow-neon-pink);
