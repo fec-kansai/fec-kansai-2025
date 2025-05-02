@@ -213,7 +213,7 @@
 @layer utilities {
   /* Neon Pink */
   .text-stroke-neon-pink {
-    -webkit-text-stroke-width: 2px;
+    -webkit-text-stroke-width: 1px;
     -webkit-text-stroke-color: var(--neon-pink);
     -webkit-text-fill-color: white;
     paint-order: stroke fill;
