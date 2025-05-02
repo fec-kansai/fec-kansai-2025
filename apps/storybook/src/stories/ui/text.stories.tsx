@@ -38,7 +38,6 @@ export const colorScheme: Story = {
         <Text colorScheme="pink">テキストテキスト</Text>
         <Text colorScheme="lightBlue">テキストテキスト</Text>
         <Text colorScheme="yellow">テキストテキスト</Text>
-        <Text colorScheme="link">テキストテキスト</Text>
       </div>
     );
   },
@@ -52,16 +51,6 @@ export const LongSentence: Story = {
           テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト
         </Text>
       </div>
-    );
-  },
-};
-
-export const WithLink: Story = {
-  render: () => {
-    return (
-      <Text asChild colorScheme="link">
-        <a href="https://example.com">リンク付きテキスト</a>
-      </Text>
     );
   },
 };
