@@ -32,6 +32,19 @@ const preview: Preview = {
         },
       },
     },
+    backgrounds: {
+      default: "dark",
+      values: [
+        {
+          name: "dark",
+          value: "#09090B",
+        },
+        {
+          name: "light",
+          value: "#ffffff",
+        },
+      ],
+    },
   },
   decorators: [withScreenshot()],
 };

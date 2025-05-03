@@ -1,17 +1,23 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import { Button } from "@workspace/ui/components/button";
+import { Button } from "@workspace/ui";
 
 type ComponentType = typeof Button;
 type Story = StoryObj<ComponentType>;
 
-export default {
+const meta = {
   title: "Components/Button",
   component: Button,
+  args: {
+    children: "Button",
+    variant: "default",
+    size: "lg",
+  },
   argTypes: {
     onClick: { action: "clicked" },
   },
-  render: (args) => <Button {...args}>テストABC</Button>,
 } satisfies Meta<ComponentType>;
+
+export default meta;
 
 // More on writing stories with args: https://storybook.js.org/docs/writing-stories/args
 export const Primary: Story = {

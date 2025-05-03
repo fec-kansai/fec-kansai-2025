@@ -1,14 +1,14 @@
 import type { Meta, StoryObj } from "@storybook/react";
-
-import { KaiyukanIcon } from "@workspace/ui/components/icons//ui/KaiyukanIcon";
-import { Logo } from "@workspace/ui/components/icons//ui/Logo";
-import { LogoHeader } from "@workspace/ui/components/icons//ui/LogoHeader";
-import { OctopusIcon } from "@workspace/ui/components/icons//ui/OctopusIcon";
-import { TakoyakiIcon } from "@workspace/ui/components/icons//ui/TakoyakiIcon";
-import { TakoyakiBoxIcon } from "@workspace/ui/components/icons//ui/TakoyakisBoxIcon";
-import { TowerOfSunIcon } from "@workspace/ui/components/icons//ui/TowerOfSunIcon";
-import { TsuutenkakuIcon } from "@workspace/ui/components/icons//ui/TsuutenkakuIcon";
-
+import {
+  KaiyukanIcon,
+  Logo,
+  LogoHeader,
+  OctopusIcon,
+  TakoyakiBoxIcon,
+  TakoyakiIcon,
+  TowerOfSunIcon,
+  TsuutenkakuIcon,
+} from "@workspace/ui";
 type ComponentType = typeof Logo;
 type Story = StoryObj<ComponentType>;
 
