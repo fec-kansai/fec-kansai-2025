@@ -1,0 +1,42 @@
+import { LogoHeader } from "@workspace/ui";
+import { BskyLogoIcon } from "@workspace/ui/components/icons/ui/BskyLogoIcon";
+import { GitHubLogoIcon } from "@workspace/ui/components/icons/ui/GitHubLogoIcon";
+import { MediumLogoIcon } from "@workspace/ui/components/icons/ui/MediumLogoIcon";
+import { XLogoIcon } from "@workspace/ui/components/icons/ui/XLogoIcon";
+
+export default function SnsLinks() {
+  return (
+    <div className="flex flex-col gap-4 flex-1">
+      <LogoHeader
+        width={240}
+        aria-label="フロントエンドカンファレンス関西2025のロゴ"
+      />
+      <div className="flex gap-4">
+        <a
+          href="https://x.com/fec_kansai"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <XLogoIcon aria-label="Xのロゴ" width={24} height={24} />
+        </a>
+        <a
+          href="https://bsky.app/profile/fec-kansai.bsky.social"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <BskyLogoIcon aria-label="Blueskyのロゴ" width={24} height={24} />
+        </a>
+        <a
+          href="https://github.com/fec-kansai"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <GitHubLogoIcon aria-label="GitHubのロゴ" width={24} height={24} />
+        </a>
+        <a href="https://k3jp.org/" target="_blank" rel="noopener noreferrer">
+          <MediumLogoIcon aria-label="Mediumのロゴ" width={24} height={24} />
+        </a>
+      </div>
+    </div>
+  );
+}
