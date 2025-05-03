@@ -99,13 +99,13 @@ export default function MainVisual() {
                 dx="0"
                 dy="0"
                 stdDeviation="2"
-                flood-color="#A855F7"
+                floodColor="#A855F7"
               />
               <feDropShadow
                 dx="0"
                 dy="0"
                 stdDeviation="6"
-                flood-color="#A855F7"
+                floodColor="#A855F7"
               />
             </filter>
           </defs>
@@ -113,36 +113,141 @@ export default function MainVisual() {
       </div>
       <style jsx global>{`
         .neon-icon {
-          filter: drop-shadow(0 0 12px #A855F7) drop-shadow(0 0 24px #A855F7);
+          filter: drop-shadow(0 0 12px #a855f7) drop-shadow(0 0 24px #a855f7);
           animation: neon-flicker 4.5s infinite alternate;
-          width:100%;
+          width: 100%;
         }
         @keyframes neon-flicker {
-          0% { opacity: 1; filter: drop-shadow(0 0 6px #A855F7) drop-shadow(0 0 12px #A855F7); }
-          10% { opacity: 0.7; filter: drop-shadow(0 0 8px #A855F7); }
-          20% { opacity: 1; filter: drop-shadow(0 0 10px #A855F7); }
-          30% { opacity: 0.8; filter: drop-shadow(0 0 6px #A855F7); }
-          40% { opacity: 1; filter: drop-shadow(0 0 16px #A855F7); }
-          50% { opacity: 0.6; filter: drop-shadow(0 0 8px #A855F7); }
-          60% { opacity: 1; filter: drop-shadow(0 0 12px #A855F7); }
-          70% { opacity: 0.7; filter: drop-shadow(0 0 6px #A855F7); }
-          80% { opacity: 1; filter: drop-shadow(0 0 18px #A855F7); }
-          90% { opacity: 0.8; filter: drop-shadow(0 0 8px #A855F7); }
-          100% { opacity: 1; filter: drop-shadow(0 0 12px #A855F7); }
+          0% {
+            opacity: 1;
+            filter: drop-shadow(0 0 6px #a855f7) drop-shadow(0 0 12px #a855f7);
+          }
+          10% {
+            opacity: 0.7;
+            filter: drop-shadow(0 0 8px #a855f7);
+          }
+          20% {
+            opacity: 1;
+            filter: drop-shadow(0 0 10px #a855f7);
+          }
+          30% {
+            opacity: 0.8;
+            filter: drop-shadow(0 0 6px #a855f7);
+          }
+          40% {
+            opacity: 1;
+            filter: drop-shadow(0 0 16px #a855f7);
+          }
+          50% {
+            opacity: 0.6;
+            filter: drop-shadow(0 0 8px #a855f7);
+          }
+          60% {
+            opacity: 1;
+            filter: drop-shadow(0 0 12px #a855f7);
+          }
+          70% {
+            opacity: 0.7;
+            filter: drop-shadow(0 0 6px #a855f7);
+          }
+          80% {
+            opacity: 1;
+            filter: drop-shadow(0 0 18px #a855f7);
+          }
+          90% {
+            opacity: 0.8;
+            filter: drop-shadow(0 0 8px #a855f7);
+          }
+          100% {
+            opacity: 1;
+            filter: drop-shadow(0 0 12px #a855f7);
+          }
         }
         /* ゆったり浮遊アニメーション */
-        @keyframes float1 { 0% { transform: translateY(0); } 50% { transform: translateY(-18px); } 100% { transform: translateY(0); } }
-        @keyframes float2 { 0% { transform: translateY(0); } 50% { transform: translateY(14px); } 100% { transform: translateY(0); } }
-        @keyframes float3 { 0% { transform: translateY(0); } 50% { transform: translateY(-10px); } 100% { transform: translateY(0); } }
-        @keyframes float4 { 0% { transform: translateY(0); } 50% { transform: translateY(20px); } 100% { transform: translateY(0); } }
-        @keyframes float5 { 0% { transform: translateY(0); } 50% { transform: translateY(-16px); } 100% { transform: translateY(0); } }
-        @keyframes float6 { 0% { transform: translateY(0); } 50% { transform: translateY(12px); } 100% { transform: translateY(0); } }
-        .animate-float1 { animation: float1 7s ease-in-out infinite; }
-        .animate-float2 { animation: float2 8s ease-in-out infinite; }
-        .animate-float3 { animation: float3 6.5s ease-in-out infinite; }
-        .animate-float4 { animation: float4 7.5s ease-in-out infinite; }
-        .animate-float5 { animation: float5 8.5s ease-in-out infinite; }
-        .animate-float6 { animation: float6 7.2s ease-in-out infinite; }
+        @keyframes float1 {
+          0% {
+            transform: translateY(0);
+          }
+          50% {
+            transform: translateY(-18px);
+          }
+          100% {
+            transform: translateY(0);
+          }
+        }
+        @keyframes float2 {
+          0% {
+            transform: translateY(0);
+          }
+          50% {
+            transform: translateY(14px);
+          }
+          100% {
+            transform: translateY(0);
+          }
+        }
+        @keyframes float3 {
+          0% {
+            transform: translateY(0);
+          }
+          50% {
+            transform: translateY(-10px);
+          }
+          100% {
+            transform: translateY(0);
+          }
+        }
+        @keyframes float4 {
+          0% {
+            transform: translateY(0);
+          }
+          50% {
+            transform: translateY(20px);
+          }
+          100% {
+            transform: translateY(0);
+          }
+        }
+        @keyframes float5 {
+          0% {
+            transform: translateY(0);
+          }
+          50% {
+            transform: translateY(-16px);
+          }
+          100% {
+            transform: translateY(0);
+          }
+        }
+        @keyframes float6 {
+          0% {
+            transform: translateY(0);
+          }
+          50% {
+            transform: translateY(12px);
+          }
+          100% {
+            transform: translateY(0);
+          }
+        }
+        .animate-float1 {
+          animation: float1 7s ease-in-out infinite;
+        }
+        .animate-float2 {
+          animation: float2 8s ease-in-out infinite;
+        }
+        .animate-float3 {
+          animation: float3 6.5s ease-in-out infinite;
+        }
+        .animate-float4 {
+          animation: float4 7.5s ease-in-out infinite;
+        }
+        .animate-float5 {
+          animation: float5 8.5s ease-in-out infinite;
+        }
+        .animate-float6 {
+          animation: float6 7.2s ease-in-out infinite;
+        }
       `}</style>
     </section>
   );
