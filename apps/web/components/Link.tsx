@@ -56,10 +56,11 @@ export const Link = ({
   // Storybookの場合またはNextLinkが利用できない場合はaタグを使用
   return (
     <a
-      href="https://example.com"
-      target="_blank"
-      rel="noopener noreferrer"
       className={cn(linkVariants({ className }))}
+      href={href}
+      target={target}
+      rel={rel}
+      {...rest}
     >
       {children}
     </a>
