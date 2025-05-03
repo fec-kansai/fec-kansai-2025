@@ -6,12 +6,12 @@ import { XLogoIcon } from "@workspace/ui/components/icons/ui/XLogoIcon";
 
 export default function SnsLinks() {
   return (
-    <div className="flex flex-col gap-4 flex-1">
+    <div className="flex flex-col gap-4 flex-1 mx-auto md:mx-0">
       <LogoHeader
         width={240}
         aria-label="フロントエンドカンファレンス関西2025のロゴ"
       />
-      <div className="flex gap-4">
+      <div className="flex gap-4 mx-auto md:mx-0">
         <a
           href="https://x.com/fec_kansai"
           target="_blank"
