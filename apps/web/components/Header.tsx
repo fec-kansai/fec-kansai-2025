@@ -1,40 +1,45 @@
-import { Link } from "@/components/Link";
 import { LogoHeader } from "@workspace/ui";
-import { Button } from "@workspace/ui/components/button";
+import { Link } from "./Link";
+import { MobileNavMenu } from "./MobileNavMenu";
+import { getNavLinkClass } from "./navLinkStyle";
 
 const navLinks = [
-  { label: "概要", href: "#about" },
-  { label: "チケット", href: "#ticket" },
-  { label: "スピーカー", href: "#speakers" },
-  { label: "スケジュール", href: "#schedule" },
-  { label: "スポンサー", href: "#sponsors" },
-  { label: "会場", href: "#venue" },
+  { name: "概要", href: "#", isActive: true },
+  { name: "チケット", href: "#", isActive: false },
+  { name: "スピーカー", href: "#", isActive: false },
+  { name: "スケジュール", href: "#", isActive: false },
+  { name: "スポンサー", href: "#", isActive: false },
+  { name: "会場", href: "#", isActive: false },
 ];
 
 export default function Header() {
   return (
-    <header className="w-full bg-black/50 border-b border-purple-300/20 backdrop-blur-md fixed top-0 z-50">
-      <div className="max-w-6xl mx-auto flex items-center justify-between px-4 py-3">
-        {/* ロゴ画像 */}
-        <LogoHeader className="w-50 md:h-8 h-10" />
-        {/* ナビゲーション */}
-        <nav className="hidden md:flex gap-6">
+    <header className="w-full flex justify-between items-center px-4 py-2 shadow-sm bg-zinc-900 text-white">
+      <Link href="/">
+        <LogoHeader
+          width={180}
+          height={37}
+          aria-label="フロントエンドカンファレンス関西 2025のロゴ"
+        />
+      </Link>
+
+      <MobileNavMenu navLinks={navLinks} />
+
+      <nav className="hidden lg:block">
+        <ul className="flex items-center">
           {navLinks.map((link) => (
-            <Link key={link.label} href={link.href}>
-              {link.label}
-            </Link>
+            <li key={link.name} className="inline-block mr-4">
+              <Link
+                href={link.href}
+                className={getNavLinkClass(link.isActive)}
+                aria-current={link.isActive ? "page" : undefined}
+              >
+                {link.name}
+              </Link>
+            </li>
           ))}
-        </nav>
-        {/* チケット購入ボタン */}
-        <div className="ml-4">
-          <Button
-            size="sm"
-            className="bg-gradient-to-r from-purple-600 to-blue-500 text-white shadow-md rounded-md px-4 py-2"
-          >
-            チケット購入
-          </Button>
-        </div>
-      </div>
+        </ul>
+      </nav>
     </header>
   );
 }
