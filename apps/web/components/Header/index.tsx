@@ -19,7 +19,7 @@ export default function Header() {
         <LogoHeader
           width={180}
           height={37}
-          aria-label="フロントエンドカンファレンス関西 2025のロゴ"
+          aria-label="フロントエンドカンファレンス関西2025 トップページ"
         />
       </Link>
 
