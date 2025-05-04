@@ -1,8 +1,8 @@
-import type { Meta, StoryFn } from "@storybook/react";
+import type { Meta, StoryObj } from "@storybook/react";
 import { Header } from "@workspace/ui"; // Header を適切なパスでインポートしてください
 
 type ComponentType = typeof Header;
-type Story = StoryFn<ComponentType>;
+type Story = StoryObj<ComponentType>;
 
 const meta = {
   title: "Components/Header",
@@ -15,10 +15,18 @@ const meta = {
 
 export default meta;
 
-export const Normal: Story = () => {
-  return (
-    <>
-      <Header />
-    </>
-  );
+export const Normal: Story = {
+  render: () => {
+    // body の padding をリセット
+    if (typeof document !== "undefined") {
+      document.body.style.margin = "0";
+      document.body.style.padding = "0";
+    }
+
+    return (
+      <>
+        <Header />
+      </>
+    );
+  },
 };
