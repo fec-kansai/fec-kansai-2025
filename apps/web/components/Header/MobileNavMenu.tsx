@@ -30,7 +30,7 @@ export function MobileNavMenu({ navLinks }: MobileNavMenuProps) {
 
       <div
         className={cn(
-          "lg:hidden fixed top-0 right-0 h-auto w-[150px] bg-black px-4 py-2 z-50 transition-transform duration-300",
+          "lg:hidden fixed top-0 right-0 h-auto w-[150px] bg-black p-4 z-50 transition-transform duration-300",
           isMenuOpen ? "translate-x-0" : "translate-x-full",
         )}
         inert={!isMenuOpen}
@@ -38,7 +38,7 @@ export function MobileNavMenu({ navLinks }: MobileNavMenuProps) {
       >
         <button
           type="button"
-          className="absolute top-1 right-4 p-2 w-[40px] h-[40px] flex items-center justify-center"
+          className="absolute top-2 right-4 p-2 w-[40px] h-[40px] flex items-center justify-center"
           onClick={() => setIsMenuOpen(false)}
           aria-label="サイドバーを閉じる"
         >
