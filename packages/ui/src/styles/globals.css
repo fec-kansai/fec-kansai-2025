@@ -19,7 +19,7 @@
   --neon-red: #ec4343;
   --neon-green: #43ec62;
   --neon-yellow: #ece143;
-  --link-gray: #D1D5DB;
+  --link-gray: #d1d5db;
 
   /* text-shadow */
   --text-shadow-value: 0px 0px 30px;
@@ -108,7 +108,6 @@
 }
 
 @theme inline {
-
   /* カラー */
   --color-neon-pink: var(--neon-pink);
   --color-neon-blue: var(--neon-blue);
@@ -117,6 +116,13 @@
   --color-neon-red: var(--neon-red);
   --color-neon-green: var(--neon-green);
   --color-link-gray: var(--link-gray);
+
+  /* ボーダー */
+  --border-neon-pink: var(--neon-pink);
+  --border-neon-blue: var(--neon-blue);
+  --border-neon-light-blue: var(--neon-light-blue);
+  --border-neon-red: var(--neon-red);
+  --border-neon-green: var(--neon-green);
 
   /* テキストシャドウ */
   --text-shadow-neon-pink: var(--neon-pink-shadow);
@@ -205,6 +211,90 @@
 }
 
 @layer utilities {
+  /* Neon Pink */
+  .text-stroke-neon-pink {
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: var(--neon-pink);
+    -webkit-text-fill-color: white;
+    paint-order: stroke fill;
+  }
+  .text-stroke-neon-pink:hover {
+    text-shadow: 0 0 30px var(--neon-pink);
+  }
+
+  .box-shadow-neon-pink {
+    box-shadow: 0 0 30px var(--neon-pink);
+  }
+
+  /* Neon Blue */
+  .text-stroke-neon-blue {
+    -webkit-text-stroke-width: 2px;
+    -webkit-text-stroke-color: var(--neon-blue);
+    -webkit-text-fill-color: white;
+    paint-order: stroke fill;
+  }
+  .text-stroke-neon-blue:hover {
+    text-shadow: 0 0 30px var(--neon-blue);
+  }
+  .box-shadow-neon-blue {
+    box-shadow: 0 0 30px var(--neon-blue);
+  }
+
+  /* Neon Light Blue */
+  .text-stroke-neon-light-blue {
+    -webkit-text-stroke-width: 2px;
+    -webkit-text-stroke-color: var(--neon-light-blue);
+    -webkit-text-fill-color: white;
+    paint-order: stroke fill;
+  }
+  .text-stroke-neon-light-blue:hover {
+    text-shadow: 0 0 30px var(--neon-light-blue);
+  }
+  .box-shadow-neon-light-blue {
+    box-shadow: 0 0 30px var(--neon-light-blue);
+  }
+
+  /* Neon Red */
+  .text-stroke-neon-red {
+    -webkit-text-stroke-width: 2px;
+    -webkit-text-stroke-color: var(--neon-red);
+    -webkit-text-fill-color: white;
+    paint-order: stroke fill;
+  }
+  .text-stroke-neon-red:hover {
+    text-shadow: 0 0 30px var(--neon-red);
+  }
+  .box-shadow-neon-red {
+    box-shadow: 0 0 30px var(--neon-red);
+  }
+
+  /* Neon Green */
+  .text-stroke-neon-green {
+    -webkit-text-stroke-width: 2px;
+    -webkit-text-stroke-color: var(--neon-green);
+    -webkit-text-fill-color: white;
+    paint-order: stroke fill;
+  }
+  .text-stroke-neon-green:hover {
+    text-shadow: 0 0 30px var(--neon-green);
+  }
+  .box-shadow-neon-green {
+    box-shadow: 0 0 30px var(--neon-green);
+  }
+
+  /* Neon Yellow */
+  .text-stroke-neon-yellow {
+    -webkit-text-stroke-width: 2px;
+    -webkit-text-stroke-color: var(--neon-yellow);
+    -webkit-text-fill-color: white;
+    paint-order: stroke fill;
+  }
+  .text-stroke-neon-yellow:hover {
+    text-shadow: 0 0 30px var(--neon-yellow);
+  }
+  .box-shadow-neon-yellow {
+    box-shadow: 0 0 30px var(--neon-yellow);
+  }
 
   .neon-base {
     color: #ffffff;
