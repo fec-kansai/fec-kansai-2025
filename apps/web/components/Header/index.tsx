@@ -15,12 +15,11 @@ const navLinks = [
 export default function Header() {
   return (
     <header className="w-full flex justify-between items-center px-4 py-2 shadow-sm bg-zinc-900 text-white">
-      <Link href="/">
-        <LogoHeader
-          width={180}
-          height={37}
-          aria-label="フロントエンドカンファレンス関西2025 トップページ"
-        />
+      <Link
+        href="/"
+        aria-label="フロントエンドカンファレンス関西2025 トップページ"
+      >
+        <LogoHeader width={180} height={37} />
       </Link>
 
       <MobileNavMenu navLinks={navLinks} />
