@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import Header from "web/components/Header";
+import Header from "web/components/Header/";
 
 type ComponentType = typeof Header;
 type Story = StoryObj<ComponentType>;

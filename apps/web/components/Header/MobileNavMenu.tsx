@@ -2,7 +2,7 @@
 import { cn } from "@workspace/ui/lib/utils";
 import { Menu, X } from "lucide-react";
 import { useState } from "react";
-import { Link } from "./Link";
+import { Link } from "../Link";
 import { getNavLinkClass } from "./navLinkStyle";
 
 type MobileNavMenuProps = {

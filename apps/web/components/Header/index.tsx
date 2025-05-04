@@ -1,5 +1,5 @@
 import { LogoHeader } from "@workspace/ui";
-import { Link } from "./Link";
+import { Link } from "../Link";
 import { MobileNavMenu } from "./MobileNavMenu";
 import { getNavLinkClass } from "./navLinkStyle";
 
