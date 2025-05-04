@@ -33,6 +33,8 @@ export function MobileNavMenu({ navLinks }: MobileNavMenuProps) {
           "lg:hidden fixed top-0 right-0 h-auto w-[150px] bg-black px-4 py-2 z-50 transition-transform duration-300",
           isMenuOpen ? "translate-x-0" : "translate-x-full",
         )}
+        inert={!isMenuOpen}
+        aria-hidden={!isMenuOpen}
       >
         <button
           type="button"
