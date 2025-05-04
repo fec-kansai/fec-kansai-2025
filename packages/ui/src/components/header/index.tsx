@@ -20,22 +20,27 @@ const headerVariants = cva(
     }
 );
 
-const navLinkVariants = cva("text-white text-base font-medium transition-all px-2 py-1", {
+const navLinkVariants = cva("block w-full text-white text-base font-medium transition-all px-2 py-1", {
     variants: {
         isActive: {
-            true: "drop-shadow-[0_0_6px_var(--neon-pink)] text-white rounded-md bg-zinc-800/50",
+            true: "",
             false: "",
         },
         isDisabled: {
             true: "text-gray-400 pointer-events-none",
-            false: "hover:text-white hover:drop-shadow-[0_0_4px_var(--neon-pink)]",
+            false: "",
         },
     },
     compoundVariants: [
         {
             isActive: true,
             isDisabled: false,
-            className: "text-white drop-shadow-[0_0_6px_var(--neon-pink)]",
+            className: "text-stroke-neon-pink-active",
+        },
+        {
+            isActive: false,
+            isDisabled: false,
+            className: "hover:text-white hover:drop-shadow-[0_0_4px_var(--neon-pink)]",
         },
     ],
     defaultVariants: {
