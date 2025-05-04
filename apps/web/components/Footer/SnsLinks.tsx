@@ -16,25 +16,33 @@ export default function SnsLinks() {
           href="https://x.com/fec_kansai"
           target="_blank"
           rel="noopener noreferrer"
+          aria-label="Xのロゴ"
         >
-          <XLogoIcon aria-label="Xのロゴ" width={24} height={24} />
+          <XLogoIcon width={24} height={24} />
         </a>
         <a
           href="https://bsky.app/profile/fec-kansai.bsky.social"
           target="_blank"
           rel="noopener noreferrer"
+          aria-label="Blueskyのロゴ"
         >
-          <BskyLogoIcon aria-label="Blueskyのロゴ" width={24} height={24} />
+          <BskyLogoIcon width={24} height={24} />
         </a>
         <a
           href="https://github.com/fec-kansai"
           target="_blank"
           rel="noopener noreferrer"
+          aria-label="GitHubのロゴ"
         >
-          <GitHubLogoIcon aria-label="GitHubのロゴ" width={24} height={24} />
+          <GitHubLogoIcon width={24} height={24} />
         </a>
-        <a href="https://k3jp.org/" target="_blank" rel="noopener noreferrer">
-          <MediumLogoIcon aria-label="Mediumのロゴ" width={24} height={24} />
+        <a
+          href="https://k3jp.org/"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Mediumのロゴ"
+        >
+          <MediumLogoIcon width={24} height={24} />
         </a>
       </div>
     </div>
