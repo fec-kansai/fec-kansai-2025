@@ -2,7 +2,7 @@ import { useState } from "react";
 import { cva, type VariantProps } from "class-variance-authority";
 import { cn } from "@workspace/ui/lib/utils";
 import { LogoHeader } from "../icons/ui";
-import { Menu, X } from "lucide-react"; // ハンバーガーアイコンと閉じるアイコン
+import { Menu, X } from "lucide-react";
 
 const headerVariants = cva(
     "w-full flex justify-between items-center px-4 py-2 shadow-sm bg-zinc-900 text-white",
