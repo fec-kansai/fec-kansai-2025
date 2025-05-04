@@ -10,6 +10,8 @@ const meta = {
   args: {
     children: "テキストテキスト",
     href: "https://example.com",
+    target: "_blank",
+    rel: "noopener noreferrer",
   },
 } satisfies Meta<typeof Link>;
 

@@ -14,11 +14,11 @@ const headingVariants = cva("font-bold neon-base heading-neon-stroke-width", {
   },
 });
 function Heading(
-  props: React.ComponentProps<"h1"> &
+  props: React.ComponentProps<"h2"> &
     VariantProps<typeof headingVariants>
 ) {
   const { className, variant,  children, ...rest } = props;
-  const Component = variant === "primary" ? "h1": "h2";
+  const Component = variant === "primary" ? "h2": "h3";
 
   return (
     <Component

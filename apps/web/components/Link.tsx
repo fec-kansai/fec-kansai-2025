@@ -32,22 +32,11 @@ type CustomLinkProps = {
   rel?: string;
 } & Omit<NextLinkProps, "href" | "className">;
 
-export const Link = ({
-  children,
-  className,
-  href,
-  target,
-  rel,
-  ...rest
-}: CustomLinkProps) => {
+export const Link = ({ children, className, ...rest }: CustomLinkProps) => {
   // Web環境の場合はNext.jsのLinkコンポーネントを使用
   if (!isStorybook && NextLink) {
     return (
-      <NextLink
-        href={href}
-        className={cn(linkVariants({ className }))}
-        {...rest}
-      >
+      <NextLink className={cn(linkVariants({ className }))} {...rest}>
         {children}
       </NextLink>
     );
@@ -55,12 +44,7 @@ export const Link = ({
 
   // Storybookの場合またはNextLinkが利用できない場合はaタグを使用
   return (
-    <a
-      href="https://example.com"
-      target="_blank"
-      rel="noopener noreferrer"
-      className={cn(linkVariants({ className }))}
-    >
+    <a className={cn(linkVariants({ className }))} {...rest}>
       {children}
     </a>
   );
