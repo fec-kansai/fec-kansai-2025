@@ -37,7 +37,7 @@ export default function SnsLinks() {
           <GitHubLogoIcon width={24} height={24} />
         </a>
         <a
-          href="https://k3jp.org/"
+          href="https://medium.com/fec-kansai"
           target="_blank"
           rel="noopener noreferrer"
           aria-label="Mediumのロゴ"
