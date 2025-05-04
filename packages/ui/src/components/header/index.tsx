@@ -44,19 +44,18 @@ const navLinkVariants = cva("text-white text-base font-medium transition-all px-
     },
 });
 
-type HeaderProps = React.HTMLAttributes<HTMLElement> & VariantProps<typeof headerVariants>;
+type HeaderProps = React.HTMLAttributes<HTMLElement> & VariantProps<typeof headerVariants> 
+& {
+    navLinks: {
+        name: string;
+        href: string;
+        isDisabled?: boolean;
+        isActive?: boolean;
+    }[];
+};
 
-export function Header({ className, size, ...props }: HeaderProps) {
+export function Header({ className, size, navLinks, ...props }: HeaderProps) {
     const [isMenuOpen, setIsMenuOpen] = useState(false); // メニューの開閉状態
-    const navLinks = [
-        { name: "概要", href: "#", isDisabled: false, isActive: true },
-        { name: "チケット", href: "#", isDisabled: false, isActive: false },
-        { name: "スピーカー", href: "#", isDisabled: false, isActive: false },
-        { name: "スケジュール", href: "#", isDisabled: false, isActive: false },
-        { name: "スポンサー", href: "#", isDisabled: false, isActive: false },
-        { name: "会場", href: "#", isDisabled: false, isActive: false },
-    ];
-
     return (
         <header className={cn(headerVariants({ size }), className)} {...props}>
             <a href="/">
