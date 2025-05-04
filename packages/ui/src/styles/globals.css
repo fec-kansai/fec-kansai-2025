@@ -296,7 +296,7 @@
     box-shadow: 0 0 30px var(--neon-yellow);
   }
 
-  .text-neon-pink, .neon-base {
+  .neon-base {
     color: #ffffff;
     paint-order: stroke fill;
   }
