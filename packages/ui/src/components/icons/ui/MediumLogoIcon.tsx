@@ -9,7 +9,7 @@ export const MediumLogoIcon = (props: IconProps) => (
     xmlns="http://www.w3.org/2000/svg"
     {...props}
   >
-    <g clip-path="url(#clip0_1549_900)">
+    <g clipPath="url(#clip0_1549_900)">
       <path
         d="M23.6905 12.2175C23.6905 18.8448 18.3871 24.2173 11.8455 24.2173C5.30378 24.2173 0 18.8436 0 12.2175C0 5.59138 5.30337 0.217285 11.8455 0.217285C18.3876 0.217285 23.6905 5.59017 23.6905 12.2175Z"
         fill="white"
