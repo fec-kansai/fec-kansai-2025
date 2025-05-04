@@ -3,17 +3,12 @@ import { cn } from "@workspace/ui/lib/utils";
 import { Menu, X } from "lucide-react";
 import { useState } from "react";
 import { Link } from "../Link";
+import { getNavLinks } from "./getNavLinks";
 import { getNavLinkClass } from "./navLinkStyle";
 
-type MobileNavMenuProps = {
-  navLinks: {
-    name: string;
-    href: string;
-    isActive?: boolean;
-  }[];
-};
+export function MobileNavMenu() {
+  const navLinks = getNavLinks();
 
-export function MobileNavMenu({ navLinks }: MobileNavMenuProps) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (

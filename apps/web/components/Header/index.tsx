@@ -1,16 +1,7 @@
 import { LogoHeader } from "@workspace/ui";
 import { Link } from "../Link";
 import { MobileNavMenu } from "./MobileNavMenu";
-import { getNavLinkClass } from "./navLinkStyle";
-
-const navLinks = [
-  { name: "概要", href: "#", isActive: true },
-  { name: "チケット", href: "#", isActive: false },
-  { name: "スピーカー", href: "#", isActive: false },
-  { name: "スケジュール", href: "#", isActive: false },
-  { name: "スポンサー", href: "#", isActive: false },
-  { name: "会場", href: "#", isActive: false },
-];
+import { NavMenu } from "./NavMenu";
 
 export default function Header() {
   return (
@@ -22,23 +13,9 @@ export default function Header() {
         <LogoHeader width={180} height={37} />
       </Link>
 
-      <MobileNavMenu navLinks={navLinks} />
+      <MobileNavMenu />
 
-      <nav className="hidden lg:block">
-        <ul className="flex items-center">
-          {navLinks.map((link) => (
-            <li key={link.name} className="inline-block mr-4">
-              <Link
-                href={link.href}
-                className={getNavLinkClass(link.isActive)}
-                aria-current={link.isActive ? "page" : undefined}
-              >
-                {link.name}
-              </Link>
-            </li>
-          ))}
-        </ul>
-      </nav>
+      <NavMenu />
     </header>
   );
 }
