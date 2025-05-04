@@ -221,9 +221,7 @@
   .text-stroke-neon-pink:hover {
     text-shadow: 0 0 30px var(--neon-pink);
   }
-  /* .text-stroke-neon-pink:active {
-    scale: 0.95;
-  } */
+
   .box-shadow-neon-pink {
     box-shadow: 0 0 30px var(--neon-pink);
   }
@@ -253,7 +251,7 @@
     text-shadow: 0 0 30px var(--neon-light-blue);
   }
   .box-shadow-neon-light-blue {
-    box-shadow: 0 0 10px var(--neon-light-blue);
+    box-shadow: 0 0 30px var(--neon-light-blue);
   }
 
   /* Neon Red */
@@ -267,7 +265,7 @@
     text-shadow: 0 0 30px var(--neon-red);
   }
   .box-shadow-neon-red {
-    box-shadow: 0 0 10px var(--neon-red);
+    box-shadow: 0 0 30px var(--neon-red);
   }
 
   /* Neon Green */
@@ -281,7 +279,7 @@
     text-shadow: 0 0 30px var(--neon-green);
   }
   .box-shadow-neon-green {
-    box-shadow: 0 0 10px var(--neon-green);
+    box-shadow: 0 0 30px var(--neon-green);
   }
 
   /* Neon Yellow */
@@ -295,7 +293,7 @@
     text-shadow: 0 0 30px var(--neon-yellow);
   }
   .box-shadow-neon-yellow {
-    box-shadow: 0 0 10px var(--neon-yellow);
+    box-shadow: 0 0 30px var(--neon-yellow);
   }
 
   .text-neon-pink, .neon-base {
