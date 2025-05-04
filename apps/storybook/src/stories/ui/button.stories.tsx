@@ -9,7 +9,7 @@ const meta = {
   component: Button,
   args: {
     children: "Button",
-    variant: "default",
+    variant: "neon-pink",
     size: "lg",
   },
   argTypes: {
@@ -19,16 +19,29 @@ const meta = {
 
 export default meta;
 
-// More on writing stories with args: https://storybook.js.org/docs/writing-stories/args
-export const Primary: Story = {
-  args: {
-    variant: "default",
-    size: "lg",
-  },
-};
-export const Secondary: Story = {
-  args: {
-    variant: "secondary",
-    size: "sm",
+export const Variants: Story = {
+  render: () => {
+    const variants = [
+      "neon-pink",
+      "neon-blue",
+      "neon-light-blue",
+      "neon-red",
+      "neon-green",
+      "neon-yellow",
+    ] as const;
+    return (
+      <>
+        {variants.map((variant) => (
+          <div key={variant} className="flex gap-2 mb-3">
+            <Button variant={variant} size="lg">
+              {variant}
+            </Button>
+            <Button variant={variant} size="sm">
+              {variant}
+            </Button>
+          </div>
+        ))}
+      </>
+    );
   },
 };
