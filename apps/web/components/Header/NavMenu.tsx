@@ -1,7 +1,7 @@
 "use client";
-import { usePathname } from "next/navigation";
 import { Link } from "../Link";
 import { getNavLinkClass, isCurrentPage } from "./navLinkStyle";
+import { useAnchorLink } from "./useAnchorLink";
 
 export function NavMenu({
   navLinks,
@@ -11,7 +11,9 @@ export function NavMenu({
     href: string;
   }[];
 }) {
-  const currentPathname = usePathname();
+  const currentPathname = useAnchorLink();
+  console.log("currentPathname", currentPathname);
+
   return (
     <nav className="hidden lg:block">
       <ul className="flex items-center">

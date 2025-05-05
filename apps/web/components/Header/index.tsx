@@ -5,11 +5,11 @@ import { NavMenu } from "./NavMenu";
 
 const navLinks = [
   { name: "概要", href: "/" },
-  { name: "チケット", href: "/tickets" },
-  { name: "スピーカー", href: "/speakers" },
-  { name: "スケジュール", href: "/schedule" },
-  { name: "スポンサー", href: "/sponsors" },
-  { name: "会場", href: "/venue" },
+  // { name: "チケット", href: "/tickets" },
+  // { name: "スピーカー", href: "/speakers" },
+  { name: "スケジュール", href: "#schedule" },
+  { name: "スポンサー", href: "#sponsors" },
+  // { name: "会場", href: "/venue" },
 ];
 
 export default function Header() {

@@ -1,10 +1,10 @@
 "use client";
 import { cn } from "@workspace/ui/lib/utils";
 import { Menu, X } from "lucide-react";
-import { usePathname } from "next/navigation";
 import { useState } from "react";
 import { Link } from "../Link";
 import { getNavLinkClass, isCurrentPage } from "./navLinkStyle";
+import { useAnchorLink } from "./useAnchorLink";
 
 export function MobileNavMenu({
   navLinks,
@@ -14,7 +14,7 @@ export function MobileNavMenu({
     href: string;
   }[];
 }) {
-  const pathName = usePathname();
+  const pathName = useAnchorLink();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
