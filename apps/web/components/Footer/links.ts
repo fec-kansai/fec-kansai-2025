@@ -5,11 +5,11 @@ interface Link {
 
 export const sponsorListItem = [
   {
-    href: "",
+    href: "https://docs.google.com/presentation/d/1R7_pY5LdboES_HFNLobQLq44iw1A5F7TMzJ4OLyWCRo/edit?usp=sharing",
     label: "協賛資料",
   },
   {
-    href: "",
+    href: "https://forms.gle/gGdRz6CVNkEVkEFo7",
     label: "スポンサー募集URL",
   },
 ] as const satisfies Link[];
