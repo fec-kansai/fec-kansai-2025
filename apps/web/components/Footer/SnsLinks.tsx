@@ -10,6 +10,7 @@ export default function SnsLinks() {
       <LogoHeader
         width={240}
         aria-label="フロントエンドカンファレンス関西2025のロゴ"
+        role="img"
       />
       <div className="flex gap-4 mx-auto md:mx-0">
         <a
@@ -18,7 +19,7 @@ export default function SnsLinks() {
           rel="noopener noreferrer"
           aria-label="Xのロゴ"
         >
-          <XLogoIcon width={24} height={24} />
+          <XLogoIcon width={24} height={24} role="img" />
         </a>
         <a
           href="https://bsky.app/profile/fec-kansai.bsky.social"
@@ -26,7 +27,7 @@ export default function SnsLinks() {
           rel="noopener noreferrer"
           aria-label="Blueskyのロゴ"
         >
-          <BskyLogoIcon width={24} height={24} />
+          <BskyLogoIcon width={24} height={24} role="img" />
         </a>
         <a
           href="https://github.com/fec-kansai"
@@ -34,7 +35,7 @@ export default function SnsLinks() {
           rel="noopener noreferrer"
           aria-label="GitHubのロゴ"
         >
-          <GitHubLogoIcon width={24} height={24} />
+          <GitHubLogoIcon width={24} height={24} role="img" />
         </a>
         <a
           href="https://medium.com/fec-kansai"
@@ -42,7 +43,7 @@ export default function SnsLinks() {
           rel="noopener noreferrer"
           aria-label="Mediumのロゴ"
         >
-          <MediumLogoIcon width={24} height={24} />
+          <MediumLogoIcon width={24} height={24} role="img" />
         </a>
       </div>
     </div>

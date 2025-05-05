@@ -24,6 +24,7 @@ export default function Footer() {
               aria-label="別タブで開きます"
               width={20}
               height={20}
+              role="img"
             />
           </a>
         </div>
