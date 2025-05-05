@@ -10,3 +10,6 @@ export const getNavLinkClass = (isActive?: boolean) => {
     "hover:text-white hover:drop-shadow-[0_0_4px_var(--neon-pink)]",
   );
 };
+
+export const isCurrentPage = (linkHref: string, currentPathname: string) =>
+  linkHref === currentPathname;
