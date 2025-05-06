@@ -25,7 +25,7 @@ if (!isStorybook) {
 
 // Linkコンポーネントのprops
 type CustomLinkProps = {
-  children?: ReactNode;
+  children: ReactNode;
   className?: string;
   href: string;
   target?: string;
