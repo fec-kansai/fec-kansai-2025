@@ -63,6 +63,7 @@ export const HashLink = ({ className, href, ...rest }: CustomLinkProps) => {
     <a
       onClick={handleClick}
       className={cn(linkVariants({ className }))}
+      href={href}
       {...rest}
     />
   );
