@@ -6,14 +6,19 @@ export function useAnchorLink() {
   const [anchor, setAnchor] = useState<string>("");
 
   useEffect(() => {
-    const checkHash = () => {
-      const currentHash = window.location.hash;
-      setAnchor(currentHash || "/");
+    const updateAnchor = () => {
+      setAnchor(window.location.hash || "/");
     };
 
-    const interval = setInterval(checkHash, 100);
+    // 初回設定
+    updateAnchor();
 
-    return () => clearInterval(interval);
+    // イベントで監視
+    window.addEventListener("hashchange", updateAnchor);
+
+    return () => {
+      window.removeEventListener("hashchange", updateAnchor);
+    };
   }, []);
 
   return anchor;

@@ -1,5 +1,5 @@
 "use client";
-import { Link } from "../Link";
+import { HashLink } from "../Link";
 import { getNavLinkClass, isCurrentPage } from "./navLinkStyle";
 import { useAnchorLink } from "./useAnchorLink";
 
@@ -12,14 +12,12 @@ export function NavMenu({
   }[];
 }) {
   const currentPathname = useAnchorLink();
-  console.log("currentPathname", currentPathname);
-
   return (
     <nav className="hidden lg:block">
       <ul className="flex items-center">
         {navLinks.map((link) => (
           <li key={link.name} className="inline-block mr-4">
-            <Link
+            <HashLink
               href={link.href}
               className={getNavLinkClass(
                 isCurrentPage(link.href, currentPathname),
@@ -29,7 +27,7 @@ export function NavMenu({
               }
             >
               {link.name}
-            </Link>
+            </HashLink>
           </li>
         ))}
       </ul>

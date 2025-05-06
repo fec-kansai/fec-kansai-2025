@@ -25,7 +25,7 @@ if (!isStorybook) {
 
 // Linkコンポーネントのprops
 type CustomLinkProps = {
-  children: ReactNode;
+  children?: ReactNode;
   className?: string;
   href: string;
   target?: string;
@@ -47,5 +47,23 @@ export const Link = ({ children, className, ...rest }: CustomLinkProps) => {
     <a className={cn(linkVariants({ className }))} {...rest}>
       {children}
     </a>
+  );
+};
+
+export const HashLink = ({ className, href, ...rest }: CustomLinkProps) => {
+  const handleClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
+    // デフォルトの動作をキャンセル
+    e.preventDefault();
+    console.log("HashLink clicked:", href);
+
+    window.location.hash = href !== "/" ? href : "";
+  };
+
+  return (
+    <a
+      onClick={handleClick}
+      className={cn(linkVariants({ className }))}
+      {...rest}
+    />
   );
 };

@@ -4,17 +4,17 @@ import { MobileNavMenu } from "./MobileNavMenu";
 import { NavMenu } from "./NavMenu";
 
 const navLinks = [
-  { name: "概要", href: "/" },
+  { name: "概要", href: "#ignite-kansai" },
   // { name: "チケット", href: "/tickets" },
   // { name: "スピーカー", href: "/speakers" },
-  { name: "スケジュール", href: "#schedule" },
+  { name: "開催日程", href: "#schedule" },
   { name: "スポンサー", href: "#sponsors" },
   // { name: "会場", href: "/venue" },
 ];
 
 export default function Header() {
   return (
-    <header className="w-full flex justify-between items-center px-4 py-2 shadow-sm bg-zinc-900 text-white">
+    <header className="w-full flex justify-between items-center px-4 py-2 shadow-sm bg-zinc-900 text-white sticky top-0 z-50">
       <Link
         href="/"
         aria-label="フロントエンドカンファレンス関西2025 トップページ"

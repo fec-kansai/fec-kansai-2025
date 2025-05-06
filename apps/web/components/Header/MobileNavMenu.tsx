@@ -2,7 +2,7 @@
 import { cn } from "@workspace/ui/lib/utils";
 import { Menu, X } from "lucide-react";
 import { useState } from "react";
-import { Link } from "../Link";
+import { HashLink } from "../Link";
 import { getNavLinkClass, isCurrentPage } from "./navLinkStyle";
 import { useAnchorLink } from "./useAnchorLink";
 
@@ -50,7 +50,7 @@ export function MobileNavMenu({
           <ul className="mt-12 space-y-4">
             {navLinks.map((link) => (
               <li key={link.name}>
-                <Link
+                <HashLink
                   href={link.href}
                   className={getNavLinkClass(
                     isCurrentPage(link.href, pathName),
@@ -60,7 +60,7 @@ export function MobileNavMenu({
                   }
                 >
                   {link.name}
-                </Link>
+                </HashLink>
               </li>
             ))}
           </ul>
