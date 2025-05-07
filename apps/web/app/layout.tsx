@@ -1,6 +1,7 @@
 import { Geist, Geist_Mono } from "next/font/google";
 
 import "@workspace/ui/globals.css";
+import GoogleAnalytics from "@/components/GoogleAnalytics";
 import Header from "@/components/Header";
 import { Providers } from "@/components/providers";
 import type { Metadata } from "next";
@@ -65,6 +66,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="ja" suppressHydrationWarning>
+      <head>
+        <GoogleAnalytics />
+      </head>
       <body
         className={`${fontSans.variable} ${fontMono.variable} font-sans antialiased `}
       >
