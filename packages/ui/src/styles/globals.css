@@ -224,6 +224,20 @@
     text-shadow: 0 0 30px var(--neon-pink);
   }
 
+  .text-stroke-neon-pink-active {
+    text-shadow: 0 0 30px var(--neon-pink);
+    -webkit-text-stroke-width: 2px;
+    -webkit-text-stroke-color: var(--neon-pink);
+    -webkit-text-fill-color: white;
+    paint-order: stroke fill;
+    transition-duration: 0.8s;
+  }
+  .text-stroke-neon-pink-active:hover {
+    color: white;
+    -webkit-text-stroke-width: 1px;
+    text-shadow: 0 0 20px var(--neon-pink);
+  }
+
   .box-shadow-neon-pink {
     box-shadow: 0 0 30px var(--neon-pink);
   }
