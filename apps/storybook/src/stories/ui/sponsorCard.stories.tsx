@@ -157,3 +157,86 @@ export const GoldList: Story = {
     );
   },
 };
+
+export const SilverList: Story = {
+  render: () => {
+    const cardList = [
+      {
+        href: "https://miidas.co.jp/",
+        imageSrc: "/sponsors/miidas.webp",
+        alt: "ミイダス",
+        size: "mini-takoyaki-silver",
+      },
+      {
+        href: "https://miidas.co.jp/",
+        imageSrc: "/sponsors/miidas.webp",
+        alt: "ミイダス",
+        size: "mini-takoyaki-silver",
+      },
+      {
+        href: "https://miidas.co.jp/",
+        imageSrc: "/sponsors/miidas.webp",
+        alt: "ミイダス",
+        size: "mini-takoyaki-silver",
+      },
+      {
+        href: "https://miidas.co.jp/",
+        imageSrc: "/sponsors/miidas.webp",
+        alt: "ミイダス",
+        size: "mini-takoyaki-silver",
+      },
+      {
+        href: "https://miidas.co.jp/",
+        imageSrc: "/sponsors/miidas.webp",
+        alt: "ミイダス",
+        size: "mini-takoyaki-silver",
+      },
+      {
+        href: "https://miidas.co.jp/",
+        imageSrc: "/sponsors/miidas.webp",
+        alt: "ミイダス",
+        size: "mini-takoyaki-silver",
+      },
+      {
+        href: "https://miidas.co.jp/",
+        imageSrc: "/sponsors/miidas.webp",
+        alt: "ミイダス",
+        size: "mini-takoyaki-silver",
+      },
+      {
+        href: "https://miidas.co.jp/",
+        imageSrc: "/sponsors/miidas.webp",
+        alt: "ミイダス",
+        size: "mini-takoyaki-silver",
+      },
+      {
+        href: "https://miidas.co.jp/",
+        imageSrc: "/sponsors/miidas.webp",
+        alt: "ミイダス",
+        size: "mini-takoyaki-silver",
+      },
+    ] as const;
+
+    return (
+      <div className="my-3">
+        <Heading variant="secondary" className="text-center my-6">
+          ミニたこやき
+        </Heading>
+        <ul className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 w-[100%] mx-auto">
+          {cardList.map(({ href, imageSrc, alt, size }) => {
+            return (
+              <li key={alt}>
+                <SponsorCard
+                  href={href}
+                  imageSrc={imageSrc}
+                  alt={alt}
+                  size={size}
+                />
+              </li>
+            );
+          })}
+        </ul>
+      </div>
+    );
+  },
+};
