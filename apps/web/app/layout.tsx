@@ -14,13 +14,51 @@ const fontMono = Geist_Mono({
   variable: "--font-mono",
 });
 
+export const metadata = {
+  title: "フロントエンドカンファレンス関西2025",
+  description:
+    "出会いが共鳴し、次の誰かを動かす。2025年11月30日（日）大阪にて日本最大級のフロントエンドカンファレンス関西が開催！",
+  keywords: [
+    "フロントエンドカンファレンス関西2025",
+    "フロントエンドカンファレンス",
+    "フロントエンド",
+    "JavaScript",
+    "React",
+    "Vue",
+    "Angular",
+    "Next.js",
+    "Nuxt.js",
+    "Svelte",
+    "TypeScript",
+    "CSS",
+    "HTML",
+  ],
+  openGraph: {
+    images: [
+      {
+        url: "/opg-image.svg",
+        width: 1200,
+        height: 630,
+        alt: "フロントエンドカンファレンス関西2025",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "フロントエンドカンファレンス関西2025",
+    description:
+      "出会いが共鳴し、次の誰かを動かす。2025年11月30日（日）大阪にて日本最大級のフロントエンドカンファレンス関西が開催！",
+    images: ["/opg-image.svg"],
+  },
+};
+
 export default function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html lang="ja" suppressHydrationWarning>
       <body
         className={`${fontSans.variable} ${fontMono.variable} font-sans antialiased `}
       >
