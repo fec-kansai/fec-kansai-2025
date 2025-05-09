@@ -222,7 +222,7 @@ export const SilverList: Story = {
         <Heading variant="secondary" className="text-center my-6">
           ミニたこやき
         </Heading>
-        <ul className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 w-[100%] mx-auto">
+        <ul className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 w-[80%] mx-auto">
           {cardList.map(({ href, imageSrc, alt, size }) => {
             return (
               <li key={alt}>
