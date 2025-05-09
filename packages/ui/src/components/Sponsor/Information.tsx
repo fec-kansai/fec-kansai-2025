@@ -5,7 +5,7 @@ interface SponsorInformationProps {
   docsLink:string
 }
 
-function Information({docsLink}:SponsorInformationProps){
+function SponsorInformation({docsLink}:SponsorInformationProps){
 
   const INFORMATION_CONTENT = `フロントエンドカンファレンス関西では、共にイベントを盛り上げてくださるスポンサー企業様を募集しております。 \r\n
 協賛をご検討いただける皆さま向けに、イベントの概要やスポンサー特典、協賛プランなどをまとめた「スポンサー協賛資料」を公開しております。\r\n\r\n
@@ -24,4 +24,4 @@ function Information({docsLink}:SponsorInformationProps){
   )
 }
 
-export {Information}
+export {SponsorInformation}
