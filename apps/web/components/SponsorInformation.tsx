@@ -1,7 +1,9 @@
-import { Information } from "@workspace/ui/components/Sponsor";
+import { Information } from "@workspace/ui/components/sponsor/index";
 
 function SponsorInformation() {
-  return <Information />;
+  const SPONSOR_DOCS_LINK = "#";
+
+  return <Information docsLink={SPONSOR_DOCS_LINK} />;
 }
 
 export { SponsorInformation };
