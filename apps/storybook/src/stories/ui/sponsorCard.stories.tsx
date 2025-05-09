@@ -135,14 +135,14 @@ export const GoldList: Story = {
     ] as const;
 
     return (
-      <div className="flex flex-col gap-5 my-6">
-        <Heading variant="secondary" className="text-center">
+      <div className="my-3">
+        <Heading variant="secondary" className="text-center my-6">
           おおさかまいど
         </Heading>
-        <ul className="flex flex-wrap gap-3 align-center justify-center">
+        <ul className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 w-[100%] mx-auto">
           {cardList.map(({ href, imageSrc, alt, size }) => {
             return (
-              <li key={alt} className="mx-6">
+              <li key={alt}>
                 <SponsorCard
                   href={href}
                   imageSrc={imageSrc}

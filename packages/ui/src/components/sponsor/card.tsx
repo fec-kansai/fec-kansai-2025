@@ -3,14 +3,46 @@ import type * as React from "react";
 
 import { cn } from "@workspace/ui/lib/utils";
 
+type SizeKeys =  "naniwa-premium" |  "osaka-maido-gold" | "mini-takoyaki-silver"
+
+/**
+ * 各スポンサーカードサイズ
+ */
+const VARIABLES_SIZE:Record<SizeKeys,{width:number,height:number}> = {
+  "naniwa-premium":{
+    width: 240,
+    height: 180
+  },
+  "osaka-maido-gold":{
+    width:200,
+    height:150
+  },
+  "mini-takoyaki-silver":{
+    width:160,
+    height:120
+  }
+}
+
+/**
+ * スポンサーカードのサイズをレスポンシブに取得
+ * @param key
+ * @returns
+ */
+function getResponsizeCardSize(key:SizeKeys){
+  const {width,height}   = VARIABLES_SIZE[key]
+  const spScale = 0.7
+  return `w-[${width*spScale}px] md:w-[${width}px] h-[${height* spScale}px] md:h-[${height}px]`
+}
+
+
 const cardVariants = cva(
-  "bg-white rounded-lg p-5 hover:cursor-pointer overflow-hidden",
+  "bg-white rounded-lg p-3 hover:cursor-pointer overflow-hidden",
   {
     variants: {
       size: {
-        "naniwa-premium": "w-[240px] h-[180px]",
-        "osaka-maido-gold": "w-[200px] h-[150px]",
-        "mini-takoyaki-silver": "w-[160px] h-[120px]"
+        "naniwa-premium": getResponsizeCardSize("naniwa-premium"),
+        "osaka-maido-gold": getResponsizeCardSize("osaka-maido-gold"),
+        "mini-takoyaki-silver": getResponsizeCardSize("mini-takoyaki-silver")
       },
     },
     defaultVariants: {
