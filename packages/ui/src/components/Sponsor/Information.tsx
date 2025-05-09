@@ -13,7 +13,7 @@ function Information({docsLink}:SponsorInformationProps){
 皆さまと共に、関西のフロントエンドコミュニティをさらに活性化できることを楽しみにしております。`
 
   return (
-    <div className="flex flex-col gap-8 items-center">
+    <div className="flex flex-col gap-8 items-center m-6">
       <Heading>スポンサー</Heading>
       <p className="text-white leading-none whitespace-pre-wrap">{INFORMATION_CONTENT}</p>
       <Button className="my-3" variant="neon-red">
