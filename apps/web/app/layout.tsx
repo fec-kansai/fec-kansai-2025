@@ -26,10 +26,7 @@ export const metadata: Metadata = {
     "JavaScript",
     "React",
     "Vue",
-    "Angular",
     "Next.js",
-    "Nuxt.js",
-    "Svelte",
     "TypeScript",
     "CSS",
     "HTML",
@@ -37,12 +34,7 @@ export const metadata: Metadata = {
     "iOS",
     "Jetpack Compose",
     "SwiftUI",
-    "Swift",
     "Flutter",
-    "Kotlin",
-    "Dart",
-    "Tauri",
-    "Web Assembly",
   ],
   openGraph: {
     images: [
