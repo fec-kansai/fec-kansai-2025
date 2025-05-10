@@ -3,6 +3,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "@workspace/ui/globals.css";
 import Header from "@/components/Header";
 import { Providers } from "@/components/providers";
+import type { Metadata } from "next";
 
 const fontSans = Geist({
   subsets: ["latin"],
@@ -14,7 +15,7 @@ const fontMono = Geist_Mono({
   variable: "--font-mono",
 });
 
-export const metadata = {
+export const metadata: Metadata = {
   title: "フロントエンドカンファレンス関西2025",
   description:
     "出会いが共鳴し、次の誰かを動かす。2025年11月30日（日）大阪にて日本最大級のフロントエンドカンファレンス関西が開催！",
@@ -32,11 +33,21 @@ export const metadata = {
     "TypeScript",
     "CSS",
     "HTML",
+    "Android",
+    "iOS",
+    "Jetpack Compose",
+    "SwiftUI",
+    "Swift",
+    "Flutter",
+    "Kotlin",
+    "Dart",
+    "Tauri",
+    "Web Assembly",
   ],
   openGraph: {
     images: [
       {
-        url: "/opg-image.svg",
+        url: "/ogp-image.png",
         width: 1200,
         height: 630,
         alt: "フロントエンドカンファレンス関西2025",
@@ -48,7 +59,15 @@ export const metadata = {
     title: "フロントエンドカンファレンス関西2025",
     description:
       "出会いが共鳴し、次の誰かを動かす。2025年11月30日（日）大阪にて日本最大級のフロントエンドカンファレンス関西が開催！",
-    images: ["/opg-image.svg"],
+    images: [
+      {
+        url: "/ogp-image.png",
+        width: 1200,
+        height: 630,
+        alt: "フロントエンドカンファレンス関西2025",
+      },
+    ],
+    creator: "@jiyuujin",
   },
 };
 
