@@ -67,7 +67,7 @@ export const metadata: Metadata = {
         alt: "フロントエンドカンファレンス関西2025",
       },
     ],
-    creator: "@jiyuujin",
+    creator: "@fec_kansai",
   },
 };
 
