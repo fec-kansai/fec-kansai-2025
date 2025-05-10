@@ -22,19 +22,14 @@ export const metadata: Metadata = {
   keywords: [
     "フロントエンドカンファレンス関西2025",
     "フロントエンドカンファレンス",
-    "フロントエンド",
     "JavaScript",
     "React",
     "Vue",
-    "Next.js",
     "TypeScript",
     "CSS",
     "HTML",
     "Android",
     "iOS",
-    "Jetpack Compose",
-    "SwiftUI",
-    "Flutter",
   ],
   openGraph: {
     images: [
