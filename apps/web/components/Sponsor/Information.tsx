@@ -11,7 +11,7 @@ function SponsorInformation({ docsLink }: SponsorInformationProps) {
 皆さまと共に、関西のフロントエンドコミュニティをさらに活性化できることを楽しみにしております。`;
 
   return (
-    <div className="flex flex-col gap-6 items-center">
+    <section className="flex flex-col gap-6 items-center">
       <Heading>スポンサー</Heading>
       <Text className="text-white leading-none whitespace-pre-wrap">
         {INFORMATION_CONTENT}
@@ -21,7 +21,7 @@ function SponsorInformation({ docsLink }: SponsorInformationProps) {
           スポンサー協賛資料
         </a>
       </Button>
-    </div>
+    </section>
   );
 }
 
