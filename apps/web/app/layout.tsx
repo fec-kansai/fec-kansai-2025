@@ -1,6 +1,7 @@
 import { Geist, Geist_Mono } from "next/font/google";
 
 import "@workspace/ui/globals.css";
+import Footer from "@/components/Footer";
 import GoogleAnalytics from "@/components/GoogleAnalytics";
 import Header from "@/components/Header";
 import { Providers } from "@/components/providers";
@@ -76,6 +77,7 @@ export default function RootLayout({
           <div className="min-h-svh flex flex-col">
             <Header />
             {children}
+            <Footer />
           </div>
         </Providers>
       </body>
