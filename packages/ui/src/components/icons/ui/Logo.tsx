@@ -1,4 +1,4 @@
-import { IconProps } from "../model/IconProps.js";
+import type { IconProps } from "../model/IconProps.js";
 
 export const Logo = (props: IconProps) => (
   <svg
@@ -9,6 +9,7 @@ export const Logo = (props: IconProps) => (
     xmlns="http://www.w3.org/2000/svg"
     {...props}
   >
+    <title>FEC-KANSAI2025ロゴ</title>
     <g filter="url(#filter0_d_412_572)">
       <path
         fillRule="evenodd"

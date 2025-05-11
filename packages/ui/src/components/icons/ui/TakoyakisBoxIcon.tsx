@@ -1,4 +1,4 @@
-import { IconProps } from "../model/IconProps.js";
+import type { IconProps } from "../model/IconProps.js";
 
 export const TakoyakiBoxIcon = (props: IconProps) => (
   <svg
@@ -9,6 +9,7 @@ export const TakoyakiBoxIcon = (props: IconProps) => (
     xmlns="http://www.w3.org/2000/svg"
     {...props}
   >
+    <title>たこ焼きボックス</title>
     <g filter="url(#filter0_d_676_182)">
       <mask
         id="path-1-outside-1_676_182"

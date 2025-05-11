@@ -1,5 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;700&display=swap");
-@import url('https://fonts.googleapis.com/css2?family=Barlow:wght@300;400;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Barlow:wght@300;400;700&display=swap");
 @import "tailwindcss";
 
 @source "../../../../apps/**/*.{ts,tsx}";
@@ -338,7 +338,7 @@
     text-shadow: var(--text-shadow-neon-blue);
   }
 
-  .effect-neon-light-blue{
+  .effect-neon-light-blue {
     -webkit-text-stroke-color: var(--color-neon-light-blue);
     text-shadow: var(--text-shadow-neon-light-blue);
   }
@@ -349,7 +349,6 @@
   }
 
   .effect-neon-green {
-
     -webkit-text-stroke-color: var(--color-neon-green);
     text-shadow: var(--text-shadow-neon-green);
   }
