@@ -1,4 +1,4 @@
-import { IconProps } from "../model/IconProps.js";
+import type { IconProps } from "../model/IconProps.js";
 
 export const KaiyukanIcon = (props: IconProps) => (
   <svg
@@ -9,6 +9,7 @@ export const KaiyukanIcon = (props: IconProps) => (
     xmlns="http://www.w3.org/2000/svg"
     {...props}
   >
+    <title>海遊館</title>
     <g filter="url(#filter0_d_676_180)">
       <mask
         id="path-1-outside-1_676_180"
