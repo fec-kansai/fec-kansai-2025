@@ -1,5 +1,6 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import { Heading, SponsorCard } from "@workspace/ui";
+import { Heading } from "@workspace/ui";
+import { SponsorCard } from "web/components/Sponsor/card";
 
 type ComponentType = typeof SponsorCard;
 type Story = StoryObj<ComponentType>;
