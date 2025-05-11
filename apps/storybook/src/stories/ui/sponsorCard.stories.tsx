@@ -57,7 +57,7 @@ export const PremiumList: Story = {
         <Heading variant="secondary" className="text-center">
           なにわプレミア
         </Heading>
-        <ul className="flex align-center justify-center">
+        <ul className="flex flex-col md:flex-row align-center md:justify-center">
           {cardList.map(({ href, imageSrc, alt, size }) => {
             return (
               <li key={alt} className="mx-6">
@@ -143,7 +143,7 @@ export const GoldList: Story = {
         <ul className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 w-[100%] mx-auto">
           {cardList.map(({ href, imageSrc, alt, size }) => {
             return (
-              <li key={alt}>
+              <li key={alt} className="flex items-center justify-center">
                 <SponsorCard
                   href={href}
                   imageSrc={imageSrc}
@@ -226,7 +226,7 @@ export const SilverList: Story = {
         <ul className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 w-[80%] mx-auto">
           {cardList.map(({ href, imageSrc, alt, size }) => {
             return (
-              <li key={alt}>
+              <li key={alt} className="flex items-center justify-center">
                 <SponsorCard
                   href={href}
                   imageSrc={imageSrc}

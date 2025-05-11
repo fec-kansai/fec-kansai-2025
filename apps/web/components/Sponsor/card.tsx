@@ -8,9 +8,9 @@ type SizeKeys = "naniwa-premium" | "osaka-maido-gold" | "mini-takoyaki-silver";
  * 各スポンサーカードサイズ
  */
 const VARIABLES_SIZE = {
-  "naniwa-premium": "w-[240px] md:w-[168px] h-[180px] md:[126px]",
-  "osaka-maido-gold": "w-[200px] md:w-[140px] h-[150px] md:[105px]",
-  "mini-takoyaki-silver": "w-[160px] md:w-[112px] h-[120px] md:[84px]",
+  "naniwa-premium": "md:w-[240px] w-[168px] md:h-[180px] h-[126px]",
+  "osaka-maido-gold": "md:w-[200px] w-[140px] md:h-[150px] h-[105px]",
+  "mini-takoyaki-silver": "md:w-[160px] w-[112px] md:h-[120px] h-[84px]",
 } satisfies Record<SizeKeys, string>;
 
 const cardVariants = cva("bg-white rounded-lg p-3 overflow-hidden", {
