@@ -6,7 +6,7 @@ export default function Page() {
   return (
     <main className="flex-1">
       <MainVisual />
-      <div className="mx-auto md:w-[1200px] w-full border-4 border-solid border-neon-light-blue box-shadow-neon-blue shadow-lg rounded-3xl my-8 p-4 bg-black/55">
+      <div className="mx-auto md:w-[1200px] w-full border-4 border-solid border-neon-light-blue box-shadow-neon-blue shadow-lg rounded-3xl my-8 p-4 bg-black/55 z-12">
         <div className="my-8">
           <IgniteKansai />
         </div>

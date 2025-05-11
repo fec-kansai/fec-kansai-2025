@@ -3,63 +3,78 @@ import {
   KaiyukanIcon,
   OctopusIcon,
   TakoyakiBoxIcon,
+  TakoyakiIcon,
   TowerOfSunIcon,
+  TsuutenkakuIcon,
 } from "@workspace/ui";
 import { Logo } from "@workspace/ui/components/icons/ui/Logo";
-import { useEffect, useState } from "react";
+import styles from "assets/css/neon.module.css";
 
-function getCountdown(targetDate: Date) {
-  const now = new Date();
-  const diff = targetDate.getTime() - now.getTime();
-  if (diff <= 0) return { days: 0, hours: 0, minutes: 0, seconds: 0 };
-  const days = Math.floor(diff / (1000 * 60 * 60 * 24));
-  const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
-  const minutes = Math.floor((diff / (1000 * 60)) % 60);
-  const seconds = Math.floor((diff / 1000) % 60);
-  return { days, hours, minutes, seconds };
-}
+// import { useEffect, useState } from "react";
+
+// function getCountdown(targetDate: Date) {
+//   const now = new Date();
+//   const diff = targetDate.getTime() - now.getTime();
+//   if (diff <= 0) return { days: 0, hours: 0, minutes: 0, seconds: 0 };
+//   const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+//   const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
+//   const minutes = Math.floor((diff / (1000 * 60)) % 60);
+//   const seconds = Math.floor((diff / 1000) % 60);
+//   return { days, hours, minutes, seconds };
+// }
 
 export default function MainVisual() {
   //NOTE:開催日 2025年10月13日
-  const target = new Date("2025-10-13T10:00:00+09:00");
-  const [countdown, setCountdown] = useState(getCountdown(target));
+  // const target = new Date("2025-10-13T10:00:00+09:00");
+  // const [countdown, setCountdown] = useState(getCountdown(target));
 
-  useEffect(() => {
-    const timer = setInterval(() => {
-      setCountdown(getCountdown(target));
-    }, 1000);
-    return () => clearInterval(timer);
-  }, [target]);
+  // useEffect(() => {
+  //   const timer = setInterval(() => {
+  //     setCountdown(getCountdown(target));
+  //   }, 1000);
+  //   return () => clearInterval(timer);
+  // }, [target]);
 
   return (
     <section className="relative w-full min-h-[calc(100vh-64px)] flex flex-col items-center justify-center">
-      {/* メインビジュアル背景画像（フルサイズ・透過なし） */}
-      {/* <img
-        src="/bg.png"
-        alt="メインビジュアル背景"
-        className="absolute inset-0 w-full h-auto object-cover z-0"
-      /> */}
       {/* ロゴ中央やや上配置 */}
       <Logo className="md:w-[720px] w-[340px] h-auto drop-shadow-xl justify-center items-center" />
       {/* ネオンアイコン配置（さらにバランスよく再調整） */}
-      <div className="absolute inset-0 w-full h-full pointer-events-none z-10">
+      <div className="absolute inset-0 w-full h-full pointer-events-none">
         {/* 左下端：たこ焼きボックス */}
-        <div className="absolute left-[4%] bottom-[8%] w-[64px] md:w-[80px] animate-float4">
-          <TakoyakiBoxIcon className="neon-icon" />
+        <div className="absolute left-[10%] bottom-[-14%] w-[64px] md:w-[280px] animate-float6 -rotate-10">
+          <TakoyakiBoxIcon className={styles["neon-icon"]} />
         </div>
         {/* 左上端：海遊館 */}
-        <div className="absolute left-[6%] top-[8%] w-[60px] md:w-[72px] animate-float1">
-          <KaiyukanIcon className="neon-icon" />
+        <div className="absolute left-[12%] top-[-10%] w-[60px] md:w-[262px] animate-float1 rotate-20">
+          <KaiyukanIcon className={styles["neon-icon"]} />
         </div>
-        {/* 右上端：太陽の塔 */}
-        <div className="absolute right-[6%] top-[7%] w-[76px] md:w-[92px] animate-float5">
-          <TowerOfSunIcon className="neon-icon" />
+        {/* 中央上：タコ */}
+        <div className="absolute left-[40%] top-[-34%] w-[76px] md:w-[142px] animate-float5 -rotate-20">
+          <OctopusIcon className={styles["neon-icon"]} />
         </div>
-        {/* ロゴ下中央やや下：タコ */}
-        <div className="absolute left-1/2 top-[62%] -translate-x-1/2 w-[56px] md:w-[68px] animate-float2">
-          <OctopusIcon className="neon-icon" />
+        {/* 右上端：通天閣 */}
+        <div className="absolute right-[8%] bottom-[-10%] w-[76px] md:w-[182px] animate-float4 -rotate-20">
+          <TsuutenkakuIcon className={styles["neon-icon"]} />
+        </div>
+        {/* 右下端：太陽の塔 */}
+        <div className="absolute right-[12%] top-[14%] w-[76px] md:w-[182px] animate-float5 rotate-20">
+          <TowerOfSunIcon className={styles["neon-icon"]} />
+        </div>
+        {/* ミニたこ焼き1 */}
+        <div className="absolute right-[10%] top-[14%] w-[76px] md:w-[122px] -rotate-10">
+          <TakoyakiIcon className={styles["neon-icon"]} />
+        </div>
+        {/* ミニたこ焼き2 */}
+        <div className="absolute left-[4%] top-[6%] w-[76px] md:w-[122px] -rotate-180">
+          <TakoyakiIcon className={styles["neon-icon"]} />
+        </div>
+        {/* ミニたこ焼き3 */}
+        <div className="absolute right-[35%] top-[-16%] w-[76px] md:w-[122px] rotate-40">
+          <TakoyakiIcon className={styles["neon-icon"]} />
         </div>
       </div>
+      {/* カウントダウン */}
       {/* <div className="flex gap-4 z-10 mt-12">
         <CountdownBox value={countdown.days} label="日" />
         <CountdownBox value={countdown.hours} label="時間" />
@@ -105,144 +120,6 @@ export default function MainVisual() {
           </defs>
         </svg>
       </div>
-      <style jsx global>{`
-        .neon-icon {
-          filter: drop-shadow(0 0 12px #a855f7) drop-shadow(0 0 24px #a855f7);
-          animation: neon-flicker 4.5s infinite alternate;
-          width: 100%;
-        }
-        @keyframes neon-flicker {
-          0% {
-            opacity: 1;
-            filter: drop-shadow(0 0 6px #a855f7) drop-shadow(0 0 12px #a855f7);
-          }
-          10% {
-            opacity: 0.7;
-            filter: drop-shadow(0 0 8px #a855f7);
-          }
-          20% {
-            opacity: 1;
-            filter: drop-shadow(0 0 10px #a855f7);
-          }
-          30% {
-            opacity: 0.8;
-            filter: drop-shadow(0 0 6px #a855f7);
-          }
-          40% {
-            opacity: 1;
-            filter: drop-shadow(0 0 16px #a855f7);
-          }
-          50% {
-            opacity: 0.6;
-            filter: drop-shadow(0 0 8px #a855f7);
-          }
-          60% {
-            opacity: 1;
-            filter: drop-shadow(0 0 12px #a855f7);
-          }
-          70% {
-            opacity: 0.7;
-            filter: drop-shadow(0 0 6px #a855f7);
-          }
-          80% {
-            opacity: 1;
-            filter: drop-shadow(0 0 18px #a855f7);
-          }
-          90% {
-            opacity: 0.8;
-            filter: drop-shadow(0 0 8px #a855f7);
-          }
-          100% {
-            opacity: 1;
-            filter: drop-shadow(0 0 12px #a855f7);
-          }
-        }
-        /* ゆったり浮遊アニメーション */
-        @keyframes float1 {
-          0% {
-            transform: translateY(0);
-          }
-          50% {
-            transform: translateY(-18px);
-          }
-          100% {
-            transform: translateY(0);
-          }
-        }
-        @keyframes float2 {
-          0% {
-            transform: translateY(0);
-          }
-          50% {
-            transform: translateY(14px);
-          }
-          100% {
-            transform: translateY(0);
-          }
-        }
-        @keyframes float3 {
-          0% {
-            transform: translateY(0);
-          }
-          50% {
-            transform: translateY(-10px);
-          }
-          100% {
-            transform: translateY(0);
-          }
-        }
-        @keyframes float4 {
-          0% {
-            transform: translateY(0);
-          }
-          50% {
-            transform: translateY(20px);
-          }
-          100% {
-            transform: translateY(0);
-          }
-        }
-        @keyframes float5 {
-          0% {
-            transform: translateY(0);
-          }
-          50% {
-            transform: translateY(-16px);
-          }
-          100% {
-            transform: translateY(0);
-          }
-        }
-        @keyframes float6 {
-          0% {
-            transform: translateY(0);
-          }
-          50% {
-            transform: translateY(12px);
-          }
-          100% {
-            transform: translateY(0);
-          }
-        }
-        .animate-float1 {
-          animation: float1 7s ease-in-out infinite;
-        }
-        .animate-float2 {
-          animation: float2 8s ease-in-out infinite;
-        }
-        .animate-float3 {
-          animation: float3 6.5s ease-in-out infinite;
-        }
-        .animate-float4 {
-          animation: float4 7.5s ease-in-out infinite;
-        }
-        .animate-float5 {
-          animation: float5 8.5s ease-in-out infinite;
-        }
-        .animate-float6 {
-          animation: float6 7.2s ease-in-out infinite;
-        }
-      `}</style>
     </section>
   );
 }

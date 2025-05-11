@@ -71,16 +71,19 @@ export default function RootLayout({
         <GoogleAnalytics />
       </head>
       <body
-        className={`${fontSans.variable} ${fontMono.variable} font-sans antialiased `}
+        className={`${fontSans.variable} ${fontMono.variable} font-sans antialiased bg-black`}
       >
         <Providers>
-          <div
-            className="min-h-svh flex flex-col  bg-[url('/bg.png')] bg-fixed"
-            style={{ backgroundSize: "100%", backgroundPosition: "25% 35%" }}
-          >
-            <Header />
-            {children}
-            <Footer />
+          <div className="relative">
+            <div
+              className="absolute inset-0 bg-[url('/bg.png')] bg-fixed z-0 opacity-50"
+              style={{ backgroundSize: "100%", backgroundPosition: "25% 35%" }}
+            />
+            <div className="relative min-h-svh flex flex-col z-0">
+              <Header />
+              {children}
+              <Footer />
+            </div>
           </div>
         </Providers>
       </body>
