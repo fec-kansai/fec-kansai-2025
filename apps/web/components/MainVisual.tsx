@@ -38,39 +38,38 @@ export default function MainVisual() {
   return (
     <section className="relative w-full min-h-[calc(100vh-64px)] flex flex-col items-center justify-center">
       {/* ロゴ中央やや上配置 */}
-      <Logo className="md:w-[720px] w-[340px] h-auto drop-shadow-xl justify-center items-center" />
-      {/* ネオンアイコン配置（さらにバランスよく再調整） */}
+      <Logo className="md:w-[720px] w-[320px] h-auto drop-shadow-xl justify-center items-center" />
       <div className="absolute inset-0 w-full h-full pointer-events-none">
         {/* 左下端：たこ焼きボックス */}
-        <div className="absolute left-[10%] bottom-[-14%] w-[64px] md:w-[280px] animate-float6 -rotate-10">
+        <div className="absolute left-[5%] md:left-[10%] bottom-[-35%] md:bottom-[-14%] w-[130px] md:w-[280px] animate-float6 -rotate-10">
           <TakoyakiBoxIcon className={styles["neon-icon"]} />
         </div>
         {/* 左上端：海遊館 */}
-        <div className="absolute left-[12%] top-[-10%] w-[60px] md:w-[262px] animate-float1 rotate-20">
+        <div className="absolute left-[7%] md:left-[12%] top-[-40%] md:top-[-10%] w-[120px] md:w-[262px] animate-float1 rotate-20">
           <KaiyukanIcon className={styles["neon-icon"]} />
         </div>
         {/* 中央上：タコ */}
-        <div className="absolute left-[40%] top-[-34%] w-[76px] md:w-[142px] animate-float5 -rotate-20">
+        <div className="absolute left-[40%] bottom-[-43%] md:top-[-34%] w-[76px] md:w-[142px] animate-float5 -rotate-20">
           <OctopusIcon className={styles["neon-icon"]} />
         </div>
         {/* 右上端：通天閣 */}
-        <div className="absolute right-[8%] bottom-[-10%] w-[76px] md:w-[182px] animate-float4 -rotate-20">
+        <div className="absolute right-[8%] md:right-[8%] bottom-[-50%] md:bottom-[-10%] w-[76px] md:w-[182px] animate-float4 -rotate-20">
           <TsuutenkakuIcon className={styles["neon-icon"]} />
         </div>
         {/* 右下端：太陽の塔 */}
-        <div className="absolute right-[12%] top-[14%] w-[76px] md:w-[182px] animate-float5 rotate-20">
+        <div className="absolute right-[0%] md:right-[12%] top-[-15%] md:top-[14%] w-[106px] md:w-[182px] animate-float5 rotate-20">
           <TowerOfSunIcon className={styles["neon-icon"]} />
         </div>
         {/* ミニたこ焼き1 */}
-        <div className="absolute right-[10%] top-[14%] w-[76px] md:w-[122px] -rotate-10">
+        <div className="absolute right-[30%] md:right-[10%] top-[20%] md:top-[14%] w-[56px] md:w-[122px] -rotate-10">
           <TakoyakiIcon className={styles["neon-icon"]} />
         </div>
         {/* ミニたこ焼き2 */}
-        <div className="absolute left-[4%] top-[6%] w-[76px] md:w-[122px] -rotate-180">
+        <div className="absolute left-[5%] md:left-[4%] top-[10%] md:top-[6%] w-[56px] md:w-[122px] -rotate-180">
           <TakoyakiIcon className={styles["neon-icon"]} />
         </div>
         {/* ミニたこ焼き3 */}
-        <div className="absolute right-[35%] top-[-16%] w-[76px] md:w-[122px] rotate-40">
+        <div className="absolute right-[30%] md:right-[35%] top-[-32%] md:top-[-16%] w-[56px] md:w-[122px] rotate-40">
           <TakoyakiIcon className={styles["neon-icon"]} />
         </div>
       </div>
