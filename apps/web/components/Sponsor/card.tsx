@@ -8,45 +8,17 @@ type SizeKeys = "naniwa-premium" | "osaka-maido-gold" | "mini-takoyaki-silver";
  * 各スポンサーカードサイズ
  */
 const VARIABLES_SIZE = {
-  "naniwa-premium": {
-    width: 240,
-    height: 180,
-  },
-  "osaka-maido-gold": {
-    width: 200,
-    height: 150,
-  },
-  "mini-takoyaki-silver": {
-    width: 160,
-    height: 120,
-  },
-} satisfies Record<SizeKeys, { width: number; height: number }>;
-
-/**
- * スポンサーカードのサイズをレスポンシブに取得
- * @param key
- * @returns
- */
-function getResponsiveCardSize(key: SizeKeys) {
-  const { width, height } = VARIABLES_SIZE[key];
-  const SP_SCALE = 0.7;
-  const widthClasses = `md:w-[${width}px] w-[${width * SP_SCALE}px]`;
-  const heightClasses = `md:h-[${height}px] h-[${height * SP_SCALE}px]`;
-  return [widthClasses, heightClasses].join(" ");
-}
-
-const CLASSES_MAP = {
-  "naniwa-premium": getResponsiveCardSize("naniwa-premium"),
-  "osaka-maido-gold": getResponsiveCardSize("osaka-maido-gold"),
-  "mini-takoyaki-silver": getResponsiveCardSize("mini-takoyaki-silver"),
+  "naniwa-premium": "w-[240px] md:w-[168px] h-[180px] md:[126px]",
+  "osaka-maido-gold": "w-[200px] md:w-[140px] h-[150px] md:[105px]",
+  "mini-takoyaki-silver": "w-[160px] md:w-[112px] h-[120px] md:[84px]",
 } satisfies Record<SizeKeys, string>;
 
 const cardVariants = cva("bg-white rounded-lg p-3 overflow-hidden", {
   variants: {
     size: {
-      "naniwa-premium": CLASSES_MAP["naniwa-premium"],
-      "osaka-maido-gold": CLASSES_MAP["osaka-maido-gold"],
-      "mini-takoyaki-silver": CLASSES_MAP["mini-takoyaki-silver"],
+      "naniwa-premium": VARIABLES_SIZE["naniwa-premium"],
+      "osaka-maido-gold": VARIABLES_SIZE["osaka-maido-gold"],
+      "mini-takoyaki-silver": VARIABLES_SIZE["mini-takoyaki-silver"],
     },
   },
   defaultVariants: {
