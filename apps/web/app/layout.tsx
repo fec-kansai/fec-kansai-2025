@@ -74,7 +74,10 @@ export default function RootLayout({
         className={`${fontSans.variable} ${fontMono.variable} font-sans antialiased `}
       >
         <Providers>
-          <div className="min-h-svh flex flex-col">
+          <div
+            className="min-h-svh flex flex-col  bg-[url('/bg.png')] bg-fixed"
+            style={{ backgroundSize: "100%", backgroundPosition: "25% 35%" }}
+          >
             <Header />
             {children}
             <Footer />

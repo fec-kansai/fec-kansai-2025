@@ -20,8 +20,8 @@ function getCountdown(targetDate: Date) {
 }
 
 export default function MainVisual() {
-  // 仮の開催日: 2025-08-22 10:00:00
-  const target = new Date("2025-08-22T10:00:00+09:00");
+  //NOTE:開催日 2025年10月13日
+  const target = new Date("2025-10-13T10:00:00+09:00");
   const [countdown, setCountdown] = useState(getCountdown(target));
 
   useEffect(() => {
@@ -32,20 +32,15 @@ export default function MainVisual() {
   }, [target]);
 
   return (
-    <section
-      className="relative w-full min-h-[calc(100vh-64px)] flex flex-col items-center justify-center overflow-hidden"
-      style={{ paddingTop: "64px" }} // ヘッダー分の余白を上部に確保
-    >
+    <section className="relative w-full min-h-[calc(100vh-64px)] flex flex-col items-center justify-center">
       {/* メインビジュアル背景画像（フルサイズ・透過なし） */}
-      <img
+      {/* <img
         src="/bg.png"
         alt="メインビジュアル背景"
         className="absolute inset-0 w-full h-auto object-cover z-0"
-      />
+      /> */}
       {/* ロゴ中央やや上配置 */}
-      <div className="absolute left-1/2 top-[22%] -translate-x-1/2 z-20 flex flex-col items-center justify-center">
-        <Logo className="w-[40vw] min-w-[20vw] max-w-[40vw] h-auto drop-shadow-xl" />
-      </div>
+      <Logo className="md:w-[720px] w-[340px] h-auto drop-shadow-xl justify-center items-center" />
       {/* ネオンアイコン配置（さらにバランスよく再調整） */}
       <div className="absolute inset-0 w-full h-full pointer-events-none z-10">
         {/* 左下端：たこ焼きボックス */}
@@ -65,13 +60,12 @@ export default function MainVisual() {
           <OctopusIcon className="neon-icon" />
         </div>
       </div>
-      {/* カウントダウンをさらに下に配置 */}
-      <div className="flex gap-4 z-10 mt-32 md:mt-90">
+      {/* <div className="flex gap-4 z-10 mt-12">
         <CountdownBox value={countdown.days} label="日" />
         <CountdownBox value={countdown.hours} label="時間" />
         <CountdownBox value={countdown.minutes} label="分" />
         <CountdownBox value={countdown.seconds} label="秒" />
-      </div>
+      </div> */}
       {/* スクロールダウンコンテンツ（ネオン風アニメーション・下部に配置） */}
       <div className="absolute bottom-0 left-1/2 -translate-x-1/2 flex flex-col items-center z-10 mb-6">
         <span className="text-white text-base md:text-lg font-medium mb-1">
@@ -253,21 +247,22 @@ export default function MainVisual() {
   );
 }
 
-function CountdownBox({ value, label }: { value: number; label: string }) {
-  // 日付はそのまま、他は2桁0埋め
-  const displayValue =
-    label === "日" ? String(value) : String(value).padStart(2, "0");
-  return (
-    <div
-      className="flex flex-col items-center justify-center w-32 px-8 py-4 bg-black/80 border border-[rgba(168,85,247,0.3)] rounded-lg shadow-md backdrop-blur-sm"
-      style={{ boxShadow: "0 4px 16px 0 rgba(168,85,247,0.10)" }}
-    >
-      <span className="font-sans font-bold text-2xl md:text-3xl text-white tracking-widest select-none">
-        {displayValue}
-      </span>
-      <span className="font-sans text-xs md:text-sm text-[#9CA3AF] mt-1 select-none">
-        {label}
-      </span>
-    </div>
-  );
-}
+//NOTE: unused?
+// function CountdownBox({ value, label }: { value: number; label: string }) {
+//   // 日付はそのまま、他は2桁0埋め
+//   const displayValue =
+//     label === "日" ? String(value) : String(value).padStart(2, "0");
+//   return (
+//     <div
+//       className="flex flex-col items-center justify-center w-16 md:w-32 px-8 py-4 bg-black/80 border border-[rgba(168,85,247,0.3)] rounded-lg shadow-md backdrop-blur-sm"
+//       style={{ boxShadow: "0 4px 16px 0 rgba(168,85,247,0.10)" }}
+//     >
+//       <span className="font-sans font-bold text-2xl md:text-3xl text-white tracking-widest select-none">
+//         {displayValue}
+//       </span>
+//       <span className="font-sans text-xs md:text-sm text-[#9CA3AF] mt-1 select-none">
+//         {label}
+//       </span>
+//     </div>
+//   );
+// }

@@ -5,7 +5,7 @@ import { ExternalLinkIcon } from "@workspace/ui/components/icons/ui/ExternalLink
 
 export default function Footer() {
   return (
-    <footer className="flex flex-col gap-14 md:gap-12 py-12 px-6 md:px-20">
+    <footer className="flex flex-col gap-14 md:gap-12 py-12 px-6 md:px-20 bg-zinc-900">
       <div className="flex flex-col gap-14 md:flex-row md:gap-0 justify-between">
         <SnsLinks />
         <FooterLinks />
