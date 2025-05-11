@@ -33,7 +33,7 @@ interface SponsorCardProps {
   href: string;
   imageSrc: string;
   alt: string;
-  size: "naniwa-premium" | "osaka-maido-gold" | "mini-takoyaki-silver";
+  size: SizeKeys;
 }
 
 function SponsorCard(
@@ -44,11 +44,14 @@ function SponsorCard(
   const { className, href, imageSrc, size, alt } = props;
 
   return (
-    <button type="button" className={cn(cardVariants({ size, className }))}>
-      <a href={href} target="_blank" rel="noreferrer">
-        <img className={cardImageVariants} src={imageSrc} alt={alt} />
-      </a>
-    </button>
+    <a
+      href={href}
+      target="_blank"
+      className={cn(cardVariants({ size, className }))}
+      rel="noreferrer"
+    >
+      <img className={cardImageVariants} src={imageSrc} alt={alt} />
+    </a>
   );
 }
 
