@@ -9,12 +9,18 @@ const buttonVariants = cva(
   {
     variants: {
       variant: {
-        "neon-pink": "text-white text-shadow-neon-pink text-stroke-neon-pink box-shadow-neon-pink border-[var(--neon-pink)] hover:bg-[rgba(236,67,193,0.5)]",
-        "neon-blue": "text-white text-shadow-neon-blue text-stroke-neon-blue box-shadow-neon-blue border-[var(--neon-blue)] hover:bg-[rgba(67,92,236,0.5)]",
-        "neon-light-blue": "text-white text-shadow-neon-light-blue text-stroke-neon-light-blue box-shadow-neon-light-blue border-[var(--neon-light-blue)] hover:bg-[rgba(67,222,236,0.5)]",
-        "neon-red": "text-white text-shadow-neon-red text-stroke-neon-red box-shadow-neon-red border-[var(--neon-red)] hover:bg-[rgba(236,67,67,0.5)]",
-        "neon-green": "text-white text-shadow-neon-green text-stroke-neon-green box-shadow-neon-green border-[var(--neon-green)] hover:bg-[rgba(67,236,98,0.5)]",
-        "neon-yellow": "text-white text-shadow-neon-yellow text-stroke-neon-yellow box-shadow-neon-yellow border-[var(--neon-yellow)] hover:bg-[rgba(236,225,67,0.5)]",
+        "neon-pink":
+          "text-white text-shadow-neon-pink text-stroke-neon-pink box-shadow-neon-pink border-[var(--neon-pink)] hover:bg-[rgba(236,67,193,0.5)]",
+        "neon-blue":
+          "text-white text-shadow-neon-blue text-stroke-neon-blue box-shadow-neon-blue border-[var(--neon-blue)] hover:bg-[rgba(67,92,236,0.5)]",
+        "neon-light-blue":
+          "text-white text-shadow-neon-light-blue text-stroke-neon-light-blue box-shadow-neon-light-blue border-[var(--neon-light-blue)] hover:bg-[rgba(67,222,236,0.5)]",
+        "neon-red":
+          "text-white text-shadow-neon-red text-stroke-neon-red box-shadow-neon-red border-[var(--neon-red)] hover:bg-[rgba(236,67,67,0.5)]",
+        "neon-green":
+          "text-white text-shadow-neon-green text-stroke-neon-green box-shadow-neon-green border-[var(--neon-green)] hover:bg-[rgba(67,236,98,0.5)]",
+        "neon-yellow":
+          "text-white text-shadow-neon-yellow text-stroke-neon-yellow box-shadow-neon-yellow border-[var(--neon-yellow)] hover:bg-[rgba(236,225,67,0.5)]",
       },
       size: {
         default: "h-9 px-4 py-2 has-[>svg]:px-3",
@@ -27,7 +33,7 @@ const buttonVariants = cva(
       variant: "neon-pink",
       size: "default",
     },
-  }
+  },
 );
 
 function Button({

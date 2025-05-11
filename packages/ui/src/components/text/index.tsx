@@ -1,6 +1,6 @@
 import { Slot } from "@radix-ui/react-slot";
-import { type VariantProps, cva } from "class-variance-authority";
 import { cn } from "@workspace/ui/lib/utils";
+import { type VariantProps, cva } from "class-variance-authority";
 
 const textVariants = cva("text-base/8 neon-base text-neon-stroke-width", {
   variants: {
@@ -24,7 +24,7 @@ function Text(
   props: React.ComponentProps<"p"> &
     VariantProps<typeof textVariants> & {
       asChild?: boolean;
-    }
+    },
 ) {
   const { className, colorScheme, asChild = false, children, ...rest } = props;
   const Comp = asChild ? Slot : "p";
