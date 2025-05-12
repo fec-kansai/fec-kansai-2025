@@ -12,7 +12,7 @@ import { Link } from "../Link";
 
 export default function Header() {
   return (
-    <header className="w-full flex md:justify-between justify-center items-center px-4 py-2 shadow-sm bg-zinc-900 text-white sticky top-0 z-50">
+    <header className="w-full flex md:justify-between justify-center items-center px-4 py-2 shadow-sm bg-black text-white sticky top-0 z-50">
       <Link
         href="/"
         aria-label="フロントエンドカンファレンス関西2025 トップページ"
