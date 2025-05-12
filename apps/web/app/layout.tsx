@@ -1,4 +1,4 @@
-import { Geist, Geist_Mono } from "next/font/google";
+import { Barlow, Noto_Sans_JP } from "next/font/google";
 
 import "@workspace/ui/globals.css";
 import Footer from "@/components/Footer";
@@ -8,14 +8,18 @@ import { Providers } from "@/components/providers";
 import type { Metadata } from "next";
 import { Suspense } from "react";
 
-const fontSans = Geist({
+const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL;
+
+const fontBarlow = Barlow({
+  weight: ["400", "700"],
   subsets: ["latin"],
-  variable: "--font-sans",
+  variable: "--font-barlow",
 });
 
-const fontMono = Geist_Mono({
+const fontNotoSansJp = Noto_Sans_JP({
+  weight: ["400", "700"],
   subsets: ["latin"],
-  variable: "--font-mono",
+  variable: "--font-noto-sans-jp",
 });
 
 export const metadata: Metadata = {
@@ -37,7 +41,7 @@ export const metadata: Metadata = {
   openGraph: {
     images: [
       {
-        url: "/ogp-image.png",
+        url: `${BASE_URL}/ogp-image.png`,
         width: 1200,
         height: 630,
         alt: "フロントエンドカンファレンス関西2025",
@@ -51,7 +55,7 @@ export const metadata: Metadata = {
       "出会いが共鳴し、次の誰かを動かす。2025年11月30日（日）大阪にて日本最大級のフロントエンドカンファレンス関西が開催！",
     images: [
       {
-        url: "/ogp-image.png",
+        url: `${BASE_URL}/ogp-image.png`,
         width: 1200,
         height: 630,
         alt: "フロントエンドカンファレンス関西2025",
@@ -74,7 +78,7 @@ export default function RootLayout({
         </Suspense>
       </head>
       <body
-        className={`${fontSans.variable} ${fontMono.variable} font-sans antialiased bg-black`}
+        className={`${fontBarlow.variable} ${fontNotoSansJp.variable} font-sans antialiased bg-black`}
       >
         <Providers>
           <div className="relative">
