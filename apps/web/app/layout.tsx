@@ -6,6 +6,7 @@ import GoogleAnalytics from "@/components/GoogleAnalytics";
 import Header from "@/components/Header";
 import { Providers } from "@/components/providers";
 import type { Metadata } from "next";
+import { Suspense } from "react";
 
 const fontSans = Geist({
   subsets: ["latin"],
@@ -68,7 +69,9 @@ export default function RootLayout({
   return (
     <html lang="ja" suppressHydrationWarning>
       <head>
-        <GoogleAnalytics />
+        <Suspense>
+          <GoogleAnalytics />
+        </Suspense>
       </head>
       <body
         className={`${fontSans.variable} ${fontMono.variable} font-sans antialiased bg-black`}
