@@ -15,28 +15,22 @@ export default function Page() {
     <main className="flex-1 relative overflow-hidden">
       <MainVisual />
       {/* icons */}
-      <div className="md:inline hidden absolute left-[0%] top-[10%] w-[76px] md:w-[182px] animate-float5 rotate-20">
+      <div className="md:inline hidden absolute left-[0%] top-[24%] w-[76px] md:w-[182px] animate-float5 rotate-20 -z-10">
         <TsuutenkakuIcon className={styles["neon-icon"]} />
       </div>
-      <div className="md:inline hidden absolute left-[10%] top-[50%] w-[76px] md:w-[182px] animate-float5 rotate-20">
+      <div className="md:inline hidden absolute left-[5%] top-[71%] w-[76px] md:w-[182px] animate-float5 rotate-20 -z-10">
         <TowerOfSunIcon className={styles["neon-icon"]} />
       </div>
-      <div className="md:inline hidden absolute right-[3%] top-[15%] w-[76px] md:w-[182px] animate-float5 -rotate-10">
+      <div className="md:inline hidden absolute right-[3%] top-[15%] w-[76px] md:w-[182px] animate-float5 -rotate-10 -z-10">
         <OctopusIcon className={styles["neon-icon"]} />
       </div>
-      <div className="md:inline hidden absolute right-[8%] top-[70%] w-[76px] md:w-[182px] animate-float5 -rotate-20">
+      <div className="md:inline hidden absolute right-[8%] top-[64%] w-[76px] md:w-[182px] animate-float5 -rotate-20 -z-10">
         <TakoyakiBoxIcon className={styles["neon-icon"]} />
       </div>
-      <div className="mx-auto md:w-[1200px] w-full border-4 border-solid border-neon-light-blue box-shadow-neon-blue shadow-lg rounded-3xl my-8 p-4 bg-black/55 z-10">
-        <div className="my-8">
-          <IgniteKansai />
-        </div>
-        <div className="my-8">
-          <DateAndVenue />
-        </div>
-        <div className="my-8">
-          <SponsorInformation />
-        </div>
+      <div className="flex flex-col mx-4 md:mx-auto md:max-w-4xl border-4 border-solid border-neon-light-blue box-shadow-neon-blue shadow-lg rounded-3xl mt-10 mb-20 px-6 py-10  gap-20 bg-black/55 z-10">
+        <IgniteKansai />
+        <DateAndVenue />
+        <SponsorInformation />
       </div>
     </main>
   );
