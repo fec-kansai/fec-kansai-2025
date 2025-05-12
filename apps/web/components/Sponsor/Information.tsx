@@ -1,4 +1,5 @@
 import { Button, Heading, Text } from "@workspace/ui";
+import { SponsorCard } from "./card";
 
 interface SponsorInformationProps {
   docsLink: string;
@@ -16,11 +17,22 @@ function SponsorInformation({ docsLink }: SponsorInformationProps) {
       <Text className="text-white whitespace-pre-wrap">
         {INFORMATION_CONTENT}
       </Text>
-      <Button className="my-3" variant="neon-red" asChild>
+      <Button className="mt-3 mb-10" variant="neon-red" asChild>
         <a href={docsLink} target="_blank" rel="noreferrer">
           スポンサー協賛資料
         </a>
       </Button>
+      <Heading variant="secondary" className="text-center">
+        会場スポンサー
+      </Heading>
+      <div className="flex flex-wrap gap-6 justify-center">
+        <SponsorCard
+          href="https://miidas.co.jp/"
+          imageSrc="/sponsors/miidas.webp"
+          alt="ミイダス"
+          size="venue-sponsor"
+        />
+      </div>
     </section>
   );
 }
