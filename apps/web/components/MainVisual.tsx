@@ -25,7 +25,7 @@ export default function MainVisual() {
           <KaiyukanIcon className={styles["neon-icon"]} />
         </div>
         {/* 中央上：タコ */}
-        <div className="absolute left-[40%] top-[-23%] md:top-[-44%] w-[76px] md:w-[142px] animate-float5 -rotate-20">
+        <div className="hidden md:block absolute left-[40%] top-[-23%] md:top-[-44%] w-[76px] md:w-[142px] animate-float5 -rotate-20">
           <OctopusIcon className={styles["neon-icon"]} />
         </div>
         {/* 右上端：通天閣 */}
