@@ -27,7 +27,7 @@ function SponsorInformation({ docsLink }: SponsorInformationProps) {
       </Heading>
       <div className="flex flex-wrap gap-6 justify-center">
         <SponsorCard
-          href="https://miidas.co.jp/"
+          href="https://careers.miidas.co.jp/tech/"
           imageSrc="/sponsors/miidas.webp"
           alt="ミイダス"
           size="venue-sponsor"
