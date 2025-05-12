@@ -15,6 +15,7 @@
       "storybook-static",
       "__screenshots__",
       ".reg",
+      "vrt-report",
       ".turbo"
     ]
   },
@@ -34,6 +35,9 @@
       "correctness": {
         "noUnusedImports": "warn",
         "noUnusedVariables": "warn"
+      },
+      "a11y": {
+        "useValidAnchor": "info"
       }
     }
   },

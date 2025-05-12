@@ -1,5 +1,8 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Barlow:wght@300;400;700&display=swap");
 @import "tailwindcss";
-@source "../../../apps/**/*.{ts,tsx}";
+
+@source "../../../../apps/**/*.{ts,tsx}";
 @source "../../../components/**/*.{ts,tsx}";
 @source "../**/*.{ts,tsx}";
 
@@ -8,6 +11,34 @@
 @custom-variant dark (&:is(.dark *));
 
 :root {
+  /* font-family */
+  --font-sans: "Barlow", "Noto Sans JP", sans-serif;
+
+  /* font-color */
+  --neon-pink: #ec43c1;
+  --neon-blue: #435cec;
+  --neon-light-blue: #43deec;
+  --neon-red: #ec4343;
+  --neon-green: #43ec62;
+  --neon-yellow: #ece143;
+  --link-gray: #d1d5db;
+
+  /* text-shadow */
+  --text-shadow-value: 0px 0px 30px;
+  --neon-pink-shadow: var(--text-shadow-value) var(--neon-pink);
+  --neon-blue-shadow: var(--text-shadow-value) var(--neon-blue);
+  --neon-light-blue-shadow: var(--text-shadow-value) var(--neon-light-blue);
+  --neon-red-shadow: var(--text-shadow-value) var(--neon-red);
+  --neon-green-shadow: var(--text-shadow-value) var(--neon-green);
+
+  /* border */
+  --border-value: 1px solid;
+  --neon-pink-border: var(--border-value) var(--neon-pink);
+  --neon-blue-border: var(--border-value) var(--neon-blue);
+  --neon-light-blue-border: var(--border-value) var(--neon-light-blue);
+  --neon-red-border: var(--border-value) var(--neon-red);
+  --neon-green-border: var(--border-value) var(--neon-green);
+
   --background: oklch(1 0 0);
   --foreground: oklch(0.145 0 0);
   --card: oklch(1 0 0);
@@ -79,6 +110,41 @@
 }
 
 @theme inline {
+  /* カラー */
+  --color-neon-pink: var(--neon-pink);
+  --color-neon-blue: var(--neon-blue);
+  --color-neon-yellow: var(--neon-yellow);
+  --color-neon-light-blue: var(--neon-light-blue);
+  --color-neon-red: var(--neon-red);
+  --color-neon-green: var(--neon-green);
+  --color-link-gray: var(--link-gray);
+
+  /* ボーダー */
+  --border-neon-pink: var(--neon-pink);
+  --border-neon-blue: var(--neon-blue);
+  --border-neon-light-blue: var(--neon-light-blue);
+  --border-neon-red: var(--neon-red);
+  --border-neon-green: var(--neon-green);
+
+  /* テキストシャドウ */
+  --text-shadow-neon-pink: var(--neon-pink-shadow);
+  --text-shadow-neon-blue: var(--neon-blue-shadow);
+  --text-shadow-neon-yellow: var(--neon-yellow-shadow);
+  --text-shadow-neon-light-blue: var(--neon-light-blue-shadow);
+  --text-shadow-neon-red: var(--neon-red-shadow);
+  --text-shadow-neon-green: var(--neon-green-shadow);
+
+  /* ボーダー */
+  --border-neon-pink: var(--neon-pink-border);
+  --border-neon-blue: var(--neon-blue-border);
+  --border-neon-light-blue: var(--neon-light-blue-border);
+  --border-neon-red: var(--neon-red-border);
+  --border-neon-green: var(--neon-green-border);
+  --border-neon-yellow: var(--neon-yellow-border);
+
+  /* フォント */
+  --font-family-sans: var(--font-sans);
+
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --color-card: var(--card);
@@ -143,5 +209,164 @@
   }
   body {
     @apply bg-background text-foreground;
+  }
+}
+
+@layer utilities {
+  /* Neon Pink */
+  .text-stroke-neon-pink {
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: var(--neon-pink);
+    -webkit-text-fill-color: white;
+    paint-order: stroke fill;
+  }
+  .text-stroke-neon-pink:hover {
+    text-shadow: 0 0 30px var(--neon-pink);
+  }
+
+  .text-stroke-neon-pink-active {
+    text-shadow: 0 0 30px var(--neon-pink);
+    -webkit-text-stroke-width: 2px;
+    -webkit-text-stroke-color: var(--neon-pink);
+    -webkit-text-fill-color: white;
+    paint-order: stroke fill;
+    transition-duration: 0.8s;
+  }
+  .text-stroke-neon-pink-active:hover {
+    color: white;
+    -webkit-text-stroke-width: 1px;
+    text-shadow: 0 0 20px var(--neon-pink);
+  }
+
+  .box-shadow-neon-pink {
+    box-shadow: 0 0 30px var(--neon-pink);
+  }
+
+  /* Neon Blue */
+  .text-stroke-neon-blue {
+    -webkit-text-stroke-width: 2px;
+    -webkit-text-stroke-color: var(--neon-blue);
+    -webkit-text-fill-color: white;
+    paint-order: stroke fill;
+  }
+  .text-stroke-neon-blue:hover {
+    text-shadow: 0 0 30px var(--neon-blue);
+  }
+  .box-shadow-neon-blue {
+    box-shadow: 0 0 30px var(--neon-blue);
+  }
+
+  /* Neon Light Blue */
+  .text-stroke-neon-light-blue {
+    -webkit-text-stroke-width: 2px;
+    -webkit-text-stroke-color: var(--neon-light-blue);
+    -webkit-text-fill-color: white;
+    paint-order: stroke fill;
+  }
+  .text-stroke-neon-light-blue:hover {
+    text-shadow: 0 0 30px var(--neon-light-blue);
+  }
+  .box-shadow-neon-light-blue {
+    box-shadow: 0 0 30px var(--neon-light-blue);
+  }
+
+  /* Neon Red */
+  .text-stroke-neon-red {
+    -webkit-text-stroke-width: 2px;
+    -webkit-text-stroke-color: var(--neon-red);
+    -webkit-text-fill-color: white;
+    paint-order: stroke fill;
+  }
+  .text-stroke-neon-red:hover {
+    text-shadow: 0 0 30px var(--neon-red);
+  }
+  .box-shadow-neon-red {
+    box-shadow: 0 0 30px var(--neon-red);
+  }
+
+  /* Neon Green */
+  .text-stroke-neon-green {
+    -webkit-text-stroke-width: 2px;
+    -webkit-text-stroke-color: var(--neon-green);
+    -webkit-text-fill-color: white;
+    paint-order: stroke fill;
+  }
+  .text-stroke-neon-green:hover {
+    text-shadow: 0 0 30px var(--neon-green);
+  }
+  .box-shadow-neon-green {
+    box-shadow: 0 0 30px var(--neon-green);
+  }
+
+  /* Neon Yellow */
+  .text-stroke-neon-yellow {
+    -webkit-text-stroke-width: 2px;
+    -webkit-text-stroke-color: var(--neon-yellow);
+    -webkit-text-fill-color: white;
+    paint-order: stroke fill;
+  }
+  .text-stroke-neon-yellow:hover {
+    text-shadow: 0 0 30px var(--neon-yellow);
+  }
+  .box-shadow-neon-yellow {
+    box-shadow: 0 0 30px var(--neon-yellow);
+  }
+
+  .neon-base {
+    color: #ffffff;
+    paint-order: stroke fill;
+  }
+
+  /* テキスト向けネオンスタイル */
+  .text-neon-stroke-width {
+    -webkit-text-stroke-width: 0.0625em;
+  }
+
+  /* 見出し向けネオンスタイル */
+  .heading-neon-stroke-width {
+    -webkit-text-stroke-width: 0.125em;
+  }
+
+  /* ネオン色バリエーション */
+  .effect-neon-pink {
+    -webkit-text-stroke-color: var(--color-neon-pink);
+    text-shadow: var(--text-shadow-neon-pink);
+  }
+
+  .effect-neon-blue {
+    -webkit-text-stroke-color: var(--color-neon-blue);
+    text-shadow: var(--text-shadow-neon-blue);
+  }
+
+  .effect-neon-light-blue {
+    -webkit-text-stroke-color: var(--color-neon-light-blue);
+    text-shadow: var(--text-shadow-neon-light-blue);
+  }
+
+  .effect-neon-red {
+    -webkit-text-stroke-color: var(--color-neon-red);
+    text-shadow: var(--text-shadow-neon-red);
+  }
+
+  .effect-neon-green {
+    -webkit-text-stroke-color: var(--color-neon-green);
+    text-shadow: var(--text-shadow-neon-green);
+  }
+
+  .effect-neon-yellow {
+    -webkit-text-stroke-color: var(--color-neon-yellow);
+    text-shadow: var(--text-shadow-neon-yellow);
+  }
+
+  /* リンクスタイル */
+  .link {
+    color: var(--color-link-gray);
+  }
+
+  .link:hover {
+    color: #ffffff;
+    -webkit-text-stroke: 0.0625em var(--color-neon-pink);
+    text-shadow: var(--text-shadow-neon-pink);
+    paint-order: stroke fill;
   }
 }

@@ -5,6 +5,7 @@ import { withScreenshot } from "storycap";
 
 const preview: Preview = {
   parameters: {
+    layout: "fullscreen",
     controls: {
       matchers: {
         color: /(background|color)$/i,
@@ -31,6 +32,19 @@ const preview: Preview = {
           hasTouch: true,
         },
       },
+    },
+    backgrounds: {
+      default: "dark",
+      values: [
+        {
+          name: "dark",
+          value: "#09090B",
+        },
+        {
+          name: "light",
+          value: "#ffffff",
+        },
+      ],
     },
   },
   decorators: [withScreenshot()],

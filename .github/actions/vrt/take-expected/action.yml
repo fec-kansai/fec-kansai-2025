@@ -31,12 +31,14 @@ runs:
     - name: Take expected screenshots
       if: ${{ steps.expected_screenshots_cache.outputs.cache-hit != 'true'}}
       shell: bash
-      run: pnpm ci:screenshot
+      run: |
+        pnpm build
+        PORT=9004 pnpm run ci:screenshot
       working-directory: ${{ inputs.working-directory }}
 
     - name: Upload expected screenshots to artifact # 他のstepでスクショを使うのでartifactにアップする
       uses: actions/upload-artifact@v4
       with:
         name: expected-screenshots
-        path: __screenshots__
+        path: ${{ inputs.working-directory }}/__screenshots__
         retention-days: 3
