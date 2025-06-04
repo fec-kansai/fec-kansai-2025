@@ -57,7 +57,7 @@ export const Color: Story = {
         {variants.map((variant) => (
           <div key={variant.label} className="flex items-center gap-10 mb-6">
             <div className="w-40">
-              <Text className="bold">カラー：{variant.label}</Text>
+              <Text className="font-bold">カラー：{variant.label}</Text>
             </div>
             <Button variant={variant.value}>ボタン</Button>
           </div>
