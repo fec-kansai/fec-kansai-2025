@@ -5,7 +5,7 @@ import type * as React from "react";
 import { cn } from "@workspace/ui/lib/utils";
 
 const buttonVariants = cva(
-  "border-2 inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-lg text-sm font-medium duration-300 hover:cursor-pointer transform focus:scale-105 active:scale-95",
+  "border-2 inline-flex items-center justify-center align-middle gap-2 whitespace-nowrap rounded-lg font-medium duration-300 hover:cursor-pointer transform focus:scale-105 active:scale-95",
   {
     variants: {
       variant: {
@@ -23,9 +23,9 @@ const buttonVariants = cva(
           "text-white text-shadow-neon-yellow text-stroke-neon-yellow box-shadow-neon-yellow border-[var(--neon-yellow)] hover:bg-[rgba(236,225,67,0.5)]",
       },
       size: {
-        default: "h-9 px-4 py-2 has-[>svg]:px-3",
-        sm: "h-8 rounded-md gap-1.5 px-3 has-[>svg]:px-2.5",
-        lg: "h-10 rounded-md px-6 has-[>svg]:px-4",
+        default: "h-12 px-4 py-2 has-[>svg]:px-3 text-base",
+        sm: "h-10 rounded-md gap-1.5 px-3 has-[>svg]:px-2.5 text-sm",
+        lg: "h-16 rounded-md px-6 has-[>svg]:px-4 text-lg",
         icon: "size-9",
       },
     },

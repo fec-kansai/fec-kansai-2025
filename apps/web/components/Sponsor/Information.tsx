@@ -1,27 +1,51 @@
 import { Button, Heading, Text } from "@workspace/ui";
 import { SponsorCard } from "./card";
 
-interface SponsorInformationProps {
-  docsLink: string;
-}
-
-function SponsorInformation({ docsLink }: SponsorInformationProps) {
-  const INFORMATION_CONTENT = `フロントエンドカンファレンス関西では、共にイベントを盛り上げてくださるスポンサー企業様を募集しております。
+const INFORMATION_CONTENT =
+  `フロントエンドカンファレンス関西では、共にイベントを盛り上げてくださるスポンサー企業様を募集しております。
 協賛をご検討いただける皆さま向けに、イベントの概要やスポンサー特典、協賛プランなどをまとめた「スポンサー協賛資料」を公開しております。\r\n
 ぜひご一読の上、ご検討いただけますと幸いです。
-皆さまと共に、関西のフロントエンドコミュニティをさらに活性化できることを楽しみにしております。`;
+皆さまと共に、関西のコミュニティをさらに活性化できることを楽しみにしております。` as const;
 
+interface SponsorInformationProps {
+  docsLink: string;
+  formLink: string;
+  isExpired?: boolean;
+}
+
+function SponsorInformation({
+  docsLink,
+  formLink,
+  isExpired,
+}: SponsorInformationProps) {
   return (
     <section id="sponsor" className="flex flex-col gap-6 items-center">
       <Heading>スポンサー</Heading>
       <Text className="text-white whitespace-pre-wrap">
         {INFORMATION_CONTENT}
       </Text>
-      <Button className="mt-3 mb-10" variant="neon-red" asChild>
-        <a href={docsLink} target="_blank" rel="noreferrer">
-          スポンサー協賛資料
-        </a>
-      </Button>
+      <div className="flex flex-wrap gap-5 md:gap-20 justify-center">
+        <Button
+          disabled={isExpired}
+          className="mt-3 mb-10"
+          variant="neon-red"
+          asChild
+        >
+          <a href={docsLink} target="_blank" rel="noreferrer">
+            スポンサー協賛資料
+          </a>
+        </Button>
+        <Button
+          disabled={isExpired}
+          className="mt-3 mb-10"
+          variant="neon-pink"
+          asChild
+        >
+          <a href={formLink} target="_blank" rel="noreferrer">
+            スポンサー募集フォーム
+          </a>
+        </Button>
+      </div>
       <Heading variant="secondary" className="text-center">
         会場スポンサー
       </Heading>
