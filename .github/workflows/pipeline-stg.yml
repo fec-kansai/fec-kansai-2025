@@ -18,32 +18,33 @@ jobs:
 
       - name: Check UI Build
         uses: ./.github/actions/check-ui-build
-  CheckStoryBookBuild:
-    runs-on: ubuntu-latest
+  # TODO: Storycap がタイムアウトするバグが解消されるまで一旦コメントアウト
+  # CheckStoryBookBuild:
+  #   runs-on: ubuntu-latest
 
-    permissions:
-      pull-requests: write
-      issues: write
-      contents: write
-      actions: write
+  #   permissions:
+  #     pull-requests: write
+  #     issues: write
+  #     contents: write
+  #     actions: write
 
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
+  #   steps:
+  #     - name: Checkout
+  #       uses: actions/checkout@v4
+  #       with:
+  #         fetch-depth: 0
 
-      - name: Check Storybook Build
-        uses: ./.github/actions/check-storybook-build
+  #     - name: Check Storybook Build
+  #       uses: ./.github/actions/check-storybook-build
 
-      - name: Compare Screenshots
-        uses: ./.github/actions/composite-screenshots/compare-screenshots
-        with:
-          github: ${{ toJson(github) }}
+  #     - name: Compare Screenshots
+  #       uses: ./.github/actions/composite-screenshots/compare-screenshots
+  #       with:
+  #         github: ${{ toJson(github) }}
 
   Deploy:
     runs-on: ubuntu-latest
-    needs: [CheckUIBuild, CheckStoryBookBuild]
+    needs: [CheckUIBuild]
     steps:
       - name: Make Deploy Directory
         shell: bash
@@ -57,17 +58,17 @@ jobs:
           name: ui-build-artifact
           path: ./_deploy
 
-      - name: Download Storybook Artifacts
-        uses: actions/download-artifact@v4
-        with:
-          name: storybook-build-artifact
-          path: ./_deploy/storybook
+      # - name: Download Storybook Artifacts
+      #   uses: actions/download-artifact@v4
+      #   with:
+      #     name: storybook-build-artifact
+      #     path: ./_deploy/storybook
 
-      - name: Download VRT Artifacts
-        uses: actions/download-artifact@v4
-        with:
-          name: vrt-report-artifact
-          path: ./_deploy/${{github.head_ref}}/vrt-report
+      # - name: Download VRT Artifacts
+      #   uses: actions/download-artifact@v4
+      #   with:
+      #     name: vrt-report-artifact
+      #     path: ./_deploy/${{github.head_ref}}/vrt-report
 
       - name: Check Merged Artifacts
         shell: bash

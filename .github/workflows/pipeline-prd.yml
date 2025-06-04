@@ -17,20 +17,10 @@ jobs:
 
       - name: Check UI Build
         uses: ./.github/actions/check-ui-build
-  CheckStoryBookBuild:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
-
-      - name: Check Storybook Build
-        uses: ./.github/actions/check-storybook-build
 
   Deploy:
     runs-on: ubuntu-latest
-    needs: [CheckUIBuild, CheckStoryBookBuild]
+    needs: [CheckUIBuild]
     steps:
       - name: Make Deploy Directory
         shell: bash
@@ -43,12 +33,6 @@ jobs:
         with:
           name: ui-build-artifact
           path: ./_deploy
-
-      # - name: Download Storybook Artifacts
-      #   uses: actions/download-artifact@v4
-      #   with:
-      #     name: storybook-build-artifact
-      #     path: ./_deploy/storybook
 
       - name: Check Merged Artifacts
         shell: bash
