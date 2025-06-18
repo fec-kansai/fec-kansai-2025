@@ -27,7 +27,7 @@ function SponsorInformation({
       <div className="flex flex-wrap gap-5 md:gap-20 justify-center">
         <Button
           disabled={isExpired}
-          className="mt-3 mb-10"
+          className="w-full sm:w-auto mt-0 sm:mt-3 md:mb-10 sm:mb-3 mb-0"
           variant="neon-red"
           asChild
         >
@@ -37,7 +37,7 @@ function SponsorInformation({
         </Button>
         <Button
           disabled={isExpired}
-          className="mt-3 mb-10"
+          className="w-full sm:w-auto mt-0 sm:mt-3 md:mb-10 sm:mb-3 mb-0"
           variant="neon-pink"
           asChild
         >
