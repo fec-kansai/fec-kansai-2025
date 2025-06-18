@@ -1,5 +1,8 @@
 import type { Meta, StoryObj } from "@storybook/react";
 import {
+  CssIcon,
+  HtmlIcon,
+  JsIcon,
   KaiyukanIcon,
   Logo,
   LogoHeader,
@@ -60,4 +63,16 @@ export const TowerOfSunIconIcon: Story = {
 
 export const TsuutenkakuIconIcon: Story = {
   render: (args) => <TsuutenkakuIcon {...args} />,
+};
+
+export const CssIconIcon: Story = {
+  render: (args) => <CssIcon {...args} />,
+};
+
+export const JsIconIcon: Story = {
+  render: (args) => <JsIcon {...args} />,
+};
+
+export const HtmlIconIcon: Story = {
+  render: (args) => <HtmlIcon {...args} />,
 };

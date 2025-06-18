@@ -9,3 +9,6 @@ export { TakoyakiIcon } from "./TakoyakiIcon";
 export { TakoyakiBoxIcon } from "./TakoyakisBoxIcon";
 export { TowerOfSunIcon } from "./TowerOfSunIcon";
 export { TsuutenkakuIcon } from "./TsuutenkakuIcon";
+export { CssIcon } from "./CssIcon";
+export { JsIcon } from "./JsIcon";
+export { HtmlIcon } from "./HtmlIcon";
