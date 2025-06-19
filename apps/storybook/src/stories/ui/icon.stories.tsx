@@ -1,16 +1,21 @@
 import type { Meta, StoryObj } from "@storybook/react";
 import {
   CssIcon,
+  FigmaIcon,
   HtmlIcon,
   JsIcon,
   KaiyukanIcon,
+  LaravelIcon,
   Logo,
   LogoHeader,
   OctopusIcon,
+  PhpIcon,
+  ReactIcon,
   TakoyakiBoxIcon,
   TakoyakiIcon,
   TowerOfSunIcon,
   TsuutenkakuIcon,
+  VueIcon,
 } from "@workspace/ui";
 type ComponentType = typeof Logo;
 type Story = StoryObj<ComponentType>;
@@ -75,4 +80,24 @@ export const JsIconIcon: Story = {
 
 export const HtmlIconIcon: Story = {
   render: (args) => <HtmlIcon {...args} />,
+};
+
+export const FigmaIconIcon: Story = {
+  render: (args) => <FigmaIcon {...args} />,
+};
+
+export const ReactIconIcon: Story = {
+  render: (args) => <ReactIcon {...args} />,
+};
+
+export const LaravelIconIcon: Story = {
+  render: (args) => <LaravelIcon {...args} />,
+};
+
+export const VueIconIcon: Story = {
+  render: (args) => <VueIcon {...args} />,
+};
+
+export const PhpIconIcon: Story = {
+  render: (args) => <PhpIcon {...args} />,
 };

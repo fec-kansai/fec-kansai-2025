@@ -12,3 +12,8 @@ export { TsuutenkakuIcon } from "./TsuutenkakuIcon";
 export { CssIcon } from "./CssIcon";
 export { JsIcon } from "./JsIcon";
 export { HtmlIcon } from "./HtmlIcon";
+export { FigmaIcon } from "./FigmaIcon";
+export { ReactIcon } from "./ReactIcon";
+export { LaravelIcon } from "./LaravelIcon";
+export { VueIcon } from "./VueIcon";
+export { PhpIcon } from "./PhpIcon";
