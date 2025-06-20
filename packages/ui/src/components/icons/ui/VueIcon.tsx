@@ -42,7 +42,7 @@ export const VueIcon = (props: IconProps) => {
           width="578.002"
           height="528"
           filterUnits="userSpaceOnUse"
-          color-interpolation-filters="sRGB"
+          colorInterpolationFilters="sRGB"
         >
           <feFlood floodOpacity="0" result="BackgroundImageFix" />
           <feColorMatrix

@@ -42,7 +42,7 @@ export const HtmlIcon = (props: IconProps) => {
           width="528"
           height="704"
           filterUnits="userSpaceOnUse"
-          color-interpolation-filters="sRGB"
+          colorInterpolationFilters="sRGB"
         >
           <feFlood floodOpacity="0" result="BackgroundImageFix" />
           <feColorMatrix

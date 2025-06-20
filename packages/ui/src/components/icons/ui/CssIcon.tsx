@@ -42,7 +42,7 @@ export const CssIcon = (props: IconProps) => {
           width="578.002"
           height="589.997"
           filterUnits="userSpaceOnUse"
-          color-interpolation-filters="sRGB"
+          colorInterpolationFilters="sRGB"
         >
           <feFlood floodOpacity="0" result="BackgroundImageFix" />
           <feColorMatrix

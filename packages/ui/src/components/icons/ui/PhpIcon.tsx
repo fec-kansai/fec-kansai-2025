@@ -42,7 +42,7 @@ export const PhpIcon = (props: IconProps) => {
           width="577.996"
           height="337"
           filterUnits="userSpaceOnUse"
-          color-interpolation-filters="sRGB"
+          colorInterpolationFilters="sRGB"
         >
           <feFlood floodOpacity="0" result="BackgroundImageFix" />
           <feColorMatrix

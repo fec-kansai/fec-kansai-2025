@@ -42,7 +42,7 @@ export const LaravelIcon = (props: IconProps) => {
           width="578"
           height="604.999"
           filterUnits="userSpaceOnUse"
-          color-interpolation-filters="sRGB"
+          colorInterpolationFilters="sRGB"
         >
           <feFlood floodOpacity="0" result="BackgroundImageFix" />
           <feColorMatrix

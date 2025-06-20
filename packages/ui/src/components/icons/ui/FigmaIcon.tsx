@@ -42,7 +42,7 @@ export const FigmaIcon = (props: IconProps) => {
           width="528"
           height="727"
           filterUnits="userSpaceOnUse"
-          color-interpolation-filters="sRGB"
+          colorInterpolationFilters="sRGB"
         >
           <feFlood floodOpacity="0" result="BackgroundImageFix" />
           <feColorMatrix

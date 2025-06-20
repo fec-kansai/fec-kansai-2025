@@ -48,7 +48,7 @@ export const JsIcon = (props: IconProps) => {
           width="582.186"
           height="587.876"
           filterUnits="userSpaceOnUse"
-          color-interpolation-filters="sRGB"
+          colorInterpolationFilters="sRGB"
         >
           <feFlood floodOpacity="0" result="BackgroundImageFix" />
           <feColorMatrix
