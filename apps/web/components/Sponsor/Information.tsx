@@ -37,7 +37,7 @@ function SponsorInformation({
         </Button>
         <Button
           disabled={isExpired}
-          className="w-full sm:w-auto mt-0 sm:mt-3 md:mb-10 sm:mb-3 mb-0"
+          className="w-full sm:w-auto"
           variant="neon-pink"
           asChild
         >
