@@ -24,7 +24,7 @@ function SponsorInformation({
       <Text className="text-white whitespace-pre-wrap">
         {INFORMATION_CONTENT}
       </Text>
-      <div className="flex flex-wrap gap-5 md:gap-20 justify-center">
+      <div className="flex flex-wrap gap-5 md:gap-20 justify-center my-0 md:mt-3 md:mb-10">
         <Button
           disabled={isExpired}
           className="w-full sm:w-auto"
