@@ -1,6 +1,7 @@
 import DateAndVenue from "@/components/DateAndVenue";
 import IgniteKansai from "@/components/IgniteKansai";
 import MainVisual from "@/components/MainVisual";
+import { ProposalInformation } from "@/components/ProposalInformation";
 import { SponsorInformation } from "@/components/SponsorInformation";
 import {
   CssIcon,
@@ -58,6 +59,7 @@ export default function Page() {
       <div className="flex flex-col mx-4 md:mx-auto md:max-w-4xl border-4 border-solid border-neon-light-blue box-shadow-neon-blue shadow-lg rounded-3xl mt-10 mb-20 px-6 py-10  gap-20 bg-black/55 z-10">
         <IgniteKansai />
         <DateAndVenue />
+        <ProposalInformation />
         <SponsorInformation />
       </div>
     </main>
