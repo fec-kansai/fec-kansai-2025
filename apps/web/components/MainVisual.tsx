@@ -1,5 +1,6 @@
 "use client";
 import {
+  CssIcon,
   KaiyukanIcon,
   OctopusIcon,
   TakoyakiBoxIcon,
@@ -24,8 +25,12 @@ export default function MainVisual() {
           <TakoyakiBoxIcon className={styles["neon-icon"]} />
         </div>
         {/* 左上端：海遊館 */}
-        <div className="absolute left-[7%] md:left-[9%] top-[-20%] md:top-[-25%] w-30 md:w-58 animate-float1 rotate-20">
+        <div className="absolute left-[7%] md:left-[0%] top-[-20%] md:top-[-25%] w-30 md:w-58 animate-float1 rotate-20">
           <KaiyukanIcon className={styles["neon-icon"]} />
+        </div>
+        {/* 左上中央：CSS */}
+        <div className="absolute left-[50%] md:left-[25%] top-[-2%] md:top-[-40%] w-24 md:w-48 animate-float2 -rotate-10">
+          <CssIcon className={styles["neon-icon"]} />
         </div>
         {/* 中央上：タコ */}
         <div className="hidden md:block absolute left-[40%] top-[-23%] md:top-[-44%] w-19 md:w-38 animate-float5 -rotate-20">
