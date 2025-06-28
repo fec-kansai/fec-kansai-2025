@@ -1,8 +1,11 @@
 "use client";
 import {
   CssIcon,
+  FigmaIcon,
+  HtmlIcon,
   KaiyukanIcon,
   OctopusIcon,
+  ReactIcon,
   TakoyakiBoxIcon,
   TakoyakiIcon,
   TowerOfSunIcon,
@@ -29,11 +32,23 @@ export default function MainVisual() {
           <KaiyukanIcon className={styles["neon-icon"]} />
         </div>
         {/* 左上中央：CSS */}
-        <div className="absolute left-[50%] md:left-[25%] top-[-2%] md:top-[-40%] w-24 md:w-48 animate-float2 -rotate-10">
+        <div className="absolute left-[50%] md:left-[25%] top-[-2%] md:top-[-40%] w-24 md:w-30 animate-float2 -rotate-10">
           <CssIcon className={styles["neon-icon"]} />
         </div>
+        {/* 中央上：React */}
+        <div className="absolute left-[5%] md:left-[45%] top-[0%] md:top-[-30%] w-24 md:w-30 animate-float3 rotate-10">
+          <ReactIcon className={styles["neon-icon"]} />
+        </div>
+        {/* 右上：Figma */}
+        <div className="absolute right-[30%] md:right-[15%] top-[-35%] md:top-[-30%] w-24 md:w-30 animate-float2 rotate-20">
+          <FigmaIcon className={styles["neon-icon"]} />
+        </div>
+        {/* 左中央：HTML */}
+        <div className="hidden md:block absolute left-[50%] md:left-[13%] top-[-23%] md:top-[-5%] w-19 md:w-30 animate-float5 -rotate-20">
+          <HtmlIcon className={styles["neon-icon"]} />
+        </div>
         {/* 中央上：タコ */}
-        <div className="hidden md:block absolute left-[40%] top-[-23%] md:top-[-44%] w-19 md:w-38 animate-float5 -rotate-20">
+        <div className="hidden md:block absolute left-[50%] top-[-23%] md:top-[15%] w-19 md:w-38 animate-float5 -rotate-20">
           <OctopusIcon className={styles["neon-icon"]} />
         </div>
         {/* 右上端：通天閣 */}
@@ -53,7 +68,7 @@ export default function MainVisual() {
           <TakoyakiIcon className={styles["neon-icon"]} />
         </div>
         {/* ミニたこ焼き3 */}
-        <div className="absolute right-[30%] md:right-[35%] top-[-20%] md:top-[-36%] w-14 md:w-30 rotate-40">
+        <div className="absolute right-[30%] md:right-[30%] top-[-20%] md:top-[-36%] w-14 md:w-30 rotate-40">
           <TakoyakiIcon className={styles["neon-icon"]} />
         </div>
       </div>
