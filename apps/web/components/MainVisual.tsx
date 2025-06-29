@@ -3,13 +3,17 @@ import {
   CssIcon,
   FigmaIcon,
   HtmlIcon,
+  JsIcon,
   KaiyukanIcon,
+  LaravelIcon,
   OctopusIcon,
+  PhpIcon,
   ReactIcon,
   TakoyakiBoxIcon,
   TakoyakiIcon,
   TowerOfSunIcon,
   TsuutenkakuIcon,
+  VueIcon,
 } from "@workspace/ui";
 import styles from "assets/css/neon.module.css";
 
@@ -24,7 +28,7 @@ export default function MainVisual() {
       />
       <div className="absolute inset-0 w-full h-full pointer-events-none">
         {/* 左下端：たこ焼きボックス */}
-        <div className="absolute left-[5%] md:left-[10%] bottom-[-25%] md:bottom-[-25%] w-32 md:w-50 animate-float6 -rotate-10">
+        <div className="absolute left-[10%] md:left-[10%] bottom-[-16%] md:bottom-[-25%] w-32 md:w-50 animate-float6 -rotate-10">
           <TakoyakiBoxIcon className={styles["neon-icon"]} />
         </div>
         {/* 左上端：海遊館 */}
@@ -47,12 +51,28 @@ export default function MainVisual() {
         <div className="hidden md:block absolute left-[50%] md:left-[13%] top-[-23%] md:top-[-5%] w-19 md:w-30 animate-float5 -rotate-20">
           <HtmlIcon className={styles["neon-icon"]} />
         </div>
+        {/* 左下：JS */}
+        <div className="absolute left-[60%] md:left-[23%] top-[35%] md:top-[35%] w-19 md:w-30 animate-float4 rotate-20">
+          <JsIcon className={styles["neon-icon"]} />
+        </div>
+        {/* 下：PHP */}
+        <div className="absolute left-[5%] md:left-[34%] top-[67%] md:top-[50%] w-19 md:w-38 animate-float5 -rotate-20">
+          <PhpIcon className={styles["neon-icon"]} />
+        </div>
+        {/* 右下：Vue */}
+        <div className="absolute right-[64%] md:right-[25%] top-[37%] md:top-[50%] w-19 md:w-38 animate-float4 -rotate-10">
+          <VueIcon className={styles["neon-icon"]} />
+        </div>
+        {/* 右：Laravel */}
+        <div className="absolute right-[10%] md:right-[10%] top-[60%] md:top-[15%] w-19 md:w-38 animate-float6 rotate-20">
+          <LaravelIcon className={styles["neon-icon"]} />
+        </div>
         {/* 中央上：タコ */}
         <div className="hidden md:block absolute left-[50%] top-[-23%] md:top-[15%] w-19 md:w-38 animate-float5 -rotate-20">
           <OctopusIcon className={styles["neon-icon"]} />
         </div>
         {/* 右上端：通天閣 */}
-        <div className="absolute right-[8%] bottom-[-30%] md:bottom-[-25%] w-19 md:w-38 animate-float4 -rotate-20">
+        <div className="absolute right-[8%] md:right-[3%] bottom-[-30%] md:bottom-[-45%] w-19 md:w-38 animate-float4 -rotate-20">
           <TsuutenkakuIcon className={styles["neon-icon"]} />
         </div>
         {/* 右下端：太陽の塔 */}
@@ -60,7 +80,7 @@ export default function MainVisual() {
           <TowerOfSunIcon className={styles["neon-icon"]} />
         </div>
         {/* ミニたこ焼き1 */}
-        <div className="absolute right-[20%] md:right-[10%] top-[25%] md:top-[14%] w-14 md:w-30 -rotate-10">
+        <div className="absolute right-[40%] md:right-[62%] top-[46%] md:top-[40%] w-14 md:w-30 -rotate-10">
           <TakoyakiIcon className={styles["neon-icon"]} />
         </div>
         {/* ミニたこ焼き2 */}
