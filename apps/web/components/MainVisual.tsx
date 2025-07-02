@@ -28,7 +28,7 @@ export default function MainVisual() {
       />
       <div className="absolute inset-0 w-full h-full pointer-events-none">
         {/* 左下端：たこ焼きボックス */}
-        <div className="absolute left-[10%] md:left-[10%] bottom-[-16%] md:bottom-[-25%] w-32 md:w-50 animate-float6 -rotate-10">
+        <div className="absolute left-[10%] md:left-[5%] bottom-[-16%] md:bottom-[-30%] w-32 md:w-50 animate-float6 -rotate-10">
           <TakoyakiBoxIcon className={styles["neon-icon"]} />
         </div>
         {/* 左上端：海遊館 */}
@@ -52,11 +52,11 @@ export default function MainVisual() {
           <HtmlIcon className={styles["neon-icon"]} />
         </div>
         {/* 左下：JS */}
-        <div className="absolute left-[60%] md:left-[23%] top-[35%] md:top-[35%] w-19 md:w-30 animate-float4 rotate-20">
+        <div className="absolute left-[60%] md:left-[20%] top-[35%] md:top-[40%] w-19 md:w-30 animate-float4 rotate-20">
           <JsIcon className={styles["neon-icon"]} />
         </div>
         {/* 下：PHP */}
-        <div className="absolute left-[5%] md:left-[34%] top-[67%] md:top-[50%] w-19 md:w-38 animate-float5 -rotate-20">
+        <div className="absolute left-[5%] md:left-[34%] top-[67%] md:top-[55%] w-19 md:w-38 animate-float5 -rotate-20">
           <PhpIcon className={styles["neon-icon"]} />
         </div>
         {/* 右下：Vue */}
@@ -80,7 +80,7 @@ export default function MainVisual() {
           <TowerOfSunIcon className={styles["neon-icon"]} />
         </div>
         {/* ミニたこ焼き1 */}
-        <div className="absolute right-[40%] md:right-[62%] top-[46%] md:top-[40%] w-14 md:w-30 -rotate-10">
+        <div className="absolute right-[40%] md:right-[62%] top-[46%] md:top-[44%] w-14 md:w-30 -rotate-10">
           <TakoyakiIcon className={styles["neon-icon"]} />
         </div>
         {/* ミニたこ焼き2 */}
