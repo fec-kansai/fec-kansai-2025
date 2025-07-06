@@ -5,7 +5,7 @@ type ComponentType = typeof Link;
 type Story = StoryObj<ComponentType>;
 
 const meta = {
-  title: "Components/Link",
+  title: "Elements/Link",
   component: Link,
   args: {
     children: "テキストテキスト",
