@@ -5,7 +5,7 @@ type ComponentType = typeof Button;
 type Story = StoryObj<ComponentType>;
 
 const meta = {
-  title: "Components/Button",
+  title: "Elements/Button",
   component: Button,
   args: {
     children: "ボタン",
