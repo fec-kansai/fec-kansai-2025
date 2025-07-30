@@ -32,7 +32,7 @@ runs:
       if: ${{ steps.expected_screenshots_cache.outputs.cache-hit != 'true'}}
       shell: bash
       run: |
-        pnpm build
+        pnpm build --test
         PORT=9004 pnpm run ci:screenshot
       working-directory: ${{ inputs.working-directory }}
 

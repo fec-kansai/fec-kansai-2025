@@ -28,7 +28,7 @@ runs:
     - name: Check Building Storybook
       if: ${{ steps.storybook_cache.outputs.cache-hit != 'true'}}
       shell: bash
-      run: pnpm build
+      run: pnpm build --test
       working-directory: ${{ inputs.working-directory }}
 
     - name: Output Artifacts
