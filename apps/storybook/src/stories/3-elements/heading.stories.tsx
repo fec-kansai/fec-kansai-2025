@@ -5,7 +5,7 @@ type ComponentType = typeof Heading;
 type Story = StoryObj<ComponentType>;
 
 const meta = {
-  title: "Components/Heading",
+  title: "Elements/Heading",
   component: Heading,
   args: {
     children: "見出しタイトル",
@@ -15,6 +15,9 @@ const meta = {
     variant: {
       options: ["primary", "secondary", "accent"],
     },
+  },
+  parameters: {
+    layout: "padded",
   },
 } satisfies Meta<ComponentType>;
 
