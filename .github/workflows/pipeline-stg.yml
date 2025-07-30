@@ -18,10 +18,10 @@ jobs:
 
       - name: Check UI Build
         uses: ./.github/actions/check-ui-build
-  # TODO: Storycap がタイムアウトするバグが解消されるまで一旦コメントアウト
+  # Storybook Build と VRT - タイムアウト対策を含む
   CheckStoryBookBuild:
     runs-on: ubuntu-latest
-
+    timeout-minutes: 15 # ジョブ全体のタイムアウトを設定
     permissions:
       pull-requests: write
       issues: write
@@ -36,15 +36,25 @@ jobs:
 
       - name: Check Storybook Build
         uses: ./.github/actions/check-storybook-build
+        timeout-minutes: 10 # Storybookビルドのタイムアウト
 
       - name: Compare Screenshots
         uses: ./.github/actions/composite-screenshots/compare-screenshots
         with:
           github: ${{ toJson(github) }}
+        timeout-minutes: 5 # VRT比較のタイムアウト
+
+      - name: Cleanup processes (if any)
+        if: always()
+        run: |
+          pkill -f "http-server" || true
+          pkill -f "storycap" || true
+          pkill -f "storybook" || true
 
   Deploy:
     runs-on: ubuntu-latest
-    needs: [CheckUIBuild]
+    needs: [CheckUIBuild, CheckStoryBookBuild] # Storybookビルドも依存関係に追加
+    if: success()
     steps:
       - name: Make Deploy Directory
         shell: bash

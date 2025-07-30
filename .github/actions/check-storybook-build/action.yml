@@ -31,38 +31,24 @@ runs:
       run: pnpm check
       working-directory: ${{ inputs.working-directory }}
 
-    - name: Take Expected Screenshots
+    - name: Build Storybook
+      shell: bash
+      run: pnpm build
+      working-directory: ${{ inputs.working-directory }}
+
+    - name: Upload Storybook Build Artifacts
+      uses: actions/upload-artifact@v4
+      with:
+        name: storybook-build-artifact
+        path: ${{ inputs.working-directory }}/storybook-static
+        retention-days: 1
+
+    - name: Take Expected Screenshots (from main branch)
       uses: ./.github/actions/vrt/take-expected
       with:
         working-directory: ${{ inputs.working-directory }}
 
-    - name: Take Actual Screenshots
+    - name: Take Actual Screenshots (from current branch)
       uses: ./.github/actions/vrt/take-actual
       with:
         working-directory: ${{ inputs.working-directory }}
-
-    - name: Restore cached expected screenshots # キャッシュに保存されたスクショがあったら再利用する
-      id: expected_screenshots_cache
-      uses: ./.github/actions/composite-screenshots/cache-screenshots
-
-    - name: Restore or build storybook # キャッシュにスクショが保存されてなかったらStorybookをビルドしてスクショ撮影する
-      if: ${{ steps.expected_screenshots_cache.outputs.cache-hit != 'true'}}
-      uses: ./.github/actions/composite-screenshots/cache-storybook-static
-
-    - name: workaround for detached HEAD
-      shell: bash
-      run: |
-        git checkout ${GITHUB_REF#refs/pull/*/head} || git checkout -b ${GITHUB_REF#refs/pull/*/head} && git pull origin ${GITHUB_REF#refs/pull/*/head}
-
-    - name: screenshot and visual regression test
-      shell: bash
-      run: |
-        pnpm ci:screenshot
-      working-directory: ${{ inputs.working-directory }}
-
-    - name: Upload actual screenshots to artifact
-      uses: actions/upload-artifact@v4
-      with:
-        name: actual-screenshots
-        path: ${{ inputs.working-directory}}/__screenshots__
-        retention-days: 3

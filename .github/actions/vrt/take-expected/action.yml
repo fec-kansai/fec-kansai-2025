@@ -32,8 +32,14 @@ runs:
       if: ${{ steps.expected_screenshots_cache.outputs.cache-hit != 'true'}}
       shell: bash
       run: |
-        pnpm build --test
-        PORT=9004 pnpm run ci:screenshot
+        # ビルドをスキップして、メインブランチのスクリーンショットのみ撮影
+        if [ ! -d "storybook-static" ]; then
+          pnpm build --test
+        fi
+        PORT=9004 timeout 180s pnpm run ci:screenshot
+        # プロセスクリーンアップ
+        pkill -f "http-server" || true
+        pkill -f "storycap" || true
       working-directory: ${{ inputs.working-directory }}
 
     - name: Upload expected screenshots to artifact # 他のstepでスクショを使うのでartifactにアップする

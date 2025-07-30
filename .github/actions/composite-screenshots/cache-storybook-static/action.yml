@@ -28,11 +28,19 @@ runs:
     - name: Check Building Storybook
       if: ${{ steps.storybook_cache.outputs.cache-hit != 'true'}}
       shell: bash
-      run: pnpm build --test
+      run: |
+        # ビルド済みディレクトリが存在するかチェック
+        if [ ! -d "storybook-static" ]; then
+          echo "Building Storybook..."
+          pnpm build --test
+        else
+          echo "Storybook already built, skipping..."
+        fi
       working-directory: ${{ inputs.working-directory }}
 
     - name: Output Artifacts
+      if: ${{ steps.storybook_cache.outputs.cache-hit != 'true'}}
       uses: actions/upload-artifact@v4
       with:
-        name: "storybook-build-artifact"
+        name: "storybook-build-artifact-cache"
         path: ${{ inputs.working-directory }}/storybook-static
