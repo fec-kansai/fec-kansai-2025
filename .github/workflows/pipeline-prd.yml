@@ -45,3 +45,5 @@ jobs:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
           command: pages deploy ./_deploy --project-name=fec-kansai-2025 --commit-dirty=true --branch=main
+        env:
+          NEXT_PUBLIC_BASE_URL: https://frontend-conf.osaka.jp
