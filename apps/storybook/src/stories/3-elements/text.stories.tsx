@@ -5,7 +5,7 @@ type ComponentType = typeof Text;
 type Story = StoryObj<ComponentType>;
 
 const meta = {
-  title: "Components/Text",
+  title: "Elements/Text",
   component: Text,
   args: {
     children: "テキストテキスト",

@@ -21,7 +21,7 @@ type ComponentType = typeof Logo;
 type Story = StoryObj<ComponentType>;
 
 const meta = {
-  title: "Components/Icon",
+  title: "Elements/Icon",
   component: Logo,
   args: {
     width: 240,

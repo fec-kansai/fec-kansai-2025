@@ -15,7 +15,6 @@ jobs:
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
-
       - name: Check UI Build
         uses: ./.github/actions/check-ui-build
   # Storybook Build と VRT - タイムアウト対策を含む
@@ -91,3 +90,5 @@ jobs:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
           command: pages deploy ./_deploy --project-name=fec-kansai-2025 --commit-dirty=true --branch=staging
+        env:
+          NEXT_PUBLIC_BASE_URL: https://frontend-conf.osaka.jp
