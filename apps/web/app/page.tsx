@@ -1,7 +1,6 @@
 import DateAndVenue from "@/components/DateAndVenue";
 import IgniteKansai from "@/components/IgniteKansai";
 import MainVisual from "@/components/MainVisual";
-import { ProposalInformation } from "@/components/ProposalInformation";
 import { SponsorInformation } from "@/components/SponsorInformation";
 import {
   CssIcon,
@@ -59,7 +58,6 @@ export default function Page() {
         </div>
         <IgniteKansai />
         <DateAndVenue />
-        <ProposalInformation />
         <SponsorInformation />
       </div>
     </main>
