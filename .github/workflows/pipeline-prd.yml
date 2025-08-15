@@ -6,6 +6,10 @@ on:
     branches:
       - main
 
+env:
+  BASE_URL: ${{ vars.NEXT_PUBLIC_BASE_URL }}
+  GTAG_ID: ${{ vars.NEXT_PUBLIC_GTAG_ID }}
+
 jobs:
   CheckUIBuild:
     runs-on: ubuntu-latest
@@ -17,6 +21,9 @@ jobs:
 
       - name: Check UI Build
         uses: ./.github/actions/check-ui-build
+        with:
+          next-public-base-url: ${{ env.BASE_URL }}
+          next-public-gtag-id: ${{ env.GTAG_ID }}
 
   Deploy:
     runs-on: ubuntu-latest

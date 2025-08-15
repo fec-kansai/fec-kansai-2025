@@ -7,9 +7,14 @@ on:
     branches:
       - staging
 
+env:
+  BASE_URL: ${{ vars.NEXT_PUBLIC_BASE_URL }}
+  GTAG_ID: ${{ vars.NEXT_PUBLIC_GTAG_ID }}
+
 jobs:
   CheckUIBuild:
     runs-on: ubuntu-latest
+    environment: staging
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -17,6 +22,10 @@ jobs:
           fetch-depth: 0
       - name: Check UI Build
         uses: ./.github/actions/check-ui-build
+        with:
+          next-public-base-url: ${{ env.BASE_URL }}
+          next-public-gtag-id: ${{ env.GTAG_ID }}
+
   # Storybook Build と VRT - タイムアウト対策を含む
   CheckStoryBookBuild:
     runs-on: ubuntu-latest
@@ -90,5 +99,3 @@ jobs:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
           command: pages deploy ./_deploy --project-name=fec-kansai-2025 --commit-dirty=true --branch=staging
-        env:
-          BASE_URL: https://frontend-conf.osaka.jp
