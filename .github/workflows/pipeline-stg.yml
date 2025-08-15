@@ -21,7 +21,6 @@ jobs:
   CheckStoryBookBuild:
     runs-on: ubuntu-latest
     timeout-minutes: 15 # ジョブ全体のタイムアウトを設定
-    if: github.event_name == 'pull_request'
     permissions:
       pull-requests: write
       issues: write
@@ -90,6 +89,6 @@ jobs:
         with:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
-          command: pages deploy ./_deploy --project-name=fec-kansai-2025 --commit-dirty=true --branch=staging --enbv
+          command: pages deploy ./_deploy --project-name=fec-kansai-2025 --commit-dirty=true --branch=staging
         env:
           BASE_URL: https://frontend-conf.osaka.jp
