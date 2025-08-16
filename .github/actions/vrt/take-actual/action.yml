@@ -30,8 +30,14 @@ runs:
     - name: Take actual screenshots
       shell: bash
       run: |
-        pnpm build
-        PORT=9003 pnpm run ci:screenshot
+        # ビルドをスキップして、現在ブランチのスクリーンショットのみ撮影
+        if [ ! -d "storybook-static" ]; then
+          pnpm build
+        fi
+        PORT=9003 timeout 180s pnpm run ci:screenshot
+        # プロセスクリーンアップ
+        pkill -f "http-server" || true
+        pkill -f "storycap" || true
       working-directory: ${{ inputs.working-directory }}
 
     - name: Upload actual screenshots to artifact

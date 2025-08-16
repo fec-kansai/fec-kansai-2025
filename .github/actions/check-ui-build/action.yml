@@ -7,6 +7,14 @@ inputs:
     description: "The directory to run the action in"
     required: false
     default: "./apps/web"
+  next-public-base-url:
+    description: "The base URL for the Next.js application"
+    required: false
+    default: "https://frontend-conf.osaka.jp"
+  next-public-gtag-id:
+    description: "The Google Analytics tracking ID"
+    required: false
+    default: ""
 
 runs:
   using: "composite"
@@ -40,6 +48,9 @@ runs:
       shell: bash
       run: pnpm build
       working-directory: ${{ inputs.working-directory }}
+      env:
+        NEXT_PUBLIC_BASE_URL: ${{ inputs.next-public-base-url }}
+        NEXT_PUBLIC_GTAG_ID: ${{ inputs.next-public-gtag-id }}
 
     - name: Output Artifacts
       uses: actions/upload-artifact@v4
