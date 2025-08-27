@@ -90,7 +90,7 @@ export const staffs = [
     avatar: "ikki418.jpeg",
   },
   {
-    x: "https://x.com/engineeryuki921",
+    x: "engineeryuki921",
     github: "",
     displayName: "むね (ゆき)",
     avatar: "mune.png",
