@@ -114,10 +114,10 @@ export const staffs = [
     avatar: "daiki.jpeg",
   },
   {
-    x: "",
+    x: "yamasaw44",
     github: "yamasaw",
     displayName: "yamasaw",
-    avatar: "",
+    avatar: "yamasaw.jpg",
   },
   {
     x: "",
