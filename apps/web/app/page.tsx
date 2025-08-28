@@ -2,6 +2,7 @@ import DateAndVenue from "@/components/DateAndVenue";
 import IgniteKansai from "@/components/IgniteKansai";
 import MainVisual from "@/components/MainVisual";
 import { SponsorInformation } from "@/components/SponsorInformation";
+import { TicketInformation } from "@/components/TicketInformation";
 import {
   CssIcon,
   FigmaIcon,
@@ -57,6 +58,7 @@ export default function Page() {
           <LaravelIcon className={styles["neon-icon"]} />
         </div>
         <IgniteKansai />
+        <TicketInformation />
         <DateAndVenue />
         <SponsorInformation />
       </div>
