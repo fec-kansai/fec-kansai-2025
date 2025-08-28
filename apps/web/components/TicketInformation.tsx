@@ -23,7 +23,7 @@ function TicketInformation() {
             className="bg-white/10 rounded-lg p-6 text-white flex flex-col gap-3 shadow-lg"
           >
             <div className="text-3xl">{ticket.emoji}</div>
-            <Heading as="h3" className="text-xl font-semibold">{ticket.title}</Heading>
+            <h3 className="text-xl font-semibold">{ticket.title}</h3>
             <p className="text-sm whitespace-pre-wrap">{ticket.description}</p>
           </div>
         ))}
