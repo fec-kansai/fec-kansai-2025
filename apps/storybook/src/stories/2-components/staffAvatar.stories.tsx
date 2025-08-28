@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from "@storybook/react/*";
 import { Heading, Text } from "@workspace/ui";
+import { staffs } from "web/app/consts/staffs";
 import { Avatar as StaffAvatar } from "web/components/Staff";
-import { staffs } from "web/const/staffs";
 
 const INFORMATION_CONTENT =
   `こんなにもたくさんのスタッフが、イベントを一緒に作っています！

@@ -1,5 +1,5 @@
+import { staffs } from "@/app/consts/staffs";
 import { Avatar as StaffAvatar } from "@/components/Staff";
-import { staffs } from "@/const/staffs";
 import { Heading, Text } from "@workspace/ui";
 
 const INFORMATION_CONTENT =
