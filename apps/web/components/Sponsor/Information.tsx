@@ -2,10 +2,9 @@ import { Heading, Text } from "@workspace/ui";
 import { SponsorCard } from "./card";
 
 const INFORMATION_CONTENT =
-  `フロントエンドカンファレンス関西では、共にイベントを盛り上げてくださるスポンサー企業様を募集しております。
-協賛をご検討いただける皆さま向けに、イベントの概要やスポンサー特典、協賛プランなどをまとめた「スポンサー協賛資料」を公開しております。\r\n
-ぜひご一読の上、ご検討いただけますと幸いです。
-皆さまと共に、関西のコミュニティをさらに活性化できることを楽しみにしております。` as const;
+  `8月 29日（金）をもちまして、スポンサー募集を終了いたしました。
+ご応募いただいた企業の皆さま、誠にありがとうございます！
+` as const;
 
 function SponsorInformation() {
   return (
