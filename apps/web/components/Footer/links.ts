@@ -12,6 +12,10 @@ export const sponsorListItem = [
     href: "https://forms.gle/gGdRz6CVNkEVkEFo7",
     label: "スポンサー募集URL",
   },
+  {
+    href: "https://docs.google.com/forms/d/e/1FAIpQLScS1bDftOmd0x1uo8s32evfTW3h51Y4jjr54jg9l3sYAQr69g/viewform",
+    label: "スポンサー情報収集フォームURL",
+  },
 ] as const satisfies Link[];
 
 export const contactListItem = [
@@ -25,7 +29,7 @@ export const contactListItem = [
   },
   {
     href: "https://docs.google.com/document/d/187gfjUQYCNd0SI2h5VrQCPG6FyIvodq_foECA_9eCpw/edit?usp=sharing",
-    label: "反社会性力排除ポリシー",
+    label: "反社会勢力排除ポリシー",
   },
   {
     href: "https://docs.google.com/document/d/107_5Vfr-dFtrKDtJWbHezFlomkG5chJez51tWMuGV98/edit?usp=sharing",
