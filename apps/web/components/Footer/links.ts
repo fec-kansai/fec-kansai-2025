@@ -12,10 +12,6 @@ export const sponsorListItem = [
     href: "https://forms.gle/gGdRz6CVNkEVkEFo7",
     label: "スポンサー募集URL",
   },
-  {
-    href: "https://docs.google.com/forms/d/e/1FAIpQLScS1bDftOmd0x1uo8s32evfTW3h51Y4jjr54jg9l3sYAQr69g/viewform",
-    label: "スポンサー情報収集フォームURL",
-  },
 ] as const satisfies Link[];
 
 export const contactListItem = [
@@ -42,5 +38,9 @@ export const contactListItem = [
   {
     href: "https://docs.google.com/document/d/1YKUO01ROvD2nnEN8YW37VKkF35HKavWQ9uG4JDJcaco/edit?usp=sharing",
     label: "キャンセルポリシー",
+  },
+  {
+    href: "https://docs.google.com/forms/d/e/1FAIpQLSdpT0zG5oK_jxoLhYHqDLcCc6WqStOQ0swHRsJNI8b7yGe5Fw/viewform",
+    label: "お問い合わせフォーム",
   },
 ] as const satisfies Link[];
