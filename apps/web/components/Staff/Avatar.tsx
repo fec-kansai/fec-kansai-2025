@@ -1,18 +1,20 @@
-
 type AvatarProps = {
+  url: string;
   x: string;
   github: string;
   displayName: string;
   avatar: string;
 };
 
-function Avatar({ x, github, displayName, avatar }: AvatarProps) {
+function Avatar({ url, x, github, displayName, avatar }: AvatarProps) {
   const targetUrl =
-    x !== ""
-      ? `https://x.com/${x}`
-      : github !== ""
-        ? `https://github.com/${github}`
-        : null;
+    url !== ""
+      ? url
+      : x !== ""
+        ? `https://x.com/${x}`
+        : github !== ""
+          ? `https://github.com/${github}`
+          : null;
 
   if (!targetUrl) {
     return (
