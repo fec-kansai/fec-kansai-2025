@@ -66,10 +66,10 @@ export const staffs = [
     avatar: "higa.jpeg",
   },
   {
-    x: "",
+    x: "honchang_",
     github: "honchang",
     displayName: "honchang",
-    avatar: "",
+    avatar: "honchang.jpg",
   },
   {
     x: "Sei_engineer",
