@@ -3,7 +3,7 @@ interface Link {
   label: string;
 }
 
-export const sponsorListItem = [
+export const sponsorListItems = [
   {
     href: "https://docs.google.com/presentation/d/1R7_pY5LdboES_HFNLobQLq44iw1A5F7TMzJ4OLyWCRo/edit?usp=sharing",
     label: "協賛資料",
@@ -14,7 +14,7 @@ export const sponsorListItem = [
   },
 ] as const satisfies Link[];
 
-export const contactListItem = [
+export const policyListItems = [
   {
     href: "https://docs.google.com/document/d/1ehwr1skJ_HS0Ef2VL18Hoka1WSB_Qvi5WYOOrRP_zSA/edit?usp=sharing",
     label: "行動規範",
@@ -39,6 +39,9 @@ export const contactListItem = [
     href: "https://docs.google.com/document/d/1YKUO01ROvD2nnEN8YW37VKkF35HKavWQ9uG4JDJcaco/edit?usp=sharing",
     label: "キャンセルポリシー",
   },
+] as const satisfies Link[];
+
+export const contactListItems = [
   {
     href: "https://docs.google.com/forms/d/e/1FAIpQLSdpT0zG5oK_jxoLhYHqDLcCc6WqStOQ0swHRsJNI8b7yGe5Fw/viewform",
     label: "お問い合わせフォーム",
