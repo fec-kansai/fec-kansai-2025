@@ -3,17 +3,6 @@ interface Link {
   label: string;
 }
 
-export const sponsorListItems = [
-  {
-    href: "https://docs.google.com/presentation/d/1R7_pY5LdboES_HFNLobQLq44iw1A5F7TMzJ4OLyWCRo/edit?usp=sharing",
-    label: "協賛資料",
-  },
-  {
-    href: "https://forms.gle/gGdRz6CVNkEVkEFo7",
-    label: "スポンサー募集URL",
-  },
-] as const satisfies Link[];
-
 export const policyListItems = [
   {
     href: "https://docs.google.com/document/d/1ehwr1skJ_HS0Ef2VL18Hoka1WSB_Qvi5WYOOrRP_zSA/edit?usp=sharing",
