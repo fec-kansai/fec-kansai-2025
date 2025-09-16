@@ -79,7 +79,14 @@ const jsonLd = {
   startDate: "2025-11-30",
   location: {
     "@type": "Place",
-    address: "大阪",
+    address: {
+      "@type": "PostalAddress",
+      addressCountry: "JP",
+      addressRegion: "大阪府",
+      addressLocality: "大阪市",
+      addressStreet: "中央区本町橋2-5",
+      addressPostalCode: "540-0029",
+    },
   },
 };
 
