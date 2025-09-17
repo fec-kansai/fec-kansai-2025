@@ -47,6 +47,7 @@ export const metadata: Metadata = {
         alt: "フロントエンドカンファレンス関西2025",
       },
     ],
+    siteName: "フロントエンドカンファレンス関西2025",
   },
   twitter: {
     card: "summary_large_image",
@@ -65,6 +66,30 @@ export const metadata: Metadata = {
   },
 };
 
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Event",
+  name: "フロントエンドカンファレンス関西2025",
+  description:
+    "出会いが共鳴し、次の誰かを動かす。2025年11月30日（日）大阪にて日本最大級のフロントエンドカンファレンス関西が開催！",
+  organizer: {
+    "@type": "Organization",
+    name: "フロントエンドカンファレンス関西",
+  },
+  startDate: "2025-11-30",
+  location: {
+    "@type": "Place",
+    address: {
+      "@type": "PostalAddress",
+      addressCountry: "JP",
+      addressRegion: "大阪府",
+      addressLocality: "大阪市",
+      addressStreet: "中央区本町橋2-5",
+      addressPostalCode: "540-0029",
+    },
+  },
+};
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -76,6 +101,13 @@ export default function RootLayout({
         <Suspense>
           <GoogleAnalytics />
         </Suspense>
+        <script
+          type="application/ld+json"
+          // biome-ignore lint/security/noDangerouslySetInnerHtml: JSON-LDスキーマの設定のため
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(jsonLd).replace(/</g, "\\u003c"),
+          }}
+        />
       </head>
       <body
         className={`${fontBarlow.variable} ${fontNotoSansJp.variable} font-sans antialiased bg-black`}
