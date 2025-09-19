@@ -12,7 +12,7 @@ export const TimeTableInformation = () => {
           variant="neon-pink"
           asChild
         >
-          <a href={TIME_TABLE_LINK} target="_blank" rel="noreferrer">
+          <a href={TIME_TABLE_LINK} target="_blank" rel="noopener noreferrer">
             タイムテーブル
           </a>
         </Button>
