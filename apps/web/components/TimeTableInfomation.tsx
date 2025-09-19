@@ -2,7 +2,7 @@ import { Button, Heading } from "@workspace/ui";
 
 export const TimeTableInfomation = () => {
   return (
-    <section id="timetable" className="flex flex-col gap-6 items-center">
+    <section id="timetable" className="flex flex-col gap-10 items-center">
       <Heading>タイムテーブル</Heading>
       <Button
         className="w-full sm:w-auto py-2.5 px-10"
