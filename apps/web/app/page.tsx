@@ -4,7 +4,7 @@ import MainVisual from "@/components/MainVisual";
 import { SponsorInformation } from "@/components/SponsorInformation";
 import { StaffInformation } from "@/components/StaffInformation";
 import { TicketInformation } from "@/components/TicketInformation";
-import { TimeTableInfomation } from "@/components/TimeTableInfomation";
+import { TimeTableInformation } from "@/components/TimeTableInformation";
 import {
   CssIcon,
   FigmaIcon,
@@ -61,7 +61,7 @@ export default function Page() {
         </div>
         <IgniteKansai />
         <TicketInformation />
-        <TimeTableInfomation />
+        <TimeTableInformation />
         <DateAndVenue />
         <SponsorInformation />
         <StaffInformation />
