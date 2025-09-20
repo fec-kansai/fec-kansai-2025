@@ -1,6 +1,5 @@
 import { staffs } from "@/app/consts/staffs";
-import { Avatar as StaffAvatar } from "@/components/Staff";
-import { Heading, Text } from "@workspace/ui";
+import { Avatar, Heading, Text } from "@workspace/ui";
 
 const INFORMATION_CONTENT =
   `こんなにもたくさんのスタッフが、イベントを一緒に作っています！
@@ -22,7 +21,7 @@ function StaffInformation() {
               key={staff.displayName}
               className="flex items-center justify-center"
             >
-              <StaffAvatar {...staff} />
+              <Avatar {...staff} />
             </li>
           );
         })}
