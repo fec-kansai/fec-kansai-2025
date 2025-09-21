@@ -3,7 +3,7 @@ import { Avatar, Heading, Text } from "@workspace/ui";
 export const KeynoteSpeechSection = () => {
   return (
     <section id="keynote" className="flex flex-col gap-6 items-center">
-      <Heading>キーノートセクション</Heading>
+      <Heading>基調講演</Heading>
       <div className="flex items-center flex-col gap-2">
         <Avatar
           avatar="/speakers/sakito.jpg"
