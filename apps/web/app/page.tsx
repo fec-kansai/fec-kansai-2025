@@ -1,5 +1,6 @@
 import DateAndVenue from "@/components/DateAndVenue";
 import IgniteKansai from "@/components/IgniteKansai";
+import { KeynoteSpeechSection } from "@/components/KeynoteSpeechSection";
 import MainVisual from "@/components/MainVisual";
 import { SponsorInformation } from "@/components/SponsorInformation";
 import { StaffInformation } from "@/components/StaffInformation";
@@ -63,6 +64,7 @@ export default function Page() {
         <TicketInformation />
         <TimeTableInformation />
         <DateAndVenue />
+        <KeynoteSpeechSection />
         <SponsorInformation />
         <StaffInformation />
       </div>
