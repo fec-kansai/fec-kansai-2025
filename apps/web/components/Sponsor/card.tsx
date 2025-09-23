@@ -33,7 +33,7 @@ const cardVariants = cva("bg-white rounded-lg overflow-hidden", {
 });
 
 const cardImageVariants =
-  "hover:opacity-70 hover:scale-110 duration-200 focus:scale-105 active:scale-95";
+  "w-full h-full object-contain hover:opacity-70 hover:scale-110 duration-200 focus:scale-105 active:scale-95";
 
 interface SponsorCardProps {
   href: string;

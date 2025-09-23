@@ -4,7 +4,7 @@ import { SponsorCard } from "./card";
 const maidoGold = [
   {
     href: "https://careers.miidas.co.jp/tech/",
-    imgSrc: "/sponsors/miidas.webp",
+    imgSrc: "/sponsors/line-yahoo.png",
     alt: "LINEヤフー株式会社",
     size: "osaka-maido-gold",
   },
@@ -16,7 +16,7 @@ const maidoGold = [
   },
   {
     href: "https://careers.miidas.co.jp/tech/",
-    imgSrc: "/sponsors/miidas.webp",
+    imgSrc: "/sponsors/chot-inc.png",
     alt: "ちょっと株式会社",
     size: "osaka-maido-gold",
   },
@@ -28,7 +28,7 @@ const maidoGold = [
   },
   {
     href: "https://careers.miidas.co.jp/tech/",
-    imgSrc: "/sponsors/miidas.webp",
+    imgSrc: "/sponsors/kakehashi.png",
     alt: "株式会社カケハシ",
     size: "osaka-maido-gold",
   },
