@@ -1,4 +1,5 @@
 import { Button, Heading, Text } from "@workspace/ui";
+import { Schedule } from "./Timetable";
 
 const TIME_TABLE_CONTENT =
   `フロントエンドカンファレンス関西 2025 のタイムテーブルは、最新トレンドから実務に役立つ内容まで、多彩なセッションが揃っています。
@@ -16,6 +17,7 @@ export const TimeTableInformation = () => {
       <Text className="text-white whitespace-pre-wrap">
         {TIME_TABLE_CONTENT}
       </Text>
+      <Schedule />
       <div className="flex flex-wrap gap-5 md:gap-20 justify-center my-0 md:mt-5 md:mb-10">
         <Button
           className="w-full sm:w-auto py-2.5 px-10"
