@@ -1,4 +1,4 @@
-import { staffs } from "@/app/consts/staffs";
+import { staffs } from "@/consts/staffs";
 import { Avatar, Heading, Text } from "@workspace/ui";
 
 const INFORMATION_CONTENT =
