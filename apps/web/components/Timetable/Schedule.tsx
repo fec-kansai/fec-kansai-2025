@@ -18,7 +18,6 @@ interface Session {
 
 interface SessionCardProps {
   session: Session;
-  trackColor: string; // e.g. "#43deec" or "#43ec62"
   color: "red" | "green"; // e.g. "red" or "green"
   trackLabel?: string;
   isMobile?: boolean;
@@ -26,7 +25,6 @@ interface SessionCardProps {
 
 export function SessionCard({
   session,
-  trackColor,
   color,
   trackLabel,
   isMobile = false,
@@ -43,7 +41,7 @@ export function SessionCard({
   return (
     <div
       className="relative w-full text-left p-4 border rounded-lg transition-colors duration-200 shadow-sm hover:shadow-md"
-      style={{ borderColor: trackColor }}
+      style={{ borderColor: `var(--neon-${color})` }}
     >
       {session.type === "lt" && (
         <div className="absolute top-0 right-0 w-20 h-20 overflow-hidden">
@@ -158,7 +156,6 @@ export function Schedule() {
                   <SessionCard
                     key={`A-${session.speaker}`}
                     session={session}
-                    trackColor="#ec4343"
                     color="red"
                   />
                 ))
@@ -175,7 +172,6 @@ export function Schedule() {
                   <SessionCard
                     key={`B-${session.speaker}`}
                     session={session}
-                    trackColor="#43ec62"
                     color="green"
                   />
                 ))
@@ -199,7 +195,6 @@ export function Schedule() {
                 <SessionCard
                   key={`A-${session.speaker}`}
                   session={session}
-                  trackColor="#ec4343"
                   color="red"
                   trackLabel={tracks.trackA}
                   isMobile
@@ -209,7 +204,6 @@ export function Schedule() {
                 <SessionCard
                   key={`B-${session.speaker}`}
                   session={session}
-                  trackColor="#43ec62"
                   color="green"
                   trackLabel={tracks.trackB}
                   isMobile
