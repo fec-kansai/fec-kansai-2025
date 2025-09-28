@@ -1,5 +1,6 @@
 import { fieldParam, formBaseUrl, isStartedSurvey } from "@/app/consts/session";
 import { trackA, trackB, tracks } from "@/app/consts/speakers";
+import { Button } from "@workspace/ui";
 
 function getSessionIdFromUrl(url: string) {
   const segments = url.split("/");
@@ -18,6 +19,7 @@ interface Session {
 interface SessionCardProps {
   session: Session;
   trackColor: string; // e.g. "#43deec" or "#43ec62"
+  color: "red" | "green"; // e.g. "red" or "green"
   trackLabel?: string;
   isMobile?: boolean;
 }
@@ -25,6 +27,7 @@ interface SessionCardProps {
 export function SessionCard({
   session,
   trackColor,
+  color,
   trackLabel,
   isMobile = false,
 }: SessionCardProps) {
@@ -39,10 +42,8 @@ export function SessionCard({
 
   return (
     <div
-      className={`relative w-full text-left p-4 border rounded-lg transition-colors duration-200 shadow-sm hover:shadow-md ${
-        isMobile ? "border-l-4" : ""
-      }`}
-      style={isMobile ? { borderLeftColor: trackColor } : {}}
+      className="relative w-full text-left p-4 border rounded-lg transition-colors duration-200 shadow-sm hover:shadow-md"
+      style={{ borderColor: trackColor }}
     >
       {session.type === "lt" && (
         <div className="absolute top-0 right-0 w-20 h-20 overflow-hidden">
@@ -54,10 +55,7 @@ export function SessionCard({
 
       {isMobile && trackLabel && (
         <div className="flex items-center mb-2">
-          <span
-            className="text-white text-xs px-2 py-1 rounded-full mr-2"
-            style={{ backgroundColor: trackColor }}
-          >
+          <span className="text-white text-xs text-white px-2 py-1 rounded-full mr-2">
             {trackLabel}
           </span>
           <span className="text-xs text-gray-500">
@@ -74,7 +72,6 @@ export function SessionCard({
 
       <div
         className={`text-lg font-bold ${isSpecialSession ? "text-white" : ""}`}
-        style={!isSpecialSession ? { color: trackColor } : {}}
       >
         {session.title}
       </div>
@@ -85,25 +82,31 @@ export function SessionCard({
 
       <div className="mt-3 flex gap-4 flex-wrap">
         {session.url && (
-          <a
-            href={session.url}
-            target="_blank"
-            rel="noreferrer"
-            className="text-sm hover:opacity-80"
-            style={{ color: trackColor }}
+          <Button
+            className="text-sm !shadow-none"
+            variant={color === "red" ? "neon-red" : "neon-green"}
+            asChild
           >
-            詳細を見る
-          </a>
+            <a
+              href={session.url}
+              className="shadow-none"
+              target="_blank"
+              rel="noreferrer"
+            >
+              詳細を見る
+            </a>
+          </Button>
         )}
         {isStartedSurvey && formUrl && (
-          <a
-            href={formUrl}
-            target="_blank"
-            rel="noreferrer"
-            className="text-sm text-[#ec4343] underline hover:opacity-80"
+          <Button
+            className="text-sm !shadow-none"
+            variant={color === "red" ? "neon-red" : "neon-green"}
+            asChild
           >
-            アンケートを記入する
-          </a>
+            <a href={formUrl} target="_blank" rel="noreferrer">
+              アンケートを記入する
+            </a>
+          </Button>
         )}
       </div>
     </div>
@@ -155,7 +158,8 @@ export function Schedule() {
                   <SessionCard
                     key={`A-${session.speaker}`}
                     session={session}
-                    trackColor="#43deec"
+                    trackColor="#ec4343"
+                    color="red"
                   />
                 ))
               ) : (
@@ -172,6 +176,7 @@ export function Schedule() {
                     key={`B-${session.speaker}`}
                     session={session}
                     trackColor="#43ec62"
+                    color="green"
                   />
                 ))
               ) : (
@@ -194,7 +199,8 @@ export function Schedule() {
                 <SessionCard
                   key={`A-${session.speaker}`}
                   session={session}
-                  trackColor="#43deec"
+                  trackColor="#ec4343"
+                  color="red"
                   trackLabel={tracks.trackA}
                   isMobile
                 />
@@ -204,6 +210,7 @@ export function Schedule() {
                   key={`B-${session.speaker}`}
                   session={session}
                   trackColor="#43ec62"
+                  color="green"
                   trackLabel={tracks.trackB}
                   isMobile
                 />
