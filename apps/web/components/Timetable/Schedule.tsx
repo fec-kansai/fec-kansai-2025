@@ -53,17 +53,20 @@ export function SessionCard({
 
       {isMobile && trackLabel && (
         <div className="flex items-center mb-2">
-          <span className="text-white text-xs text-white px-2 py-1 rounded-full mr-2">
+          <span
+            className="text-white text-base px-2 py-1 rounded-full mr-2"
+            style={{ color: `var(--neon-${color})` }}
+          >
             {trackLabel}
           </span>
-          <span className="text-xs text-gray-500">
+          <span className="text-base text-gray-300">
             {session.startTime} - {session.endTime}
           </span>
         </div>
       )}
 
       {!isMobile && (
-        <div className="text-xs text-gray-300 mb-2">
+        <div className="text-base text-gray-300 mb-2">
           {session.startTime} - {session.endTime}
         </div>
       )}
@@ -75,7 +78,7 @@ export function SessionCard({
       </div>
 
       {session.speaker && (
-        <div className="text-sm text-gray-200 mt-1">{session.speaker}</div>
+        <div className="text-base text-gray-200 mt-1">{session.speaker}</div>
       )}
 
       <div className="mt-3 flex gap-4 flex-wrap">
