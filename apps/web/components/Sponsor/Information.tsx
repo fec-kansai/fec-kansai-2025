@@ -8,37 +8,37 @@ const INFORMATION_CONTENT =
 
 const maidoGold = [
   {
-    href: "https://careers.miidas.co.jp/tech/",
+    href: "https://www.lycorp.co.jp/ja/technology-design/",
     imgSrc: "/sponsors/line-yahoo.png",
     alt: "LINEヤフー株式会社",
     size: "osaka-maido-gold",
   },
   {
-    href: "https://careers.miidas.co.jp/tech/",
+    href: "https://www.kinto-technologies.com/",
     imgSrc: "/sponsors/KINTOtechnologies.svg",
     alt: "KINTOテクノロジーズ株式会社",
     size: "osaka-maido-gold",
   },
   {
-    href: "https://careers.miidas.co.jp/tech/",
+    href: "https://chot-inc.com/",
     imgSrc: "/sponsors/chot-inc.png",
     alt: "ちょっと株式会社",
     size: "osaka-maido-gold",
   },
   // {
-  //   href: "https://careers.miidas.co.jp/tech/",
+  //   href: "https://corp.kaonavi.jp/",
   //   imgSrc: "/sponsors/miidas.webp",
   //   alt: "株式会社カオナビ",
   //   size: "osaka-maido-gold",
   // },
   {
-    href: "https://careers.miidas.co.jp/tech/",
+    href: "https://hrmos.co/pages/kakehashi/",
     imgSrc: "/sponsors/kakehashi.png",
     alt: "株式会社カケハシ",
     size: "osaka-maido-gold",
   },
   {
-    href: "https://careers.miidas.co.jp/tech/",
+    href: "https://knowledgework.com/",
     imgSrc: "/sponsors/miidas.webp",
     alt: "株式会社ナレッジワーク",
     size: "osaka-maido-gold",
@@ -47,7 +47,7 @@ const maidoGold = [
 
 const miniTakoyakiSilver = [
   {
-    href: "https://careers.miidas.co.jp/tech/",
+    href: "http://www.jointcrew.co.jp/",
     imgSrc: "/sponsors/jointcrew.png",
     alt: "株式会社JOINT CREW",
     size: "mini-takoyaki-silver",
@@ -56,7 +56,7 @@ const miniTakoyakiSilver = [
 
 // const namingRights = [
 //   {
-//     href: "https://careers.miidas.co.jp/tech/",
+//     href: "https://knowledgework.com/",
 //     imgSrc: "/sponsors/miidas.webp",
 //     alt: "株式会社ナレッジワーク",
 //     size: "osaka-maido-gold",
@@ -65,7 +65,7 @@ const miniTakoyakiSilver = [
 
 // const nameCards = [
 //     {
-//     href: "https://careers.miidas.co.jp/tech/",
+//     href: "https://hrmos.co/pages/kakehashi/",
 //     imgSrc: "/sponsors/kakehashi.png",
 //     alt: "株式会社カケハシ",
 //     size: "osaka-maido-gold",
@@ -74,7 +74,7 @@ const miniTakoyakiSilver = [
 
 // const studentSupportPlan = [
 //   {
-//     href: "https://careers.miidas.co.jp/tech/",
+//     href: "https://www.cyberagent.co.jp/",
 //     imgSrc: "/sponsors/miidas.webp",
 //     alt: "株式会社サイバーエージェント",
 //     size: "mini-takoyaki-silver",
