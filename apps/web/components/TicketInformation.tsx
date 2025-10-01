@@ -35,7 +35,7 @@ function TicketInformation() {
           asChild
         >
           <a href={TICKET_SITE_LINK} target="_blank" rel="noreferrer">
-            チケット購入サイト
+            チケットを購入する
           </a>
         </Button>
       </div>
