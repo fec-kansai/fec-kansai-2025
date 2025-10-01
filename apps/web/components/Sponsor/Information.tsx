@@ -68,6 +68,19 @@ function SponsorInformation() {
         {INFORMATION_CONTENT}
       </Text>
       <div>
+        <Heading variant="bronze" className="text-center my-6">
+          会場スポンサー
+        </Heading>
+        <div className="flex flex-wrap gap-6 justify-center">
+          <SponsorCard
+            href="https://careers.miidas.co.jp/tech/"
+            imageSrc="/sponsors/miidas.webp"
+            alt="ミイダス"
+            size="venue-sponsor"
+          />
+        </div>
+      </div>
+      <div>
         <Heading variant="gold" className="text-center my-6">
           おおさかまいど
         </Heading>
@@ -97,19 +110,6 @@ function SponsorInformation() {
               size={size}
             />
           ))}
-        </div>
-      </div>
-      <div>
-        <Heading variant="bronze" className="text-center my-6">
-          会場スポンサー
-        </Heading>
-        <div className="flex flex-wrap gap-6 justify-center">
-          <SponsorCard
-            href="https://careers.miidas.co.jp/tech/"
-            imageSrc="/sponsors/miidas.webp"
-            alt="ミイダス"
-            size="venue-sponsor"
-          />
         </div>
       </div>
     </section>
