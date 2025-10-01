@@ -52,13 +52,16 @@ const miniTakoyakiSilver = [
     alt: "株式会社JOINT CREW",
     size: "mini-takoyaki-silver",
   },
-  {
-    href: "https://careers.miidas.co.jp/tech/",
-    imgSrc: "/sponsors/miidas.webp",
-    alt: "株式会社サイバーエージェント",
-    size: "mini-takoyaki-silver",
-  },
 ] as const;
+
+// const studentSupportPlan = [
+//   {
+//     href: "https://careers.miidas.co.jp/tech/",
+//     imgSrc: "/sponsors/miidas.webp",
+//     alt: "株式会社サイバーエージェント",
+//     size: "mini-takoyaki-silver",
+//   },
+// ] as const;
 
 function SponsorInformation() {
   return (
