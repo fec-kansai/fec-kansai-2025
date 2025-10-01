@@ -15,7 +15,7 @@ const maidoGold = [
   },
   {
     href: "https://careers.miidas.co.jp/tech/",
-    imgSrc: "/sponsors/miidas.webp",
+    imgSrc: "/sponsors/KINTOtechnologies.svg",
     alt: "KINTOテクノロジーズ株式会社",
     size: "osaka-maido-gold",
   },
@@ -48,7 +48,7 @@ const maidoGold = [
 const miniTakoyakiSilver = [
   {
     href: "https://careers.miidas.co.jp/tech/",
-    imgSrc: "/sponsors/miidas.webp",
+    imgSrc: "/sponsors/jointcrew.png",
     alt: "株式会社JOINT CREW",
     size: "mini-takoyaki-silver",
   },
