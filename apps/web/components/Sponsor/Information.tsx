@@ -85,7 +85,7 @@ function SponsorInformation() {
       </div>
       <div>
         <Heading variant="silver" className="text-center my-6">
-          ミニたこ焼き
+          ミニたこやき
         </Heading>
         <div className="flex flex-wrap gap-6 justify-center">
           {miniTakoyakiSilver.map(({ href, imgSrc, alt, size }) => (
