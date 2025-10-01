@@ -1,5 +1,10 @@
-import { Heading } from "@workspace/ui";
+import { Heading, Text } from "@workspace/ui";
 import { SponsorCard } from "./card";
+
+const INFORMATION_CONTENT =
+  `8月 29日（金）をもちまして、スポンサー募集を終了いたしました。
+ご応募いただいた企業の皆さま、誠にありがとうございます！
+` as const;
 
 const maidoGold = [
   {
@@ -59,6 +64,9 @@ function SponsorInformation() {
   return (
     <section id="sponsor" className="flex flex-col gap-6 items-center">
       <Heading>スポンサー</Heading>
+      <Text className="text-white whitespace-pre-wrap">
+        {INFORMATION_CONTENT}
+      </Text>
       <div>
         <Heading variant="gold" className="text-center my-6">
           おおさかまいど
