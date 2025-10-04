@@ -39,7 +39,7 @@ const maidoGold = [
   },
   {
     href: "https://knowledgework.com/",
-    imgSrc: "/sponsors/miidas.webp",
+    imgSrc: "",
     alt: "株式会社ナレッジワーク",
     size: "osaka-maido-gold",
   },
@@ -89,7 +89,7 @@ function SponsorInformation() {
         {INFORMATION_CONTENT}
       </Text>
       <div>
-        <Heading variant="bronze" className="text-center my-6">
+        <Heading variant="gold" className="text-center my-6">
           会場スポンサー
         </Heading>
         <div className="flex flex-wrap gap-6 justify-center">
@@ -102,7 +102,7 @@ function SponsorInformation() {
         </div>
       </div>
       <div>
-        <Heading variant="gold" className="text-center my-6">
+        <Heading variant="silver" className="text-center my-6">
           おおさかまいど
         </Heading>
         <div className="flex flex-wrap gap-6 justify-center">
@@ -118,7 +118,7 @@ function SponsorInformation() {
         </div>
       </div>
       <div>
-        <Heading variant="silver" className="text-center my-6">
+        <Heading variant="bronze" className="text-center my-6">
           ミニたこやき
         </Heading>
         <div className="flex flex-wrap gap-6 justify-center">
