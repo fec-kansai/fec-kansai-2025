@@ -25,12 +25,12 @@ const maidoGold = [
     alt: "ちょっと株式会社",
     size: "osaka-maido-gold",
   },
-  // {
-  //   href: "https://corp.kaonavi.jp/",
-  //   imgSrc: "/sponsors/miidas.webp",
-  //   alt: "株式会社カオナビ",
-  //   size: "osaka-maido-gold",
-  // },
+  {
+    href: "https://corp.kaonavi.jp/",
+    imgSrc: "/sponsors/kaonavi.png",
+    alt: "株式会社カオナビ",
+    size: "osaka-maido-gold",
+  },
   {
     href: "https://hrmos.co/pages/kakehashi/",
     imgSrc: "/sponsors/kakehashi.png",
