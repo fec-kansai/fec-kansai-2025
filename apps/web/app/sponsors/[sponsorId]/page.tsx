@@ -1,7 +1,7 @@
 "use client";
 
 import { Link } from "@/components/Link";
-import { Badge } from "@workspace/ui";
+import { Badge, Button } from "@workspace/ui";
 import { BskyLogoIcon } from "@workspace/ui/components/icons/ui/BskyLogoIcon";
 import { XLogoIcon } from "@workspace/ui/components/icons/ui/XLogoIcon";
 import { ExternalLink } from "lucide-react";
@@ -39,6 +39,8 @@ export default function SponsorDetailPage(props: SponsorDetailPageProps) {
             <Link
               href="https://careers.miidas.co.jp/tech/"
               className="flex items-center"
+              target="_blank"
+              rel="noopener noreferrer"
             >
               Tech Blog
               <ExternalLink className="inline-block ml-1" size={16} />
@@ -46,6 +48,8 @@ export default function SponsorDetailPage(props: SponsorDetailPageProps) {
             <Link
               href="https://careers.miidas.co.jp/tech/"
               className="flex items-center"
+              target="_blank"
+              rel="noopener noreferrer"
             >
               採用サイト
               <ExternalLink className="inline-block ml-1" size={16} />
@@ -73,6 +77,13 @@ export default function SponsorDetailPage(props: SponsorDetailPageProps) {
             </div>
           </div>
         </div>
+      </div>
+      <div className="flex justify-center">
+        <Button variant="neon-red">
+          <a href="/" className="w-[200px]">
+            トップに戻る
+          </a>
+        </Button>
       </div>
     </main>
   );
