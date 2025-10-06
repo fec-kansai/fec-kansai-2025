@@ -1,4 +1,4 @@
-import { TICKETS, TICKET_SITE_LINK } from "@/app/consts/ticket";
+import { TICKETS, TICKET_SITE_LINK } from "@/consts/ticket";
 import { Button, Heading, Text } from "@workspace/ui";
 
 const TICKET_CONTENT =
