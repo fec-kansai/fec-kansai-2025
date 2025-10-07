@@ -12,36 +12,42 @@ const maidoGold = [
     imgSrc: "/sponsors/line-yahoo.png",
     alt: "LINEヤフー株式会社",
     size: "osaka-maido-gold",
+    imgClassName: "",
   },
   {
     href: "https://www.kinto-technologies.com/",
     imgSrc: "/sponsors/KINTOtechnologies.svg",
     alt: "KINTOテクノロジーズ株式会社",
     size: "osaka-maido-gold",
+    imgClassName: "p-4",
   },
   {
     href: "https://chot-inc.com/",
     imgSrc: "/sponsors/chot-inc.png",
     alt: "ちょっと株式会社",
     size: "osaka-maido-gold",
+    imgClassName: "p-4",
   },
   {
     href: "https://corp.kaonavi.jp/",
     imgSrc: "/sponsors/kaonavi.png",
     alt: "株式会社カオナビ",
     size: "osaka-maido-gold",
+    imgClassName: "",
   },
   {
     href: "https://hrmos.co/pages/kakehashi/",
     imgSrc: "/sponsors/kakehashi.png",
     alt: "株式会社カケハシ",
     size: "osaka-maido-gold",
+    imgClassName: "",
   },
   {
     href: "https://knowledgework.com/",
-    imgSrc: "",
+    imgSrc: "/sponsors/KnowledgeWork.png",
     alt: "株式会社ナレッジワーク",
     size: "osaka-maido-gold",
+    imgClassName: "",
   },
 ] as const;
 
@@ -54,32 +60,33 @@ const miniTakoyakiSilver = [
   },
 ] as const;
 
-// const namingRights = [
-//   {
-//     href: "https://knowledgework.com/",
-//     imgSrc: "/sponsors/miidas.webp",
-//     alt: "株式会社ナレッジワーク",
-//     size: "osaka-maido-gold",
-//   },
-// ] as const;
+const namingRights = [
+  {
+    href: "https://knowledgework.com/",
+    imgSrc: "/sponsors/KnowledgeWork.png",
+    alt: "株式会社ナレッジワーク",
+    size: "mini-takoyaki-silver",
+  },
+] as const;
 
-// const nameCards = [
-//     {
-//     href: "https://hrmos.co/pages/kakehashi/",
-//     imgSrc: "/sponsors/kakehashi.png",
-//     alt: "株式会社カケハシ",
-//     size: "osaka-maido-gold",
-//   },
-// ] as const;
+const nameCards = [
+  {
+    href: "https://hrmos.co/pages/kakehashi/",
+    imgSrc: "/sponsors/kakehashi.png",
+    alt: "株式会社カケハシ",
+    size: "mini-takoyaki-silver",
+  },
+] as const;
 
-// const studentSupportPlan = [
-//   {
-//     href: "https://www.cyberagent.co.jp/",
-//     imgSrc: "/sponsors/miidas.webp",
-//     alt: "株式会社サイバーエージェント",
-//     size: "mini-takoyaki-silver",
-//   },
-// ] as const;
+const studentSupportPlan = [
+  {
+    href: "https://www.cyberagent.co.jp/",
+    imgSrc: "/sponsors/CyberAgent.png",
+    alt: "株式会社サイバーエージェント",
+    size: "osaka-maido-gold",
+    imgClassName: "p-2",
+  },
+] as const;
 
 function SponsorInformation() {
   return (
@@ -106,13 +113,14 @@ function SponsorInformation() {
           おおさかまいど
         </Heading>
         <div className="flex flex-wrap gap-6 justify-center">
-          {maidoGold.map(({ href, imgSrc, alt, size }) => (
+          {maidoGold.map(({ href, imgSrc, alt, size, imgClassName }) => (
             <SponsorCard
               key={alt}
               href={href}
               imageSrc={imgSrc}
               alt={alt}
               size={size}
+              imgClassName={imgClassName}
             />
           ))}
         </div>
@@ -131,6 +139,58 @@ function SponsorInformation() {
               size={size}
             />
           ))}
+        </div>
+      </div>
+      <div>
+        <Heading variant="accent" className="text-center my-6">
+          ネーミングライツ
+        </Heading>
+        <div className="flex flex-wrap gap-6 justify-center">
+          {namingRights.map(({ href, imgSrc, alt, size }) => (
+            <SponsorCard
+              key={alt}
+              href={href}
+              imageSrc={imgSrc}
+              alt={alt}
+              size={size}
+              className=""
+            />
+          ))}
+        </div>
+      </div>
+      <div>
+        <Heading variant="accent" className="text-center my-6">
+          ネームカード
+        </Heading>
+        <div className="flex flex-wrap gap-6 justify-center">
+          {nameCards.map(({ href, imgSrc, alt, size }) => (
+            <SponsorCard
+              key={alt}
+              href={href}
+              imageSrc={imgSrc}
+              alt={alt}
+              size={size}
+            />
+          ))}
+        </div>
+      </div>
+      <div>
+        <Heading variant="accent" className="text-center my-6">
+          学生支援
+        </Heading>
+        <div className="flex flex-wrap gap-6 justify-center">
+          {studentSupportPlan.map(
+            ({ href, imgSrc, alt, size, imgClassName }) => (
+              <SponsorCard
+                key={alt}
+                href={href}
+                imageSrc={imgSrc}
+                alt={alt}
+                size={size}
+                imgClassName={imgClassName}
+              />
+            ),
+          )}
         </div>
       </div>
     </section>

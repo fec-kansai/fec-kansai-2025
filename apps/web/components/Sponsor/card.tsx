@@ -40,6 +40,7 @@ interface SponsorCardProps {
   imageSrc: string;
   alt: string;
   size: SizeKeys;
+  imgClassName?: string;
 }
 
 function SponsorCard(
@@ -47,7 +48,7 @@ function SponsorCard(
     SponsorCardProps &
     VariantProps<typeof cardVariants>,
 ) {
-  const { className, href, imageSrc, size, alt } = props;
+  const { className, href, imageSrc, size, alt, imgClassName } = props;
 
   return (
     <a
@@ -56,7 +57,11 @@ function SponsorCard(
       className={cn(cardVariants({ size, className }))}
       rel="noreferrer"
     >
-      <img className={cardImageVariants} src={imageSrc} alt={alt} />
+      <img
+        className={cn(imgClassName, cardImageVariants)}
+        src={imageSrc}
+        alt={alt}
+      />
     </a>
   );
 }
