@@ -80,6 +80,13 @@ const nameCards = [
 
 const studentSupportPlan = [
   {
+    href: "https://www.lycorp.co.jp/ja/technology-design/",
+    imgSrc: "/sponsors/line-yahoo.png",
+    alt: "LINEヤフー株式会社",
+    size: "osaka-maido-gold",
+    imgClassName: "",
+  },
+  {
     href: "https://www.cyberagent.co.jp/",
     imgSrc: "/sponsors/CyberAgent.png",
     alt: "株式会社サイバーエージェント",
