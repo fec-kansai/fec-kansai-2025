@@ -33,13 +33,14 @@ const cardVariants = cva("bg-white rounded-lg overflow-hidden", {
 });
 
 const cardImageVariants =
-  "hover:opacity-70 hover:scale-110 duration-200 focus:scale-105 active:scale-95";
+  "w-full h-full object-contain hover:opacity-70 hover:scale-110 duration-200 focus:scale-105 active:scale-95";
 
 interface SponsorCardProps {
   href: string;
   imageSrc: string;
   alt: string;
   size: SizeKeys;
+  imgClassName?: string;
 }
 
 function SponsorCard(
@@ -47,7 +48,7 @@ function SponsorCard(
     SponsorCardProps &
     VariantProps<typeof cardVariants>,
 ) {
-  const { className, href, imageSrc, size, alt } = props;
+  const { className, href, imageSrc, size, alt, imgClassName } = props;
 
   return (
     <a
@@ -56,7 +57,11 @@ function SponsorCard(
       className={cn(cardVariants({ size, className }))}
       rel="noreferrer"
     >
-      <img className={cardImageVariants} src={imageSrc} alt={alt} />
+      <img
+        className={cn(imgClassName, cardImageVariants)}
+        src={imageSrc}
+        alt={alt}
+      />
     </a>
   );
 }
