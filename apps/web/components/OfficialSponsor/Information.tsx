@@ -97,7 +97,7 @@ const studentSupportPlan = [
 
 function OfficialSponsorInformation() {
   return (
-    <section id="sponsor" className="flex flex-col gap-6 items-center">
+    <section id="official-sponsor" className="flex flex-col gap-6 items-center">
       <Heading>スポンサー</Heading>
       <Text className="text-white whitespace-pre-wrap">
         {INFORMATION_CONTENT}
