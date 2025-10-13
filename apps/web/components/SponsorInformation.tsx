@@ -1,7 +1,7 @@
-import { SponsorInformation as Information } from "@/components/Sponsor";
+import { OfficialSponsorInformation } from "@/components/OfficialSponsor";
 
 function SponsorInformation() {
-  return <Information />;
+  return <OfficialSponsorInformation />;
 }
 
 export { SponsorInformation };

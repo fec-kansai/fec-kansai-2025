@@ -95,7 +95,7 @@ const studentSupportPlan = [
   },
 ] as const;
 
-function SponsorInformation() {
+function OfficialSponsorInformation() {
   return (
     <section id="sponsor" className="flex flex-col gap-6 items-center">
       <Heading>スポンサー</Heading>
@@ -204,4 +204,4 @@ function SponsorInformation() {
   );
 }
 
-export { SponsorInformation };
+export { OfficialSponsorInformation };
