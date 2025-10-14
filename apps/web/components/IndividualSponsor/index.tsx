@@ -4,32 +4,15 @@ const INFORMATION_CONTENT = `個人スポンサーの募集は終了いたしま
 ご支援いただいた皆さま、誠にありがとうございます！
 ` as const;
 
-// 仮
 const individualSponsors = [
   {
-    // href: "https://twitter.com/username1",
-    name: "個人スポンサー 1",
-    alt: "個人スポンサー 1",
+    name: "岡山 叶太",
   },
   {
-    // href: "https://twitter.com/username2",
-    name: "個人スポンサー 2",
-    alt: "個人スポンサー 2",
+    name: "spring-raining",
   },
   {
-    // href: "https://twitter.com/username3",
-    name: "個人スポンサー 3",
-    alt: "個人スポンサー 3",
-  },
-  {
-    // href: "https://twitter.com/username4",
-    name: "個人スポンサー 4",
-    alt: "個人スポンサー 4",
-  },
-  {
-    // href: "https://twitter.com/username5",
-    name: "個人スポンサー 5",
-    alt: "個人スポンサー 5",
+    name: "jiyuujin",
   },
 ];
 
