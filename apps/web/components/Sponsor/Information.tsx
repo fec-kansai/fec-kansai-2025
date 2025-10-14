@@ -40,7 +40,7 @@ const maidoGold = [
     imgSrc: "/sponsors/kakehashi.png",
     alt: "株式会社カケハシ",
     size: "osaka-maido-gold",
-    imgClassName: "p-2 pr-3.5 scale-125 hover:scale-135",
+    imgClassName: "p-2 pr-3.5 scale-145 hover:scale-150",
   },
   {
     href: "https://knowledgework.com/",
@@ -75,7 +75,7 @@ const nameCards = [
     imgSrc: "/sponsors/kakehashi.png",
     alt: "株式会社カケハシ",
     size: "mini-takoyaki-silver",
-    imgClassName: "p-2 pr-3.5 scale-125 hover:scale-135",
+    imgClassName: "p-2 pr-3.5 scale-145 hover:scale-150",
   },
 ] as const;
 
