@@ -40,7 +40,7 @@ const maidoGold = [
     imgSrc: "/sponsors/kakehashi.png",
     alt: "株式会社カケハシ",
     size: "osaka-maido-gold",
-    imgClassName: "",
+    imgClassName: "p-2 pr-3.5 scale-125 hover:scale-135",
   },
   {
     href: "https://knowledgework.com/",
@@ -75,6 +75,7 @@ const nameCards = [
     imgSrc: "/sponsors/kakehashi.png",
     alt: "株式会社カケハシ",
     size: "mini-takoyaki-silver",
+    imgClassName: "p-2 pr-3.5 scale-125 hover:scale-135",
   },
 ] as const;
 
@@ -170,13 +171,14 @@ function SponsorInformation() {
           ネームカード
         </Heading>
         <div className="flex flex-wrap gap-6 justify-center">
-          {nameCards.map(({ href, imgSrc, alt, size }) => (
+          {nameCards.map(({ href, imgSrc, alt, size, imgClassName }) => (
             <SponsorCard
               key={alt}
               href={href}
               imageSrc={imgSrc}
               alt={alt}
               size={size}
+              imgClassName={imgClassName}
             />
           ))}
         </div>
