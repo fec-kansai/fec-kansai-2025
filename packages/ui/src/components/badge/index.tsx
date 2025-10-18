@@ -28,7 +28,7 @@ const badgeVariants = cva(
 
 export const Badge = ({ plan = "venue", className, ...props }: BadgeProps) => {
   const BASIC_PLANS = ["mini-takoyaki", "osaka-maido", "venue"];
-  const isBasicPlan = !BASIC_PLANS.includes(plan);
+  const isBasicPlan = BASIC_PLANS.includes(plan);
 
   const planName = useMemo(() => {
     switch (plan) {
