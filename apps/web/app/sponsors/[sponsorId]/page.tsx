@@ -1,7 +1,5 @@
 import { Link } from "@/components/Link";
-import { Badge, Button } from "@workspace/ui";
-import { BskyLogoIcon } from "@workspace/ui/components/icons/ui/BskyLogoIcon";
-import { XLogoIcon } from "@workspace/ui/components/icons/ui/XLogoIcon";
+import { Badge, BskyLogoIcon, Button, XLogoIcon } from "@workspace/ui";
 import { ExternalLink } from "lucide-react";
 
 export type SponsorDetailPageProps = {
