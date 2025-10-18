@@ -1,8 +1,6 @@
 import { Heading, Text } from "@workspace/ui";
 
-const INFORMATION_CONTENT = `個人スポンサーの募集は終了いたしました。
-ご支援いただいた皆さま、誠にありがとうございます！
-` as const;
+const INFORMATION_CONTENT = "個人スポンサーはまだ募集中です！" as const;
 
 const individualSponsors = [
   {
