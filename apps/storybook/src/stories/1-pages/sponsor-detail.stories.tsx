@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from "@storybook/react/*";
-import SponsorDetail from "web/app/sponsors//[sponsorId]/page";
+import SponsorDetail from "web/app/sponsors/[sponsorId]/page";
 
 type ComponentType = typeof SponsorDetail;
 type Story = StoryObj<ComponentType>;
