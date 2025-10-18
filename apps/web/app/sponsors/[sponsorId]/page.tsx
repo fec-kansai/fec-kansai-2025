@@ -75,7 +75,7 @@ export default function SponsorDetailPage(props: SponsorDetailPageProps) {
         </div>
       </div>
       <div className="flex justify-center">
-        <Button variant="neon-red">
+        <Button variant="neon-red" asChild>
           <a href="/" className="w-[200px]">
             トップに戻る
           </a>
