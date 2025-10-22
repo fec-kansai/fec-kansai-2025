@@ -58,7 +58,7 @@ function SponsorCard(
       rel="noreferrer"
     >
       <img
-        className={cn(imgClassName, cardImageVariants)}
+        className={cn(cardImageVariants, imgClassName)}
         src={imageSrc}
         alt={alt}
       />
