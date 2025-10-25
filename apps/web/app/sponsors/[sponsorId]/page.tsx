@@ -1,7 +1,17 @@
 import { Link } from "@/components/Link";
 import { SPONSORS } from "@/consts/sponsors";
-import { Badge, BskyLogoIcon, Button, XLogoIcon } from "@workspace/ui";
+import {
+  Badge,
+  BskyLogoIcon,
+  Button,
+  CssIcon,
+  ReactIcon,
+  TakoyakiIcon,
+  VueIcon,
+  XLogoIcon,
+} from "@workspace/ui";
 import { cn } from "@workspace/ui/lib/utils";
+import styles from "assets/css/neon.module.css";
 import { ExternalLink } from "lucide-react";
 import { notFound } from "next/navigation";
 
@@ -25,23 +35,38 @@ export default function SponsorDetailPage({ params }: PageProps) {
 
   return (
     <main className="md:flex-1 relative overflow-hidden">
-      <div className="flex flex-col md:flex-row mx-4 md:mx-auto md:max-w-4xl border-4 border-solid border-neon-light-blue box-shadow-neon-blue shadow-lg rounded-3xl mt-10 mb-20 px-6 py-10 gap-6 bg-black/55 z-10">
-        <a
-          href={sponsor.url}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="w-full md:w-[300px] h-[200px] flex-shrink-0 bg-white rounded-lg overflow-hidden"
-        >
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img
-            className={cn(
-              "w-full h-full object-contain hover:opacity-70 hover:scale-110 duration-200 focus:scale-105 active:scale-95",
-              sponsor.imgClassName,
-            )}
-            src={sponsor.image}
-            alt={sponsor.name}
-          />
-        </a>
+      <div className="relative flex flex-col md:flex-row mx-4 md:mx-auto md:max-w-4xl border-4 border-solid border-neon-light-blue box-shadow-neon-blue shadow-lg rounded-3xl mt-10 mb-20 px-6 py-10 gap-6 bg-black/55 z-10">
+        {/* icons */}
+        <div className="md:inline hidden absolute left-[-30%] top-[30%] w-[76px] md:w-[182px] animate-float5 rotate-20 -z-10">
+          <CssIcon className={styles["neon-icon"]} />
+        </div>
+        <div className="md:inline hidden absolute left-[-28%] top-[-30%] w-[76px] md:w-[182px] animate-float5 rotate-340 -z-10">
+          <VueIcon className={styles["neon-icon"]} />
+        </div>
+        <div className="md:inline hidden absolute right-[-29.5%] top-[-25%] w-[76px] md:w-[182px] animate-float5 -rotate-350 -z-10">
+          <ReactIcon className={styles["neon-icon"]} />
+        </div>
+        <div className="md:inline hidden absolute right-[-31%] top-[35%] w-[76px] md:w-[182px] animate-float5 -rotate-20 -z-10">
+          <TakoyakiIcon className={styles["neon-icon"]} />
+        </div>
+        <div className="flex justify-center md:justify-start">
+          <a
+            href={sponsor.url}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="w-full max-w-sm md:w-[300px] md:h-[200px] flex-shrink-0 bg-white rounded-lg overflow-hidden"
+          >
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              className={cn(
+                "w-full h-full aspect-3/2 object-contain hover:opacity-70 hover:scale-110 duration-200 focus:scale-105 active:scale-95",
+                sponsor.imgClassName
+              )}
+              src={sponsor.image}
+              alt={sponsor.name}
+            />
+          </a>
+        </div>
         <div className="flex flex-col gap-6">
           {(sponsor.basicPlan || sponsor.optionPlan) && (
             <div className="flex flex-wrap gap-3">
