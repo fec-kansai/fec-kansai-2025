@@ -60,7 +60,7 @@ export default function SponsorDetailPage({ params }: PageProps) {
             <img
               className={cn(
                 "w-full h-full aspect-3/2 object-contain hover:opacity-70 hover:scale-110 duration-200 focus:scale-105 active:scale-95",
-                sponsor.imgClassName
+                sponsor.imgClassName,
               )}
               src={sponsor.image}
               alt={sponsor.name}
