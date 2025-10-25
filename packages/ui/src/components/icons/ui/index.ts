@@ -17,3 +17,5 @@ export { ReactIcon } from "./ReactIcon";
 export { LaravelIcon } from "./LaravelIcon";
 export { VueIcon } from "./VueIcon";
 export { PhpIcon } from "./PhpIcon";
+export { XLogoIcon } from "./XLogoIcon";
+export { BskyLogoIcon } from "./BskyLogoIcon";

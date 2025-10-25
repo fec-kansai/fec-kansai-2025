@@ -1,3 +1,8 @@
+import {
+  SPONSORS,
+  SPONSOR_BASIC_PLANS,
+  SPONSOR_OPTION_PLANS,
+} from "@/consts/sponsors";
 import { Heading, Text } from "@workspace/ui";
 import { SponsorCard } from "./card";
 
@@ -6,95 +11,30 @@ const INFORMATION_CONTENT =
 ご応募いただいた企業の皆さま、誠にありがとうございます！
 ` as const;
 
-const maidoGold = [
-  {
-    href: "https://www.lycorp.co.jp/ja/technology-design/",
-    imgSrc: "/sponsors/line-yahoo.png",
-    alt: "LINEヤフー株式会社",
-    size: "osaka-maido-gold",
-    imgClassName: "",
-  },
-  {
-    href: "https://www.kinto-technologies.com/",
-    imgSrc: "/sponsors/KINTOtechnologies.svg",
-    alt: "KINTOテクノロジーズ株式会社",
-    size: "osaka-maido-gold",
-    imgClassName: "p-4",
-  },
-  {
-    href: "https://chot-inc.com/",
-    imgSrc: "/sponsors/chot-inc.png",
-    alt: "ちょっと株式会社",
-    size: "osaka-maido-gold",
-    imgClassName: "p-4",
-  },
-  {
-    href: "https://corp.kaonavi.jp/",
-    imgSrc: "/sponsors/kaonavi.png",
-    alt: "株式会社カオナビ",
-    size: "osaka-maido-gold",
-    imgClassName: "",
-  },
-  {
-    href: "https://hrmos.co/pages/kakehashi/",
-    imgSrc: "/sponsors/kakehashi.png",
-    alt: "株式会社カケハシ",
-    size: "osaka-maido-gold",
-    imgClassName: "p-2 pr-3.5 scale-145 hover:scale-150",
-  },
-  {
-    href: "https://knowledgework.com/",
-    imgSrc: "/sponsors/KnowledgeWork.png",
-    alt: "株式会社ナレッジワーク",
-    size: "osaka-maido-gold",
-    imgClassName: "",
-  },
-] as const;
+// 定義済み定数（SPONSORS）から各セクションの表示対象を抽出
+const venueSponsors = SPONSORS.filter(
+  (s) => s.basicPlan === SPONSOR_BASIC_PLANS.VENUE,
+);
 
-const miniTakoyakiSilver = [
-  {
-    href: "http://www.jointcrew.co.jp/",
-    imgSrc: "/sponsors/jointcrew.png",
-    alt: "株式会社JOINT CREW",
-    size: "mini-takoyaki-silver",
-  },
-] as const;
+const osakaMaidoSponsors = SPONSORS.filter(
+  (s) => s.basicPlan === SPONSOR_BASIC_PLANS.OSAKA_MAIDO,
+);
 
-const namingRights = [
-  {
-    href: "https://knowledgework.com/",
-    imgSrc: "/sponsors/KnowledgeWork.png",
-    alt: "株式会社ナレッジワーク",
-    size: "mini-takoyaki-silver",
-  },
-] as const;
+const miniTakoyakiSponsors = SPONSORS.filter(
+  (s) => s.basicPlan === SPONSOR_BASIC_PLANS.MINI_TAKOYAKI,
+);
 
-const nameCards = [
-  {
-    href: "https://hrmos.co/pages/kakehashi/",
-    imgSrc: "/sponsors/kakehashi.png",
-    alt: "株式会社カケハシ",
-    size: "mini-takoyaki-silver",
-    imgClassName: "p-2 pr-3.5 scale-145 hover:scale-150",
-  },
-] as const;
+const namingRightsSponsors = SPONSORS.filter(
+  (s) => s.optionPlan === SPONSOR_OPTION_PLANS.NAME_RIGHTS,
+);
 
-const studentSupportPlan = [
-  {
-    href: "https://www.lycorp.co.jp/ja/technology-design/",
-    imgSrc: "/sponsors/line-yahoo.png",
-    alt: "LINEヤフー株式会社",
-    size: "osaka-maido-gold",
-    imgClassName: "",
-  },
-  {
-    href: "https://www.cyberagent.co.jp/",
-    imgSrc: "/sponsors/CyberAgent.png",
-    alt: "株式会社サイバーエージェント",
-    size: "osaka-maido-gold",
-    imgClassName: "p-2",
-  },
-] as const;
+const nameCardSponsors = SPONSORS.filter(
+  (s) => s.optionPlan === SPONSOR_OPTION_PLANS.NAME_CARD,
+);
+
+const studentSupportSponsors = SPONSORS.filter(
+  (s) => s.optionPlan === SPONSOR_OPTION_PLANS.STUDENT,
+);
 
 function SponsorInformation() {
   return (
@@ -108,12 +48,16 @@ function SponsorInformation() {
           会場スポンサー
         </Heading>
         <div className="flex flex-wrap gap-6 justify-center">
-          <SponsorCard
-            href="https://careers.miidas.co.jp/tech/"
-            imageSrc="/sponsors/miidas.webp"
-            alt="ミイダス"
-            size="venue-sponsor"
-          />
+          {venueSponsors.map((s) => (
+            <SponsorCard
+              key={s.id}
+              href={`/sponsors/${s.id}`}
+              imageSrc={s.image}
+              alt={s.name}
+              size="venue-sponsor"
+              imgClassName={s.imgClassName}
+            />
+          ))}
         </div>
       </div>
       <div>
@@ -121,14 +65,14 @@ function SponsorInformation() {
           おおさかまいど
         </Heading>
         <div className="flex flex-wrap gap-6 justify-center">
-          {maidoGold.map(({ href, imgSrc, alt, size, imgClassName }) => (
+          {osakaMaidoSponsors.map((s) => (
             <SponsorCard
-              key={alt}
-              href={href}
-              imageSrc={imgSrc}
-              alt={alt}
-              size={size}
-              imgClassName={imgClassName}
+              key={s.id}
+              href={`/sponsors/${s.id}`}
+              imageSrc={s.image}
+              alt={s.name}
+              size="osaka-maido-gold"
+              imgClassName={s.imgClassName}
             />
           ))}
         </div>
@@ -138,13 +82,14 @@ function SponsorInformation() {
           ミニたこやき
         </Heading>
         <div className="flex flex-wrap gap-6 justify-center">
-          {miniTakoyakiSilver.map(({ href, imgSrc, alt, size }) => (
+          {miniTakoyakiSponsors.map((s) => (
             <SponsorCard
-              key={alt}
-              href={href}
-              imageSrc={imgSrc}
-              alt={alt}
-              size={size}
+              key={s.id}
+              href={`/sponsors/${s.id}`}
+              imageSrc={s.image}
+              alt={s.name}
+              size="mini-takoyaki-silver"
+              imgClassName={s.imgClassName}
             />
           ))}
         </div>
@@ -154,14 +99,14 @@ function SponsorInformation() {
           ネーミングライツ
         </Heading>
         <div className="flex flex-wrap gap-6 justify-center">
-          {namingRights.map(({ href, imgSrc, alt, size }) => (
+          {namingRightsSponsors.map((s) => (
             <SponsorCard
-              key={alt}
-              href={href}
-              imageSrc={imgSrc}
-              alt={alt}
-              size={size}
-              className=""
+              key={s.id}
+              href={`/sponsors/${s.id}`}
+              imageSrc={s.image}
+              alt={s.name}
+              size="mini-takoyaki-silver"
+              imgClassName={s.imgClassName}
             />
           ))}
         </div>
@@ -171,14 +116,14 @@ function SponsorInformation() {
           ネームカード
         </Heading>
         <div className="flex flex-wrap gap-6 justify-center">
-          {nameCards.map(({ href, imgSrc, alt, size, imgClassName }) => (
+          {nameCardSponsors.map((s) => (
             <SponsorCard
-              key={alt}
-              href={href}
-              imageSrc={imgSrc}
-              alt={alt}
-              size={size}
-              imgClassName={imgClassName}
+              key={s.id}
+              href={`/sponsors/${s.id}`}
+              imageSrc={s.image}
+              alt={s.name}
+              size="mini-takoyaki-silver"
+              imgClassName={s.imgClassName}
             />
           ))}
         </div>
@@ -188,18 +133,16 @@ function SponsorInformation() {
           学生支援
         </Heading>
         <div className="flex flex-wrap gap-6 justify-center">
-          {studentSupportPlan.map(
-            ({ href, imgSrc, alt, size, imgClassName }) => (
-              <SponsorCard
-                key={alt}
-                href={href}
-                imageSrc={imgSrc}
-                alt={alt}
-                size={size}
-                imgClassName={imgClassName}
-              />
-            ),
-          )}
+          {studentSupportSponsors.map((s) => (
+            <SponsorCard
+              key={s.id}
+              href={`/sponsors/${s.id}`}
+              imageSrc={s.image}
+              alt={s.name}
+              size="osaka-maido-gold"
+              imgClassName={s.imgClassName}
+            />
+          ))}
         </div>
       </div>
     </section>
