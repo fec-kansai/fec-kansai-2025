@@ -1,7 +1,5 @@
 import { Heading, Text } from "@workspace/ui";
 
-const INFORMATION_CONTENT = "個人スポンサーはまだ募集中です！" as const;
-
 const individualSponsors = [
   {
     name: "岡山 叶太",
@@ -12,6 +10,9 @@ const individualSponsors = [
   {
     name: "jiyuujin",
   },
+  {
+    name: "スー",
+  },
 ];
 
 function IndividualSponsor() {
@@ -21,14 +22,11 @@ function IndividualSponsor() {
       className="flex flex-col gap-6 items-center"
     >
       <Heading>個人スポンサー</Heading>
-      <Text className="text-white whitespace-pre-wrap">
-        {INFORMATION_CONTENT}
-      </Text>
       <ul className="flex flex-wrap gap-x-4 gap-y-6 justify-center max-w-screen-lg mx-auto px-4">
         {individualSponsors.map((staff) => {
           return (
             <li key={staff.name} className="flex items-center justify-center">
-              <Text>{staff.name}</Text>
+              <Text className="font-bold">{staff.name}</Text>
             </li>
           );
         })}
