@@ -1,6 +1,6 @@
 import { Link } from "@/components/Link";
 import { SPONSORS } from "@/consts/sponsors";
-import { BskyLogoIcon, Button, XLogoIcon } from "@workspace/ui";
+import { Badge, BskyLogoIcon, Button, XLogoIcon } from "@workspace/ui";
 import { cn } from "@workspace/ui/lib/utils";
 import { ExternalLink } from "lucide-react";
 import { notFound } from "next/navigation";
@@ -43,6 +43,12 @@ export default function SponsorDetailPage({ params }: PageProps) {
           />
         </a>
         <div className="flex flex-col gap-6">
+          {(sponsor.basicPlan || sponsor.optionPlan) && (
+            <div className="flex flex-wrap gap-3">
+              {sponsor.basicPlan && <Badge plan={sponsor.basicPlan} />}
+              {sponsor.optionPlan && <Badge plan={sponsor.optionPlan} />}
+            </div>
+          )}
           <h1 className="text-3xl font-bold text-white">{sponsor.name}</h1>
           <p className="text-white leading-[200%] whitespace-pre-wrap">
             {sponsor.description}
