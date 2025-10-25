@@ -65,7 +65,7 @@ export default function SponsorDetailPage({ params }: PageProps) {
           ) : null}
           {sponsor.accounts?.length ? (
             <div className="flex flex-col gap-2">
-              <h2 className="text-xl font-bold text-white">公式SNS</h2>
+              <h2 className="text-xl font-bold text-white mb-2">公式SNS</h2>
               <div className="flex gap-4">
                 {sponsor.accounts.map((a) => (
                   <a
@@ -87,7 +87,7 @@ export default function SponsorDetailPage({ params }: PageProps) {
           ) : null}
         </div>
       </div>
-      <div className="flex justify-center">
+      <div className="flex justify-center mb-20">
         <Button variant="neon-red" asChild>
           <Link href="/" className="w-[200px] text-center">
             トップに戻る
