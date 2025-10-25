@@ -25,6 +25,7 @@ export type Sponsor = {
   accounts: { type: "X" | "BlueSky"; link: string }[];
   basicPlan?: SponsorBasicPlan;
   optionPlan?: SponsorOptionPlan;
+  imgClassName?: string;
 };
 
 // TODO: スポンサー情報は一覧に合わせて修正する
@@ -64,6 +65,7 @@ export const SPONSORS: readonly Sponsor[] = [
     urls: [{ type: "Tech Blog", link: "https://blog.kinto-technologies.com/" }],
     accounts: [{ type: "X", link: "https://x.com/KintoTech_Dev" }],
     basicPlan: SPONSOR_BASIC_PLANS.OSAKA_MAIDO,
+    imgClassName: "p-4",
   },
   {
     id: "chot-inc",
@@ -78,6 +80,7 @@ export const SPONSORS: readonly Sponsor[] = [
     ],
     accounts: [{ type: "X", link: "https://x.com/chot_inc" }],
     basicPlan: SPONSOR_BASIC_PLANS.OSAKA_MAIDO,
+    imgClassName: "p-4",
   },
   {
     id: "kaonavi",
@@ -166,5 +169,6 @@ export const SPONSORS: readonly Sponsor[] = [
     ],
     accounts: [{ type: "X", link: "https://x.com/ca_developers" }],
     optionPlan: SPONSOR_OPTION_PLANS.STUDENT,
+    imgClassName: "p-2",
   },
 ] as const;

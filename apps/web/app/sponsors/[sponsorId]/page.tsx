@@ -1,84 +1,97 @@
 import { Link } from "@/components/Link";
-import { Badge, BskyLogoIcon, Button, XLogoIcon } from "@workspace/ui";
+import { SPONSORS } from "@/consts/sponsors";
+import { BskyLogoIcon, Button, XLogoIcon } from "@workspace/ui";
+import { cn } from "@workspace/ui/lib/utils";
 import { ExternalLink } from "lucide-react";
+import { notFound } from "next/navigation";
 
-export type SponsorDetailPageProps = {
-  image?: string;
-  name?: string;
-  description?: string;
-  url?: string;
+type PageProps = {
+  params: { sponsorId: string };
 };
 
-export default function SponsorDetailPage(props: SponsorDetailPageProps) {
+export function generateStaticParams() {
+  return SPONSORS.map((s) => ({ sponsorId: s.id }));
+}
+
+export function generateMetadata({ params }: PageProps) {
+  const sponsor = SPONSORS.find((s) => s.id === params.sponsorId);
+  const title = sponsor ? `${sponsor.name} | スポンサー` : "スポンサー";
+  return { title };
+}
+
+export default function SponsorDetailPage({ params }: PageProps) {
+  const sponsor = SPONSORS.find((s) => s.id === params.sponsorId);
+  if (!sponsor) return notFound();
+
   return (
     <main className="md:flex-1 relative overflow-hidden">
       <div className="flex flex-col md:flex-row mx-4 md:mx-auto md:max-w-4xl border-4 border-solid border-neon-light-blue box-shadow-neon-blue shadow-lg rounded-3xl mt-10 mb-20 px-6 py-10 gap-6 bg-black/55 z-10">
         <a
-          href="https://careers.miidas.co.jp/tech/"
+          href={sponsor.url}
           target="_blank"
           rel="noopener noreferrer"
-          className="w-full md:w-[300px] h-[200px] flex-shrink-0"
+          className="w-full md:w-[300px] h-[200px] flex-shrink-0 bg-white rounded-lg overflow-hidden"
         >
+          {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
-            className="w-full h-full object-cover rounded-md"
-            src="/sponsors/miidas.webp"
-            alt="ミイダス"
+            className={cn(
+              "w-full h-full object-contain hover:opacity-70 hover:scale-110 duration-200 focus:scale-105 active:scale-95",
+              sponsor.imgClassName,
+            )}
+            src={sponsor.image}
+            alt={sponsor.name}
           />
         </a>
         <div className="flex flex-col gap-6">
-          <Badge />
-          <h1 className="text-3xl font-bold text-white">ミイダス株式会社</h1>
-          <p className="text-white leading-[200%]">
-            ミイダスは、あなたの市場価値を無料で診断できるサービスです。登録者数は200万人を超え、多くの企業がミイダスを通じて優秀な人材を採用しています。
+          <h1 className="text-3xl font-bold text-white">{sponsor.name}</h1>
+          <p className="text-white leading-[200%] whitespace-pre-wrap">
+            {sponsor.description}
           </p>
-          <div className="flex flex-col">
-            <Link
-              href="https://careers.miidas.co.jp/tech/"
-              className="flex items-center"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Tech Blog
-              <ExternalLink className="inline-block ml-1" size={16} />
-            </Link>
-            <Link
-              href="https://careers.miidas.co.jp/tech/"
-              className="flex items-center"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              採用サイト
-              <ExternalLink className="inline-block ml-1" size={16} />
-            </Link>
-          </div>
-          <div className="flex flex-col gap-2">
-            <h2 className="text-xl font-bold text-white">公式SNS</h2>
-            <div className="flex gap-4">
-              <a
-                href="https://x.com/fec_kansai"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="Xのロゴ"
-              >
-                <XLogoIcon width={24} height={24} role="img" />
-              </a>
-              <a
-                href="https://bsky.app/profile/fec-kansai.bsky.social"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="Blueskyのロゴ"
-              >
-                <BskyLogoIcon width={24} height={24} role="img" />
-              </a>
+          {sponsor.urls?.length ? (
+            <div className="flex flex-col gap-2">
+              {sponsor.urls.map((u) => (
+                <Link
+                  key={u.link}
+                  href={u.link}
+                  className="flex items-center"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  {u.type}
+                  <ExternalLink className="inline-block ml-1" size={16} />
+                </Link>
+              ))}
             </div>
-          </div>
+          ) : null}
+          {sponsor.accounts?.length ? (
+            <div className="flex flex-col gap-2">
+              <h2 className="text-xl font-bold text-white">公式SNS</h2>
+              <div className="flex gap-4">
+                {sponsor.accounts.map((a) => (
+                  <a
+                    key={a.link}
+                    href={a.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={a.type}
+                  >
+                    {a.type === "X" ? (
+                      <XLogoIcon width={24} height={24} role="img" />
+                    ) : (
+                      <BskyLogoIcon width={24} height={24} role="img" />
+                    )}
+                  </a>
+                ))}
+              </div>
+            </div>
+          ) : null}
         </div>
       </div>
       <div className="flex justify-center">
         <Button variant="neon-red" asChild>
-          <a href="/" className="w-[200px]">
+          <Link href="/" className="w-[200px] text-center">
             トップに戻る
-          </a>
+          </Link>
         </Button>
       </div>
     </main>

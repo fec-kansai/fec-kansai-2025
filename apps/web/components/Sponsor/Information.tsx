@@ -8,42 +8,48 @@ const INFORMATION_CONTENT =
 
 const maidoGold = [
   {
-    href: "https://www.lycorp.co.jp/ja/technology-design/",
+    id: "line-yahoo",
+    href: "/sponsors/line-yahoo",
     imgSrc: "/sponsors/line-yahoo.png",
     alt: "LINEヤフー株式会社",
     size: "osaka-maido-gold",
     imgClassName: "",
   },
   {
-    href: "https://www.kinto-technologies.com/",
+    id: "kinto-technologies",
+    href: "/sponsors/kinto-technologies",
     imgSrc: "/sponsors/KINTOtechnologies.svg",
     alt: "KINTOテクノロジーズ株式会社",
     size: "osaka-maido-gold",
     imgClassName: "p-4",
   },
   {
-    href: "https://chot-inc.com/",
+    id: "chot-inc",
+    href: "/sponsors/chot-inc",
     imgSrc: "/sponsors/chot-inc.png",
     alt: "ちょっと株式会社",
     size: "osaka-maido-gold",
     imgClassName: "p-4",
   },
   {
-    href: "https://corp.kaonavi.jp/",
+    id: "kaonavi",
+    href: "/sponsors/kaonavi",
     imgSrc: "/sponsors/kaonavi.png",
     alt: "株式会社カオナビ",
     size: "osaka-maido-gold",
     imgClassName: "",
   },
   {
-    href: "https://hrmos.co/pages/kakehashi/",
+    id: "kakehashi",
+    href: "/sponsors/kakehashi",
     imgSrc: "/sponsors/kakehashi.png",
     alt: "株式会社カケハシ",
     size: "osaka-maido-gold",
     imgClassName: "p-2 pr-3.5 scale-145 hover:scale-150",
   },
   {
-    href: "https://knowledgework.com/",
+    id: "knowledge-work",
+    href: "/sponsors/knowledge-work",
     imgSrc: "/sponsors/KnowledgeWork.png",
     alt: "株式会社ナレッジワーク",
     size: "osaka-maido-gold",
@@ -53,7 +59,8 @@ const maidoGold = [
 
 const miniTakoyakiSilver = [
   {
-    href: "http://www.jointcrew.co.jp/",
+    id: "joint-crew",
+    href: "/sponsors/joint-crew",
     imgSrc: "/sponsors/jointcrew.png",
     alt: "株式会社JOINT CREW",
     size: "mini-takoyaki-silver",
@@ -62,7 +69,8 @@ const miniTakoyakiSilver = [
 
 const namingRights = [
   {
-    href: "https://knowledgework.com/",
+    id: "knowledge-work",
+    href: "/sponsors/knowledge-work",
     imgSrc: "/sponsors/KnowledgeWork.png",
     alt: "株式会社ナレッジワーク",
     size: "mini-takoyaki-silver",
@@ -71,7 +79,8 @@ const namingRights = [
 
 const nameCards = [
   {
-    href: "https://hrmos.co/pages/kakehashi/",
+    id: "kakehashi",
+    href: "/sponsors/kakehashi",
     imgSrc: "/sponsors/kakehashi.png",
     alt: "株式会社カケハシ",
     size: "mini-takoyaki-silver",
@@ -81,14 +90,16 @@ const nameCards = [
 
 const studentSupportPlan = [
   {
-    href: "https://www.lycorp.co.jp/ja/technology-design/",
+    id: "line-yahoo",
+    href: "/sponsors/line-yahoo",
     imgSrc: "/sponsors/line-yahoo.png",
     alt: "LINEヤフー株式会社",
     size: "osaka-maido-gold",
     imgClassName: "",
   },
   {
-    href: "https://www.cyberagent.co.jp/",
+    id: "cyber-agent",
+    href: "/sponsors/cyber-agent",
     imgSrc: "/sponsors/CyberAgent.png",
     alt: "株式会社サイバーエージェント",
     size: "osaka-maido-gold",
@@ -109,7 +120,7 @@ function SponsorInformation() {
         </Heading>
         <div className="flex flex-wrap gap-6 justify-center">
           <SponsorCard
-            href="https://careers.miidas.co.jp/tech/"
+            href="/sponsors/miidas"
             imageSrc="/sponsors/miidas.webp"
             alt="ミイダス"
             size="venue-sponsor"
