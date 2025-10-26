@@ -16,21 +16,23 @@ import { ExternalLink } from "lucide-react";
 import { notFound } from "next/navigation";
 
 type PageProps = {
-  params: { sponsorId: string };
+  params: Promise<{ sponsorId: string }>;
 };
 
 export function generateStaticParams() {
   return SPONSORS.map((s) => ({ sponsorId: s.id }));
 }
 
-export function generateMetadata({ params }: PageProps) {
-  const sponsor = SPONSORS.find((s) => s.id === params.sponsorId);
+export async function generateMetadata({ params }: PageProps) {
+  const { sponsorId } = await params;
+  const sponsor = SPONSORS.find((s) => s.id === sponsorId);
   const title = sponsor ? `${sponsor.name} | スポンサー` : "スポンサー";
   return { title };
 }
 
-export default function SponsorDetailPage({ params }: PageProps) {
-  const sponsor = SPONSORS.find((s) => s.id === params.sponsorId);
+export default async function SponsorDetailPage({ params }: PageProps) {
+  const { sponsorId } = await params;
+  const sponsor = SPONSORS.find((s) => s.id === sponsorId);
   if (!sponsor) return notFound();
 
   return (
