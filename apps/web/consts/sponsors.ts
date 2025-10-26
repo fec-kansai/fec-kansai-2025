@@ -116,7 +116,7 @@ export const SPONSORS: readonly Sponsor[] = [
       { type: "公式ページ", link: "https://www.kakehashi.life/" },
     ],
     accounts: [{ type: "X", link: "https://x.com/kakehashi_dev" }],
-    imgClassName: "p-2 pr-3.5 scale-145 hover:scale-150",
+    imgClassName: "p-2 pr-3.5 scale-145 hover:scale-150 active:scale-130",
 
     basicPlan: SPONSOR_BASIC_PLANS.OSAKA_MAIDO,
     optionPlan: SPONSOR_OPTION_PLANS.NAME_CARD,
