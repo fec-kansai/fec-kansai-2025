@@ -385,6 +385,30 @@
     text-shadow: var(--text-shadow-neon-yellow);
   }
 
+  /* テキストカラークラス */
+  .text-neon-pink {
+    color: var(--color-neon-pink);
+  }
+
+  .text-neon-blue {
+    color: var(--color-neon-blue);
+  }
+
+  .text-neon-light-blue {
+    color: var(--color-neon-light-blue);
+  }
+
+  .text-neon-red {
+    color: var(--color-neon-red);
+  }
+
+  .text-neon-green {
+    color: var(--color-neon-green);
+  }
+
+  .text-neon-yellow {
+    color: var(--color-neon-yellow);
+  }
   .effect-neon-gold {
     background: linear-gradient(
       90deg,

@@ -49,7 +49,7 @@ function Avatar({
   }
 
   return (
-    <a href={targetUrl} target="_blank" rel="noreferrer">
+    <a href={targetUrl} target="_blank" rel="noopener noreferrer">
       {avatarImage({ displayName, avatar, ...rest })}
     </a>
   );
