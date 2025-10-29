@@ -1,6 +1,6 @@
+import { Link } from "@/components/Link";
 import { cn } from "@workspace/ui/lib/utils";
 import { type VariantProps, cva } from "class-variance-authority";
-import type React from "react";
 
 type SizeKeys =
   | "naniwa-premium"
@@ -41,28 +41,42 @@ interface SponsorCardProps {
   alt: string;
   size: SizeKeys;
   imgClassName?: string;
+  className?: string;
 }
 
 function SponsorCard(
-  props: React.ComponentProps<"a"> &
-    SponsorCardProps &
-    VariantProps<typeof cardVariants>,
+  props: SponsorCardProps & VariantProps<typeof cardVariants>,
 ) {
   const { className, href, imageSrc, size, alt, imgClassName } = props;
 
+  const isExternal = /^https?:\/\//.test(href);
+
+  if (isExternal) {
+    return (
+      <a
+        href={href}
+        target="_blank"
+        rel="noreferrer"
+        className={cn(cardVariants({ size, className }))}
+      >
+        <img
+          className={cn(imgClassName, cardImageVariants)}
+          src={imageSrc}
+          alt={alt}
+        />
+      </a>
+    );
+  }
+
   return (
-    <a
-      href={href}
-      target="_blank"
-      className={cn(cardVariants({ size, className }))}
-      rel="noreferrer"
-    >
+    <Link href={href} className={cn(cardVariants({ size, className }))}>
+      {/* eslint-disable-next-line @next/next/no-img-element */}
       <img
         className={cn(cardImageVariants, imgClassName)}
         src={imageSrc}
         alt={alt}
       />
-    </a>
+    </Link>
   );
 }
 
