@@ -36,9 +36,9 @@ const studentSupportSponsors = SPONSORS.filter(
   (s) => s.optionPlan === SPONSOR_OPTION_PLANS.STUDENT,
 );
 
-function SponsorInformation() {
+function OfficialSponsorInformation() {
   return (
-    <section id="sponsor" className="flex flex-col gap-6 items-center">
+    <section id="official-sponsor" className="flex flex-col gap-6 items-center">
       <Heading>スポンサー</Heading>
       <Text className="text-white whitespace-pre-wrap">
         {INFORMATION_CONTENT}
@@ -149,4 +149,4 @@ function SponsorInformation() {
   );
 }
 
-export { SponsorInformation };
+export { OfficialSponsorInformation };
