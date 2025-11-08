@@ -1,7 +1,13 @@
-import { SponsorInformation as Information } from "@/components/Sponsor";
+import { OfficialSponsorInformation } from "@/components/OfficialSponsor";
+import { IndividualSponsor } from "./IndividualSponsor";
 
 function SponsorInformation() {
-  return <Information />;
+  return (
+    <>
+      <OfficialSponsorInformation />
+      <IndividualSponsor />
+    </>
+  );
 }
 
 export { SponsorInformation };

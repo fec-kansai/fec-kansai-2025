@@ -1,6 +1,6 @@
+import { Link } from "@/components/Link";
 import { cn } from "@workspace/ui/lib/utils";
 import { type VariantProps, cva } from "class-variance-authority";
-import type React from "react";
 
 type SizeKeys =
   | "naniwa-premium"
@@ -33,31 +33,50 @@ const cardVariants = cva("bg-white rounded-lg overflow-hidden", {
 });
 
 const cardImageVariants =
-  "hover:opacity-70 hover:scale-110 duration-200 focus:scale-105 active:scale-95";
+  "w-full h-full object-contain hover:opacity-70 hover:scale-110 duration-200 focus:scale-105 active:scale-95";
 
 interface SponsorCardProps {
   href: string;
   imageSrc: string;
   alt: string;
   size: SizeKeys;
+  imgClassName?: string;
+  className?: string;
 }
 
 function SponsorCard(
-  props: React.ComponentProps<"a"> &
-    SponsorCardProps &
-    VariantProps<typeof cardVariants>,
+  props: SponsorCardProps & VariantProps<typeof cardVariants>,
 ) {
-  const { className, href, imageSrc, size, alt } = props;
+  const { className, href, imageSrc, size, alt, imgClassName } = props;
+
+  const isExternal = /^https?:\/\//.test(href);
+
+  if (isExternal) {
+    return (
+      <a
+        href={href}
+        target="_blank"
+        rel="noreferrer"
+        className={cn(cardVariants({ size, className }))}
+      >
+        <img
+          className={cn(imgClassName, cardImageVariants)}
+          src={imageSrc}
+          alt={alt}
+        />
+      </a>
+    );
+  }
 
   return (
-    <a
-      href={href}
-      target="_blank"
-      className={cn(cardVariants({ size, className }))}
-      rel="noreferrer"
-    >
-      <img className={cardImageVariants} src={imageSrc} alt={alt} />
-    </a>
+    <Link href={href} className={cn(cardVariants({ size, className }))}>
+      {/* eslint-disable-next-line @next/next/no-img-element */}
+      <img
+        className={cn(cardImageVariants, imgClassName)}
+        src={imageSrc}
+        alt={alt}
+      />
+    </Link>
   );
 }
 

@@ -1,4 +1,4 @@
-import { TICKETS, TICKET_SITE_LINK } from "@/app/consts/ticket";
+import { TICKETS, TICKET_SITE_LINK } from "@/consts/ticket";
 import { Button, Heading, Text } from "@workspace/ui";
 
 const TICKET_CONTENT =
@@ -35,7 +35,7 @@ function TicketInformation() {
           asChild
         >
           <a href={TICKET_SITE_LINK} target="_blank" rel="noreferrer">
-            チケット購入サイト
+            チケットを購入する
           </a>
         </Button>
       </div>
