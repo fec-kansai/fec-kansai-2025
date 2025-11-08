@@ -1,4 +1,4 @@
-import { staffs } from "@/consts/staffs";
+import { onSiteStaffs, staffs } from "@/consts/staffs";
 import { Avatar, Heading, Text } from "@workspace/ui";
 
 const INFORMATION_CONTENT =
@@ -9,24 +9,38 @@ function StaffInformation() {
   const staffList = staffs;
 
   return (
-    <section id="staff" className="flex flex-col gap-6 items-center">
-      <Heading>スタッフ</Heading>
-      <Text className="text-white whitespace-pre-wrap">
-        {INFORMATION_CONTENT}
-      </Text>
-      <ul className="flex flex-wrap gap-x-4 gap-y-6 justify-center max-w-screen-lg mx-auto px-4">
-        {staffList.map((staff) => {
-          return (
-            <li
-              key={staff.displayName}
-              className="flex items-center justify-center"
-            >
-              <Avatar {...staff} />
-            </li>
-          );
-        })}
-      </ul>
-    </section>
+    <>
+      <section id="staff" className="flex flex-col gap-6 items-center">
+        <Heading>スタッフ</Heading>
+        <Text className="text-white whitespace-pre-wrap">
+          {INFORMATION_CONTENT}
+        </Text>
+        <ul className="flex flex-wrap gap-x-4 gap-y-6 justify-center max-w-screen-lg mx-auto px-4">
+          {staffList.map((staff) => {
+            return (
+              <li
+                key={staff.displayName}
+                className="flex items-center justify-center"
+              >
+                <Avatar {...staff} />
+              </li>
+            );
+          })}
+        </ul>
+      </section>
+      <section id="on-site-staff" className="flex flex-col gap-6 items-center">
+        <Heading variant="secondary">当日スタッフ</Heading>
+        <ul className="flex flex-wrap gap-x-4 gap-y-6 justify-center max-w-screen-lg mx-auto px-4">
+          {onSiteStaffs.map((staff) => {
+            return (
+              <li key={staff.name} className="flex items-center justify-center">
+                <Text className="font-bold">{staff.name}</Text>
+              </li>
+            );
+          })}
+        </ul>
+      </section>
+    </>
   );
 }
 
