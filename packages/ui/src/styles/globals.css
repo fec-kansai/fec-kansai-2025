@@ -21,6 +21,12 @@
   --neon-red: #ec4343;
   --neon-green: #43ec62;
   --neon-yellow: #ece143;
+  --neon-gold-light: #facc15;
+  --neon-gold-dark: #ca8a04;
+  --neon-bronze-light: #d97706;
+  --neon-bronze-dark: #92400e;
+  --neon-silver-light: #9ca3af;
+  --neon-silver-dark: #4b5563;
   --link-gray: #d1d5db;
 
   /* text-shadow */
@@ -117,6 +123,12 @@
   --color-neon-light-blue: var(--neon-light-blue);
   --color-neon-red: var(--neon-red);
   --color-neon-green: var(--neon-green);
+  --color-neon-gold-light: var(--neon-gold-light);
+  --color-neon-gold-dark: var(--neon-gold-dark);
+  --color-neon-bronze-light: var(--neon-bronze-light);
+  --color-neon-bronze-dark: var(--neon-bronze-dark);
+  --color-neon-silver-light: var(--neon-silver-light);
+  --color-neon-silver-dark: var(--neon-silver-dark);
   --color-link-gray: var(--link-gray);
 
   /* ボーダー */
@@ -188,6 +200,7 @@
     from {
       height: 0;
     }
+
     to {
       height: var(--radix-accordion-content-height);
     }
@@ -197,6 +210,7 @@
     from {
       height: var(--radix-accordion-content-height);
     }
+
     to {
       height: 0;
     }
@@ -207,6 +221,7 @@
   * {
     @apply border-border outline-ring/50;
   }
+
   body {
     @apply bg-background text-foreground;
   }
@@ -220,6 +235,7 @@
     -webkit-text-fill-color: white;
     paint-order: stroke fill;
   }
+
   .text-stroke-neon-pink:hover {
     text-shadow: 0 0 30px var(--neon-pink);
   }
@@ -232,6 +248,7 @@
     paint-order: stroke fill;
     transition-duration: 0.8s;
   }
+
   .text-stroke-neon-pink-active:hover {
     color: white;
     -webkit-text-stroke-width: 1px;
@@ -249,9 +266,11 @@
     -webkit-text-fill-color: white;
     paint-order: stroke fill;
   }
+
   .text-stroke-neon-blue:hover {
     text-shadow: 0 0 30px var(--neon-blue);
   }
+
   .box-shadow-neon-blue {
     box-shadow: 0 0 30px var(--neon-blue);
   }
@@ -263,9 +282,11 @@
     -webkit-text-fill-color: white;
     paint-order: stroke fill;
   }
+
   .text-stroke-neon-light-blue:hover {
     text-shadow: 0 0 30px var(--neon-light-blue);
   }
+
   .box-shadow-neon-light-blue {
     box-shadow: 0 0 30px var(--neon-light-blue);
   }
@@ -277,9 +298,11 @@
     -webkit-text-fill-color: white;
     paint-order: stroke fill;
   }
+
   .text-stroke-neon-red:hover {
     text-shadow: 0 0 30px var(--neon-red);
   }
+
   .box-shadow-neon-red {
     box-shadow: 0 0 30px var(--neon-red);
   }
@@ -291,9 +314,11 @@
     -webkit-text-fill-color: white;
     paint-order: stroke fill;
   }
+
   .text-stroke-neon-green:hover {
     text-shadow: 0 0 30px var(--neon-green);
   }
+
   .box-shadow-neon-green {
     box-shadow: 0 0 30px var(--neon-green);
   }
@@ -305,9 +330,11 @@
     -webkit-text-fill-color: white;
     paint-order: stroke fill;
   }
+
   .text-stroke-neon-yellow:hover {
     text-shadow: 0 0 30px var(--neon-yellow);
   }
+
   .box-shadow-neon-yellow {
     box-shadow: 0 0 30px var(--neon-yellow);
   }
@@ -356,6 +383,75 @@
   .effect-neon-yellow {
     -webkit-text-stroke-color: var(--color-neon-yellow);
     text-shadow: var(--text-shadow-neon-yellow);
+  }
+
+  /* テキストカラークラス */
+  .text-neon-pink {
+    color: var(--color-neon-pink);
+  }
+
+  .text-neon-blue {
+    color: var(--color-neon-blue);
+  }
+
+  .text-neon-light-blue {
+    color: var(--color-neon-light-blue);
+  }
+
+  .text-neon-red {
+    color: var(--color-neon-red);
+  }
+
+  .text-neon-green {
+    color: var(--color-neon-green);
+  }
+
+  .text-neon-yellow {
+    color: var(--color-neon-yellow);
+  }
+  .effect-neon-gold {
+    background: linear-gradient(
+      90deg,
+      var(--color-neon-gold-light),
+      var(--color-neon-gold-dark)
+    );
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: var(--color-neon-gold-dark);
+    text-shadow: 0 0 30px var(--color-neon-gold-light);
+    paint-order: stroke fill;
+  }
+
+  .effect-neon-silver {
+    background: linear-gradient(
+      90deg,
+      var(--color-neon-silver-light),
+      var(--color-neon-silver-dark)
+    );
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: var(--color-neon-silver-dark);
+    text-shadow: 0 0 30px var(--color-neon-silver-light);
+    paint-order: stroke fill;
+  }
+
+  .effect-neon-bronze {
+    background: linear-gradient(
+      90deg,
+      var(--color-neon-bronze-light),
+      var(--color-neon-bronze-dark)
+    );
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: var(--color-neon-bronze-dark);
+    text-shadow: 0 0 30px var(--color-neon-bronze-light);
+    paint-order: stroke fill;
   }
 
   /* リンクスタイル */
