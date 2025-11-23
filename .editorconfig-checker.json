@@ -45,6 +45,14 @@
     "\\.css\\.map$",
     "\\.js\\.map$",
     "min\\.css$",
-    "min\\.js$"
+    "min\\.js$",
+    "\\.env$",
+    "\\.mjs$",
+    "\\.env\\.example$",
+    "\\.gitignore$",
+    "\\.node-version$",
+    "\\.jsonc$",
+    "\\.commitlintrc$",
+    "\\.editorconfig$"
   ]
 }
