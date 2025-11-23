@@ -13,6 +13,9 @@ const individualSponsors = [
   {
     name: "スー",
   },
+  {
+    name: "Kaho Michimae",
+  },
 ];
 
 function IndividualSponsor() {
