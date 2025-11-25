@@ -9,8 +9,8 @@ export interface Track {
 }
 
 export const tracks = {
-  trackA: "Track A",
-  trackB: "Track B",
+  trackA: "ナレッジワークルーム",
+  trackB: "Ignite Kansaiルーム",
 };
 
 export const trackA: Track[] = [
