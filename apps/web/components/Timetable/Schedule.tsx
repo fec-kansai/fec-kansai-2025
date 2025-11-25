@@ -91,7 +91,7 @@ export function SessionCard({
             <a
               href={session.url}
               className="shadow-none"
-              target="_blank"
+              target={/^https?:\/\//i.test(session.url) ? "_blank" : ""}
               rel="noreferrer"
             >
               詳細を見る
