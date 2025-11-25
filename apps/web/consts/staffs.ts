@@ -146,4 +146,17 @@ export const staffs = [
     displayName: "シュンキ",
     avatar: "/staffs/shunki.jpg",
   },
+  {
+    url: "",
+    x: "",
+    github: "",
+    displayName: "あかぎ",
+    avatar: "/staffs/akagi.jpg",
+  },
+];
+
+export const onSiteStaffs = [
+  { name: "勝 浩紀" },
+  { name: "Ryosuke Kawamura" },
+  { name: "fkuMnk..増岡" },
 ];
