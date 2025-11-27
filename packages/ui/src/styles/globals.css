@@ -29,6 +29,10 @@
   --neon-silver-dark: #4b5563;
   --link-gray: #d1d5db;
 
+  /* header height */
+  --header-height: 80px;
+  --sp-header-height: 80px;
+
   /* text-shadow */
   --text-shadow-value: 0px 0px 30px;
   --neon-pink-shadow: var(--text-shadow-value) var(--neon-pink);
@@ -464,5 +468,19 @@
     -webkit-text-stroke: 0.0625em var(--color-neon-pink);
     text-shadow: var(--text-shadow-neon-pink);
     paint-order: stroke fill;
+  }
+}
+
+[id] {
+  scroll-margin-top: var(--header-height);
+}
+
+@media (max-width: 767px) {
+  html {
+    scroll-padding-top: var(--sp-header-height);
+  }
+
+  [id] {
+    scroll-margin-top: var(--sp-header-height);
   }
 }
