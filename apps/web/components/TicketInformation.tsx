@@ -1,14 +1,15 @@
-import { TICKETS, TICKET_SITE_LINK } from "@/consts/ticket";
-import { Button, Heading, Text } from "@workspace/ui";
+import { TICKETS } from "@/consts/ticket";
+import { Heading, Text } from "@workspace/ui";
 
 const TICKET_CONTENT =
-  `フロントエンドカンファレンス関西 2025 では、現在、参加チケットを絶賛販売中です！
+  `フロントエンドカンファレンス関西 2025 のチケット購入受付は、終了いたしました。
+ご購入いただいた皆さま、そして関心をお寄せくださった皆さまに、心より感謝申し上げます。
 
-フロントエンドに関わる多彩なテーマを扱うセッションが勢ぞろい。
-現場でのリアルな知見から、これからの未来を見据えた話題まで、学びも刺激もたっぷりの一日です。
+当日は、フロントエンドに関わる多彩なテーマのセッションが勢ぞろい。
+現場でのリアルな知見から、これからの未来を見据えた話題まで、学びも刺激もたっぷりの一日をお届けします。
 
-関西のフロントエンドコミュニティに触れてみたい方、日々の業務に新しい視点を取り入れたい方、仲間とつながりたい方——
-この機会にぜひご参加ください！` as const;
+関西のフロントエンドコミュニティに触れ、日々の業務に新しい視点を取り入れ、仲間とつながる絶好の機会です。
+当日、皆さまとお会いできるのを楽しみにしています！` as const;
 
 function TicketInformation() {
   const tickets = TICKETS;
@@ -27,17 +28,6 @@ function TicketInformation() {
             <p className="text-sm whitespace-pre-wrap">{ticket.description}</p>
           </div>
         ))}
-      </div>
-      <div className="flex flex-wrap gap-5 md:gap-20 justify-center my-0 md:mt-5 md:mb-10">
-        <Button
-          className="w-full sm:w-auto py-2.5 px-10"
-          variant="neon-pink"
-          asChild
-        >
-          <a href={TICKET_SITE_LINK} target="_blank" rel="noreferrer">
-            チケットを購入する
-          </a>
-        </Button>
       </div>
     </section>
   );
